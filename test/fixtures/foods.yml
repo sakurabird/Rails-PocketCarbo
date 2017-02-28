@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  carbohydrate_per_100g: 1.5
+  carbohydrate_per_weight: 1.5
+  weight: 1
+  calory: 1.5
+  protein: 1.5
+  fat: 1.5
+  sodium: 1.5
+  type: one
+  kind: one
+
+two:
+  name: MyString
+  carbohydrate_per_100g: 1.5
+  carbohydrate_per_weight: 1.5
+  weight: 1
+  calory: 1.5
+  protein: 1.5
+  fat: 1.5
+  sodium: 1.5
+  type: two
+  kind: two
