@@ -4,7 +4,11 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.all
+    # 検索フォームの入力内容で検索する
+    @q = Food.ransack(params[:q])
+
+    # 重複を排除
+    @foods = @q.result(distinct: true)
   end
 
   # GET /foods/1
