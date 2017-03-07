@@ -20,3 +20,6 @@ doc/
 
 # project files
 db/*.csv
+
+# Ignore Spring files.
+/spring/*.pid
