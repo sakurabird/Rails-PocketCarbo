@@ -1,27 +1,28 @@
 <main>
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<div class="container">
+  <div class="container">
+    <%= render 'layouts/search_form' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Carbohydrate per 100g</th>
-      <th>Carbohydrate per weight</th>
-      <th>Weight</th>
-      <th>Calory</th>
-      <th>Protein</th>
-      <th>Fat</th>
-      <th>Sodium</th>
-      <th>Type</th>
-      <th>Kind</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <table>
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Carbohydrate per 100g</th>
+        <th>Carbohydrate per weight</th>
+        <th>Weight</th>
+        <th>Calory</th>
+        <th>Protein</th>
+        <th>Fat</th>
+        <th>Sodium</th>
+        <th>Type</th>
+        <th>Kind</th>
+        <th colspan="3"></th>
+      </tr>
+      </thead>
 
-  <tbody>
-    <% @foods.each do |food| %>
+      <tbody>
+      <% @foods.each do |food| %>
       <tr>
         <td><%= food.name %></td>
         <td><%= food.carbohydrate_per_100g %></td>
@@ -34,11 +35,12 @@
         <td><%= food.type.name %></td>
         <td><%= food.kind.name %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <% end %>
+      </tbody>
+    </table>
 
-<br>
-</div>
+    <br>
+
+  </div>
 
 </main>
