@@ -5,8 +5,14 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     @search_keyword = params[:search_keyword]
-    # logger.debug(search_keyword)
-    @foods = Food.search(:name_cont => @search_keyword).result
+    @type_id = params[:type_id]
+    # logger.debug("========================type_id============================")
+    # logger.debug(@type_id)
+    if @type_id
+      @foods = Food.ransack(:type_id_eq => @type_id).result
+    else
+      @foods = Food.ransack(:name_cont => @search_keyword).result
+    end
   end
 
   # GET /foods/1
