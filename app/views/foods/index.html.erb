@@ -3,45 +3,29 @@
   <p id="notice"><%= notice %></p>
 
   <div class="container">
+    <!-- search form-->
     <%= render 'layouts/search_form' %>
 
-    <table>
-      <thead>
-      <tr>
-        <th>Name</th>
-        <th>Carbohydrate per 100g</th>
-        <th>Carbohydrate per weight</th>
-        <th>Weight</th>
-        <th>Calory</th>
-        <th>Protein</th>
-        <th>Fat</th>
-        <th>Sodium</th>
-        <th>Type</th>
-        <th>Kind</th>
-        <th colspan="3"></th>
-      </tr>
-      </thead>
-
-      <tbody>
+    <!-- food list -->
+    <div class="list-group">
       <% @foods.each do |food| %>
-      <tr>
-        <td><%= food.name %></td>
-        <td><%= food.carbohydrate_per_100g %></td>
-        <td><%= food.carbohydrate_per_weight %></td>
-        <td><%= food.weight %></td>
-        <td><%= food.calory %></td>
-        <td><%= food.protein %></td>
-        <td><%= food.fat %></td>
-        <td><%= food.sodium %></td>
-        <td><%= food.type.name %></td>
-        <td><%= food.kind.name %></td>
-      </tr>
+      <div class="list-group-item">
+        <div class="col-md-3 food_grid_left">
+          <h6 class="mb-1"><%= food.name %></h6>
+          <h3><strong><%= food.carbohydrate_per_100g %> g</strong><span style="font-size:small"> (100g中) </span></h3>
+        </div>
+        <div class="col-md-9 food_grid_right grey.darken-2">
+          <p class="mt-1">一回分約 <%= food.weight %> g あたりの値</p>
+          <p class="mb-1"><strong>糖質:</strong> <%= food.carbohydrate_per_weight %>g <strong>カロリー:</strong>
+            <%= food.calory %>kcal <strong>たんぱく質:</strong> <%= food.protein %>g <strong>脂質:</strong>
+            <%= food.fat %>g <strong>塩分:</strong><%= food.sodium %>g</p>
+        </div>
+      </div>
       <% end %>
-      </tbody>
-    </table>
-
+    </div>
+    <!--/. food list -->
+      
     <br>
-
   </div>
 
 </main>
