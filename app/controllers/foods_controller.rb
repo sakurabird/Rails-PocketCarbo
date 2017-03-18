@@ -9,9 +9,9 @@ class FoodsController < ApplicationController
     # logger.debug("========================type_id============================")
     # logger.debug(@type_id)
     if @type_id
-      @foods = Food.ransack(:type_id_eq => @type_id).result
+      @foods = Food.ransack(:type_id_eq => @type_id).result.page(params[:page])
     else
-      @foods = Food.ransack(:name_cont => @search_keyword).result
+      @foods = Food.ransack(:name_cont => @search_keyword).result.page(params[:page])
     end
   end
 

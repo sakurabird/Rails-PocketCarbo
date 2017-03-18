@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   match 'foods/index', to: 'foods#index', via: ['post', 'get']
 
-  resources :foods
+  resources :foods do
+    get 'page/:page', :action => :index, :on => :collection
+  end
 end

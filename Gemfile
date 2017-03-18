@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'ransack'
+gem 'kaminari'
 
 gem 'rails',        '5.0.0.1'
 gem 'puma',         '3.4.0'
