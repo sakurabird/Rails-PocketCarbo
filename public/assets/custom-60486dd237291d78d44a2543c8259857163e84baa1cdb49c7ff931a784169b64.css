@@ -1,0 +1,104 @@
+/* main layout */
+/* line 3, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+main {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+}
+
+/* navbar */
+/* line 9, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.navbar {
+  background-color: transparent;
+}
+
+/* line 13, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+/* line 16, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.scrolling-navbar {
+  -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  transition: background .5s ease-in-out, padding .5s ease-in-out;
+}
+
+/* line 22, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.top-nav-collapse {
+  background-color: #1C2331;
+}
+
+@media only screen and (max-width: 768px) {
+  /* line 27, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+  .navbar {
+    background-color: #1C2331;
+  }
+}
+/* hr margin */
+/* line 33, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.extra-margins {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Foods list grid left */
+/* line 39, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.food_grid_left {
+  text-align: left;
+  color: #424242;
+}
+
+/* Foods list grid right */
+/* line 45, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.food_grid_right {
+  background-color: #fafafa;
+  text-align: left;
+  color: #757575;
+}
+
+/* Pagination */
+/* line 52, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.pagination a, .pagination span.current, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #DDD;
+  border-left-width: 0;
+}
+
+/* line 62, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.pagination {
+  border-left: 1px solid #ddd;
+}
+/* line 64, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.pagination .first {
+  padding: 0;
+  float: none;
+  border: none;
+}
+/* line 69, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.pagination .prev {
+  padding: 0;
+  float: none;
+  border: none;
+}
+/* line 74, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.pagination .page {
+  padding: 0;
+  float: none;
+  border: none;
+}
+/* line 79, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.pagination .next {
+  padding: 0;
+  float: none;
+  border: none;
+}
+/* line 84, /Users/sakura/Documents/Rails/sakura_fish/pocket_carbo/app/assets/stylesheets/custom.scss */
+.pagination .last {
+  padding: 0;
+  float: none;
+  border: none;
+}
