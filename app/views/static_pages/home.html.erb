@@ -31,17 +31,9 @@
                 <div class="card">
                     <img class="img-fluid" src=<%= asset_path 'kind1.jpg' %> alt="Card image cap">
                     <div class="card-block">
-                        <h4 class="card-title">素材</h4>
+                        <h4 class="card-title">各種食材</h4>
                         <p class="card-text">穀類、豆、種実、藻類、野菜、果実、魚介類、肉類、卵・乳類、油脂、調味料など</p>
                         <%= button_to "見る", foods_index_path(:type_id => 1), class: "btn btn-default btn-md" %>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="img-fluid" src=<%= asset_path 'kind2.jpg' %> alt="Card image cap">
-                    <div class="card-block">
-                        <h4 class="card-title">市販食品</h4>
-                        <p class="card-text">おつまみ、乳製品、缶詰、インスタント食品、冷凍食品、調理パン、おにぎり、菓子類他</p>
-                        <%= button_to "見る", foods_index_path(:type_id => 2), class: "btn btn-default btn-md" %>
                     </div>
                 </div>
                 <div class="card">
@@ -49,6 +41,14 @@
                     <div class="card-block">
                         <h4 class="card-title">定番料理</h4>
                         <p class="card-text">ごはん、パン、めん類、肉料理、魚介料理、野菜料理、卵・豆腐・海藻料理、鍋・汁物など</p>
+                        <%= button_to "見る", foods_index_path(:type_id => 2), class: "btn btn-default btn-md" %>
+                    </div>
+                </div>
+                <div class="card">
+                    <img class="img-fluid" src=<%= asset_path 'kind2.jpg' %> alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">市販食品</h4>
+                        <p class="card-text">おつまみ、乳製品、缶詰、インスタント食品、冷凍食品、調理パン、おにぎり、菓子類他</p>
                         <%= button_to "見る", foods_index_path(:type_id => 3), class: "btn btn-default btn-md" %>
                     </div>
                 </div>
@@ -76,6 +76,12 @@
                     </div>
                 </div>
                 <div class="card">
+                    <img class="img-fluid" src=<%= asset_path 'kind6.jpg' %> alt="Card image cap">
+                    <div class="card-block">
+                        <h4 class="card-title">メーカー商品</h4>
+                        <p class="card-text">メーカーのホームページより</p>
+                        <%= button_to "見る", foods_index_path(:type_id => 6), class: "btn btn-default btn-md" %>
+                    </div>
                 </div>
             </div>
         </div>
