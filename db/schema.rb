@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316164340) do
+ActiveRecord::Schema.define(version: 20170320122535) do
 
   create_table "foods", force: :cascade do |t|
     t.string   "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20170316164340) do
     t.datetime "updated_at",              null: false
     t.string   "search_word"
     t.boolean  "deleted_flg"
+    t.string   "weight_hint"
     t.index ["kind_id"], name: "index_foods_on_kind_id"
     t.index ["type_id"], name: "index_foods_on_type_id"
   end
