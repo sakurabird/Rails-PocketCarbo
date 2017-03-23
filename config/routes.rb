@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'static_pages/privacy_policy'
 
   match 'foods/index', to: 'foods#index', via: ['post', 'get']
+  match 'foods/search', to: 'foods#search', via: ['post', 'get']
 
   resources :foods do
     get 'page/:page', :action => :index, :on => :collection
