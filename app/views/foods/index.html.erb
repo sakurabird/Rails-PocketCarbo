@@ -6,6 +6,8 @@
     <!-- search form-->
     <%= render 'layouts/search_form' %>
 
+    <p><%= @type_name + "の糖質量" if @type_name.present? %></p>
+
     <!-- food list -->
     <div class="list-group">
       <% @foods.each do |food| %>

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   match 'foods/index', to: 'foods#index', via: ['post', 'get']
   match 'foods/search', to: 'foods#search', via: ['post', 'get']
+  match 'foods/search_t', to: 'foods#search_by_type', via: ['post', 'get']
 
   resources :foods do
     get 'page/:page', :action => :index, :on => :collection
