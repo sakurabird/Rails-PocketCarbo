@@ -23,3 +23,6 @@ db/*.csv
 
 # Ignore Spring files.
 /spring/*.pid
+
+# Environment valuables
+.env
