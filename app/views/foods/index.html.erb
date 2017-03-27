@@ -6,14 +6,29 @@
     <!-- search form-->
     <%= render 'layouts/search_form' %>
 
-    <p><%= @type_name + "の糖質量" if @type_name.present? %></p>
+    <!-- food type -->
+    <a class="food_type" href=<%= foods_search_t_path(:type_id => @type_id) %><p><%= @type_name + "の糖質量" if @type_name.present? %></p></a>
+
+    <!-- food kinds -->
+    <div class="col-md-12">
+      <% if @kinds.present? %>
+      <% @kinds.each do |kind| %>
+      <div class="btn-group">
+        <a href=<%= foods_search_t_path(:type_id => @type_id, :kind_id => kind.id) %>
+        class="<%= @kind_id.to_s == kind.id.to_s ? 'food_type_button_selected' : 'food_type_button' %>">
+        <span><%= kind.name %></span></a>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+    <!--/. food kind -->
 
     <!-- food list -->
     <div class="list-group">
       <% @foods.each do |food| %>
       <div class="list-group-item">
         <div class="col-md-3 food_grid_left">
-          <h6 class="mb-1"><%= food.name %></h6>
+          <h5 class="mb-1"><%= food.name %></h5>
           <h3><strong><%= food.carbohydrate_per_100g %> g</strong><span style="font-size:small"> (100g中) </span></h3>
         </div>
         <div class="col-md-9 food_grid_right grey.darken-2">

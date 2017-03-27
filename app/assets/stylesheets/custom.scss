@@ -47,6 +47,42 @@ main {
   color: #757575;
 }
 
+/* Foods type in Foods list */
+a.food_type {
+  text-align: left;
+  font-size: 16px;
+  color: #00695c;
+}
+
+a.food_type_button span {
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
+  color: #1C2331;
+  text-align:center;
+  font-size: 12px;
+  background-color: #ffd180;
+}
+
+a.food_type_button span:hover {
+  background-color: #dcedc8;
+}
+
+// changed background-color
+a.food_type_button_selected span {
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  padding: 5px 10px 5px 10px;
+  color: #1C2331;
+  text-align:center;
+  font-size: 12px;
+  background-color: #ffab40;
+}
+
 /* Pagination */
 .pagination a, .pagination span.current, .pagination span.gap {
   float: left;
