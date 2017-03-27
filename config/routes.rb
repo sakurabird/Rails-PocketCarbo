@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   resources :foods do
     get 'page/:page', :action => :index, :on => :collection
   end
+
+  get '*not_found', controller: 'application', action: 'render_404'
+  post '*not_found', controller: 'application', action: 'render_404'
 end
