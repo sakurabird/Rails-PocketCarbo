@@ -12,6 +12,7 @@ gem 'coffee-rails', '4.2.1'
 gem 'jquery-rails', '4.1.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.4.1'
+gem 'pg'
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'
@@ -33,7 +34,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg',             '0.15.1'
+  gem 'pg'
   gem 'rails_12factor'
 end
 
