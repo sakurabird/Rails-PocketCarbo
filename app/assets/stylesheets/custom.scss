@@ -35,9 +35,17 @@ main {
 }
 
 /* Foods list grid left */
-.food_grid_left {
+.food_grid_left_safe {
   text-align: left;
-  color: #424242;
+  color: #2196f3;
+}
+.food_grid_left_warning {
+  text-align: left;
+  color: #4caf50;
+}
+.food_grid_left_danger {
+  text-align: left;
+  color: #f44336;
 }
 
 /* Foods list grid right */

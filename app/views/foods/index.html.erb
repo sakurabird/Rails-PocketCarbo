@@ -27,8 +27,8 @@
     <div class="list-group">
       <% @foods.each do |food| %>
       <div class="list-group-item">
-        <div class="col-md-3 food_grid_left">
-          <h5 class="mb-1"><%= food.name %></h5>
+        <div class="<%= carbo_level_color_css(food) %>">
+          <h5 class="mb-1"><strong><%= food.name %></strong></h5>
           <h3><strong><%= food.carbohydrate_per_100g %> g</strong><span style="font-size:small"> (100g中) </span></h3>
         </div>
         <div class="col-md-9 food_grid_right grey.darken-2">
