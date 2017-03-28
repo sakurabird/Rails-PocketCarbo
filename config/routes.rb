@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   get 'static_pages/home'
   get 'static_pages/privacy_policy'
+  get 'static_pages/about'
+  get 'static_pages/help'
 
   match 'foods/index', to: 'foods#index', via: ['post', 'get']
   match 'foods/search', to: 'foods#search', via: ['post', 'get']
