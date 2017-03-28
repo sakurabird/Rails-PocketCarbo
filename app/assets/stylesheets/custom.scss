@@ -60,13 +60,13 @@ main {
 }
 
 /* Foods type in Foods list */
-a.food_type {
+.food_type {
   text-align: left;
   font-size: 16px;
   color: #00695c;
 }
 
-a.food_type_button span {
+.food_type_button span {
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 10px;
@@ -78,12 +78,12 @@ a.food_type_button span {
   background-color: #ffd180;
 }
 
-a.food_type_button span:hover {
+.food_type_button span:hover {
   background-color: #dcedc8;
 }
 
 // changed background-color
-a.food_type_button_selected span {
+.food_type_button_selected span {
   display: inline-block;
   margin-right: 5px;
   margin-bottom: 10px;
