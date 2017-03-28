@@ -20,10 +20,15 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
+  config.assets.css_compressor = :scss
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
+
+  # Disable Rails's static asset server (Apache or nginx will already do this).
+  # Rails5.1からconfig.public_file_server.enabledになるとある http://stackoverflow.com/a/30128323/2845202
+  config.serve_static_files = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
