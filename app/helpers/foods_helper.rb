@@ -10,9 +10,12 @@ module FoodsHelper
       when 5 .. 15 then
         # 糖質量がやや多い
         return "col-md-3 food_grid_left_warning"
-      else
+      when 15 .. 50 then
         # 糖質量が多い
         return "col-md-3 food_grid_left_danger"
+      else
+        # 糖質量が非常に多い
+        return "col-md-3 food_grid_left_danger_high"
     end
   end
 end
