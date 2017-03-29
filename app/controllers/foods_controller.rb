@@ -3,7 +3,11 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.ransack(:type_id_eq => @type_id, :kind_id_eq => @kind_id, :name_cont => @search_keyword, :deleted_flg_eq => false).result.page(params[:page])
+    @foods = Food.ransack(:type_id_eq => @type_id,
+                          :kind_id_eq => @kind_id,
+                          :name_or_search_word_cont => @search_keyword,
+                          :deleted_flg_eq => false)
+                 .result.page(params[:page])
   end
 
   def search
