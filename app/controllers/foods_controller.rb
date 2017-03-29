@@ -3,15 +3,13 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = Food.ransack(:type_id_eq => @type_id,
-                          :kind_id_eq => @kind_id,
-                          :name_or_search_word_cont => @search_keyword,
-                          :deleted_flg_eq => false)
-                 .result.page(params[:page])
+    @q = Food.ransack(:deleted_flg_eq => false) if !@q.present?
+    @foods = @q.result.page(params[:page])
   end
 
   def search
     @search_keyword = params[:search_keyword]
+    @q = Food.with_keywords(@search_keyword).ransack(params[:q], :deleted_flg_eq => false)
 
     index
     render :index
@@ -21,12 +19,15 @@ class FoodsController < ApplicationController
     current_type
     current_kinds
     @search_keyword = nil
+    @q = Food.ransack(:type_id_eq => @type_id,
+                      :kind_id_eq => @kind_id,
+                      :deleted_flg_eq => false)
 
     index
     render :index
   end
 
-private
+  private
 
   # タイプ情報を取得する
   def current_type
