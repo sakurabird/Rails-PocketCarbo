@@ -1,95 +1,87 @@
-<% provide(:page_title, "Welcome") %>
+<% provide(:page_title, "トップページ") %>
 <main>
 
-    <!--Main layout-->
-    <div class="container">
-        <!--First row-->
-        <div class="row">
-
-            <!--Main information-->
-            <div class="col-md-12">
-                <h3 class="h3-responsive">Welcome! ポケット糖質量</h3>
-                <hr>
-                <p>ポケット糖質量は1100種類以上の食品に含まれる糖質量が検索できるサイトです。<br>
-                    100グラムあたりの糖質量と、それぞれの食品の1食を目安とした分量に含まれるエネルギー（カロリー）・たんぱく質・脂質・塩分が表示できます。<br>
-                    健康づくりのためにぜひご利用ください。</p>
-            </div>
-
+<!--Main layout-->
+<div class="container">
+    <!--First row-->
+    <div class="row">
+        <!--Main information-->
+        <div class="col-md-12">
+            <p>1100種類以上の食品に含まれる糖質量を検索・一覧で表示できるサイトです。<br>
+                様々な健康改善効果を期待できる糖質制限にピッタリ。ぜひご活用ください！</p>
         </div>
-        <!--/.First row-->
-
-        <!--Second row-->
-        <%= render 'layouts/search_form' %>
-
-        <!--/.Second row-->
-
-        <hr class="extra-margins">
-
-        <!--Type cards row1-->
-        <div class="row">
-            <div class="card-group">
-                <div class="card">
-                    <img class="img-fluid" src=<%= asset_path 'kind1.jpg' %>>
-                    <div class="card-block">
-                        <h4 class="card-title">各種食材</h4>
-                        <p class="card-text">穀類、豆、種実、藻類、野菜、果実、魚介類、肉類、卵・乳類、油脂、調味料など</p>
-                        <%= button_to "見る", foods_search_t_path(:type_id => 1), class: "btn btn-default btn-md" %>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="img-fluid" src=<%= asset_path 'kind3.jpg' %>>
-                    <div class="card-block">
-                        <h4 class="card-title">定番料理</h4>
-                        <p class="card-text">ごはん、パン、めん類、肉料理、魚介料理、野菜料理、卵・豆腐・海藻料理、鍋・汁物など</p>
-                        <%= button_to "見る", foods_search_t_path(:type_id => 2), class: "btn btn-default btn-md" %>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="img-fluid" src=<%= asset_path 'kind2.jpg' %>>
-                    <div class="card-block">
-                        <h4 class="card-title">市販食品</h4>
-                        <p class="card-text">おつまみ、乳製品、缶詰、インスタント食品、冷凍食品、調理パン、おにぎり、菓子類他</p>
-                        <%= button_to "見る", foods_search_t_path(:type_id => 3), class: "btn btn-default btn-md" %>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/.Type cards row1-->
-
-        <!--Type cards row2-->
-        <div class="row">
-            <div class="card-group">
-                <div class="card">
-                    <img class="img-fluid" src=<%= asset_path 'kind4.jpg' %>>
-                    <div class="card-block">
-                        <h4 class="card-title">外食・テイクアウト</h4>
-                        <p class="card-text">ファストフード、ピザ、弁当、定食、すし、焼き鳥、おでん、焼き肉、天ぷら、串揚げなど</p>
-                        <%= button_to "見る", foods_search_t_path(:type_id => 4), class: "btn btn-default btn-md" %>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="img-fluid" src=<%= asset_path 'kind5.jpg' %>>
-                    <div class="card-block">
-                        <h4 class="card-title">飲みもの</h4>
-                        <p class="card-text">ソフトドリンク、アルコールなど</p>
-                        <%= button_to "見る", foods_search_t_path(:type_id => 5), class: "btn btn-default btn-md" %>
-                    </div>
-                </div>
-                <div class="card">
-                    <img class="img-fluid" src=<%= asset_path 'kind6.jpg' %>>
-                    <div class="card-block">
-                        <h4 class="card-title">メーカー商品</h4>
-                        <p class="card-text">メーカーのホームページより</p>
-                        <%= button_to "見る", foods_search_t_path(:type_id => 6), class: "btn btn-default btn-md" %>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--/.Type cards row1-->
-
-        <hr class="extra-margins">
-
     </div>
-    <!--/.Main layout-->
+    <!--/.First row-->
+
+    <!--Second row-->
+    <%= render 'layouts/search_form' %>
+    <!--/.Second row-->
+
+    <!--Type cards row1-->
+    <div class="row">
+        <div class="card-group">
+            <div class="card">
+                <img class="img-fluid" src=<%= asset_path 'kind1.jpg' %>>
+                <div class="card-block">
+                    <h4 class="card-title">各種食材</h4>
+                    <p class="card-text">穀類、豆、種実、藻類、野菜、果実、魚介類、肉類、卵・乳類、油脂、調味料など</p>
+                    <%= button_to "見る", foods_search_t_path(:type_id => 1), class: "btn btn-default btn-md" %>
+                </div>
+            </div>
+            <div class="card">
+                <img class="img-fluid" src=<%= asset_path 'kind3.jpg' %>>
+                <div class="card-block">
+                    <h4 class="card-title">定番料理</h4>
+                    <p class="card-text">ごはん、パン、めん類、肉料理、魚介料理、野菜料理、卵・豆腐・海藻料理、鍋・汁物など</p>
+                    <%= button_to "見る", foods_search_t_path(:type_id => 2), class: "btn btn-default btn-md" %>
+                </div>
+            </div>
+            <div class="card">
+                <img class="img-fluid" src=<%= asset_path 'kind2.jpg' %>>
+                <div class="card-block">
+                    <h4 class="card-title">市販食品</h4>
+                    <p class="card-text">おつまみ、乳製品、缶詰、インスタント食品、冷凍食品、調理パン、おにぎり、菓子類他</p>
+                    <%= button_to "見る", foods_search_t_path(:type_id => 3), class: "btn btn-default btn-md" %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.Type cards row1-->
+
+    <!--Type cards row2-->
+    <div class="row">
+        <div class="card-group">
+            <div class="card">
+                <img class="img-fluid" src=<%= asset_path 'kind4.jpg' %>>
+                <div class="card-block">
+                    <h4 class="card-title">外食・テイクアウト</h4>
+                    <p class="card-text">ファストフード、ピザ、弁当、定食、すし、焼き鳥、おでん、焼き肉、天ぷら、串揚げなど</p>
+                    <%= button_to "見る", foods_search_t_path(:type_id => 4), class: "btn btn-default btn-md" %>
+                </div>
+            </div>
+            <div class="card">
+                <img class="img-fluid" src=<%= asset_path 'kind5.jpg' %>>
+                <div class="card-block">
+                    <h4 class="card-title">飲みもの</h4>
+                    <p class="card-text">ソフトドリンク、アルコールなど</p><br>
+                    <%= button_to "見る", foods_search_t_path(:type_id => 5), class: "btn btn-default btn-md" %>
+                </div>
+            </div>
+            <div class="card">
+                <img class="img-fluid" src=<%= asset_path 'kind6.jpg' %>>
+                <div class="card-block">
+                    <h4 class="card-title">メーカー商品</h4>
+                    <p class="card-text">メーカーのホームページなどの情報より集めたデータ</p>
+                    <%= button_to "見る", foods_search_t_path(:type_id => 6), class: "btn btn-default btn-md" %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.Type cards row1-->
+
+    <hr class="extra-margins">
+
+</div>
+<!--/.Main layout-->
 
 </main>

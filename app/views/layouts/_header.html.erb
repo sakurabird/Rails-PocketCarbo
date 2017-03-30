@@ -5,16 +5,17 @@
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="/">
-                <strong>ポケット糖質量</strong>
+            <a class="navbar-brand" href=<%= root_path %>>
+            <strong>ポケット糖質量 </strong><small>糖質量検索・一覧表示</small>
             </a>
             <div class="collapse navbar-collapse" id="navbarNav1">
+                <!-- left side -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href=<%= root_path %>>Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/foods">全食品一覧</a>
+                        <a class="nav-link" href=<%= foods_path %>>全食品一覧</a>
                     </li>
 
                     <li class="nav-item dropdown btn-group">
@@ -29,6 +30,12 @@
                             <a href=<%= foods_search_t_path(:type_id => 6) %> class="dropdown-item">メーカー商品</a>
                         </div>
                         </div>
+                    </li>
+                </ul>
+                <!-- right side -->
+                <ul class="navbar-nav ml-auto nav-flex-icons">
+                    <li class="nav-item">
+                        <a href=<%= static_pages_help_path %> class="nav-link waves-effect waves-light"><i class="fa fa-question"></i></a>
                     </li>
                 </ul>
             </div>
