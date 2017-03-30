@@ -1,8 +1,8 @@
 require 'csv'
 
-Type.delete_all
-Kind.delete_all
 Food.delete_all
+Kind.delete_all
+Type.delete_all
 
 csv_data = CSV.read('db/type.csv', headers: true)
 csv_data.each do |data|
