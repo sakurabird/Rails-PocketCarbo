@@ -7,7 +7,7 @@
     <%= render 'layouts/search_form' %>
 
     <!-- food type -->
-    <a class="food_type" href=<%= foods_search_t_path(:type_id => @type_id) %><p><%= @type_name + "の糖質量" if @type_name.present? %></p></a>
+    <a class="food_type" href="<%= foods_search_t_path(:type_id => @type_id) %>"<p><%= @type_name + "の糖質量" if @type_name.present? %></p></a>
 
     <!-- food kinds -->
     <div class="col-md-12">
