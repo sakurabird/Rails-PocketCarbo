@@ -16,6 +16,7 @@ gem 'pg'
 gem 'google-analytics-rails', '1.1.0'
 gem 'meta-tags'
 gem 'config'
+gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'
