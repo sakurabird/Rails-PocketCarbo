@@ -42,6 +42,8 @@ class FoodsController < ApplicationController
     return if !@type_id.present?
     @kind_id = params[:kind_id] if params[:kind_id].present?
     @kind_id = '' if !@kind_id.present?
+    kind = Kind.find_by(id: @kind_id)
+    @kind_name = kind.name if kind.present?
     @kinds = Kind.where(type_id: @type_id)
   end
 end

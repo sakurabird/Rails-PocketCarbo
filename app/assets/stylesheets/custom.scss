@@ -61,8 +61,9 @@ main {
 
 /* Foods type in Foods list */
 .food_type {
+  display: inline-block;
   text-align: left;
-  font-size: 16px;
+  font-size: 20px;
   color: #00695c;
 }
 
@@ -93,6 +94,16 @@ main {
   text-align:center;
   font-size: 12px;
   background-color: #ffab40;
+}
+
+.food_kind_title {
+  display: inline-block;
+  margin-left: 25px;
+  padding: 3px 7px 3px 7px;
+  text-align: left;
+  font-size: 15px;
+  color: #f57c00;
+  border: 1px solid #f57c00;
 }
 
 /* Pagination */
