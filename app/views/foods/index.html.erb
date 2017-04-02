@@ -8,8 +8,8 @@
 
     <!-- food type -->
     <div class="row col-md-12 ">
-      <a class="food_type" href="<%= foods_search_t_path(:type_id => @type_id) %>"<p><%= @type_name + "の糖質量" if @type_name.present? %></p></a>
-      <p class="food_kind_title"><%= @kind_name if @kind_name.present? %></p>
+      <%= food_type %>
+      <%= food_kind_title %>
     </div>
 
     <!-- food kinds -->
@@ -35,7 +35,7 @@
           <h3><strong><%= food.carbohydrate_per_100g %> g</strong><span style="font-size:small"> (100g中) </span></h3>
         </div>
         <div class="col-md-9 food_grid_right grey.darken-2">
-          <p class="mt-1">一回分約 <%= food.weight %> g あたりの値</p>
+          <p class="mt-1"><%= ingredient_discription(food) %></p>
           <p class="mb-1"><strong>糖質:</strong> <%= food.carbohydrate_per_weight %>g <strong>カロリー:</strong>
             <%= food.calory %>kcal <strong>たんぱく質:</strong> <%= food.protein %>g <strong>脂質:</strong>
             <%= food.fat %>g <strong>塩分:</strong><%= food.sodium %>g</p>

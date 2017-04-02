@@ -18,4 +18,29 @@ module FoodsHelper
         return "col-md-3 food_grid_left_danger_high"
     end
   end
+
+  def food_type
+    if @type_name.present?
+      link_to "#{@type_name}の糖質量", foods_search_t_path(:type_id => @type_id), class: "food_type"
+    end
+  end
+
+  def food_kind_title
+    if @kind_name.present?
+      html = <<-EOF
+      <p class='food_kind_title'>#{@kind_name}</p>
+      EOF
+      html.html_safe
+    else
+      nil
+    end
+  end
+
+  def ingredient_discription(food)
+    weight_hint = food.weight_hint.blank? ? '' : "(#{food.weight_hint})"
+    logger.debug(weight_hint)
+
+    "一回分#{weight_hint}#{food.weight} g あたりの値"
+  end
+
 end

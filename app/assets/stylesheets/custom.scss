@@ -62,6 +62,7 @@ main {
 /* Foods type in Foods list */
 .food_type {
   display: inline-block;
+  margin-bottom: 7px;
   text-align: left;
   font-size: 20px;
   color: #00695c;
@@ -98,10 +99,10 @@ main {
 
 .food_kind_title {
   display: inline-block;
-  margin-left: 25px;
-  padding: 3px 7px 3px 7px;
+  margin-left: 20px;
+  padding: 2px 5px 2px 5px;
   text-align: left;
-  font-size: 15px;
+  font-size: 14px;
   color: #f57c00;
   border: 1px solid #f57c00;
 }
