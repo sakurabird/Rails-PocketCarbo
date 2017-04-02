@@ -2,13 +2,9 @@
 <html lang="ja">
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <%= render 'layouts/meta_tags' %>
 
     <title>ポケット糖質量 <%= yield(:page_title) %></title>
-    <%= favicon_link_tag() %>
-    <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'bootstrap.min': 'reload' %>
@@ -23,22 +19,8 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
-
-    <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
     <%= analytics_init if Rails.env.production? %>
-
-    <title>ポケット糖質量　糖質制限中に糖質量を一発検索・一覧表示</title>
-    <meta name="description" content="ポケット糖質量は1100種類以上の食品に含まれる糖質量が検索できるサイトです。
-100グラムあたりの糖質量と、それぞれの食品の1回分を目安とした分量に含まれるエネルギー（カロリー）・たんぱく質・脂質・塩分が表示できます。
-健康づくりのためにぜひご利用ください。">
-    <meta property="og:title" content="ポケット糖質量　糖質制限中に糖質量を一発検索・一覧表示"/>
-    <meta property="og:description" content="ポケット糖質量は1100種類以上の食品に含まれる糖質量が検索できるサイトです。
-100グラムあたりの糖質量と、それぞれの食品の1回分を目安とした分量に含まれるエネルギー（カロリー）・たんぱく質・脂質・塩分が表示できます。
-健康づくりのためにぜひご利用ください。"/>
-    <meta property="og:url" content="http://www.pockettoushituryou.com/"/>
-    <meta property="og:type" content=“website"/>
-    <meta property="og:site_name" content=“ポケット糖質量"/>
 
   </head>
 
