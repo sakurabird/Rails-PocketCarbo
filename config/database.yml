@@ -28,7 +28,16 @@ test:
   pool: 5
   timeout: 5000
 
-#
+# staging
+staging:
+  <<: *default
+  database: d4cr9pccj2d2e3
+  username: ENV['DATABASE_USER']
+  password: ENV['DATABASE_PASSWORD']
+  host: ec2-184-72-252-69.compute-1.amazonaws.com
+  port: 5432
+
+# 本番
 production:
   <<: *default
   database: d8c7clp3dmvv4u
