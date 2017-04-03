@@ -234,23 +234,23 @@ DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug (= 9.0.0)
   coffee-rails (= 4.2.1)
-  config
-  dotenv-rails
+  config (= 1.4.0)
+  dotenv-rails (= 2.2.0)
   google-analytics-rails (= 1.1.0)
   guard
   guard-minitest
   jbuilder (= 2.4.1)
   jquery-rails (= 4.1.1)
-  kaminari
+  kaminari (= 1.0.1)
   listen (= 3.0.8)
-  meta-tags
+  meta-tags (= 2.4.0)
   minitest-reporters
-  pg
+  pg (= 0.19.0)
   puma (= 3.4.0)
   rails (= 5.0.0.1)
   rails-controller-testing
-  rails_12factor
-  ransack
+  rails_12factor (= 0.0.2)
+  ransack (= 1.8.2)
   sass-rails (= 5.0.6)
   spring (= 1.7.2)
   spring-watcher-listen (= 2.0.0)

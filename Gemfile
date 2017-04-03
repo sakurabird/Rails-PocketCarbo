@@ -1,10 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'dotenv-rails'
-gem 'ransack'
-gem 'kaminari'
-
 gem 'rails',        '5.0.0.1'
+gem 'dotenv-rails', '2.2.0'
+gem 'ransack',      '1.8.2'
+gem 'kaminari',     '1.0.1'
 gem 'puma',         '3.4.0'
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.0.0'
@@ -12,10 +11,10 @@ gem 'coffee-rails', '4.2.1'
 gem 'jquery-rails', '4.1.1'
 gem 'turbolinks',   '5.0.1'
 gem 'jbuilder',     '2.4.1'
-gem 'pg'
+gem 'pg',           '0.19.0'
 gem 'google-analytics-rails', '1.1.0'
-gem 'meta-tags'
-gem 'config'
+gem 'meta-tags',    '2.4.0'
+gem 'config',       '1.4.0'
 gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
@@ -38,8 +37,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
-  gem 'rails_12factor'
+  gem 'rails_12factor',       '0.0.2'
 end
 
 # Windows環境ではtzinfo-dataというgemを含める必要があります
