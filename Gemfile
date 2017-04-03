@@ -36,7 +36,7 @@ group :test do
   gem 'guard-minitest'
 end
 
-group :production do
+group :production, :staging do
   gem 'rails_12factor',       '0.0.2'
 end
 
