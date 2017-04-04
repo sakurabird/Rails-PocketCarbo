@@ -34,6 +34,25 @@ main {
   margin-bottom: 2.5rem;
 }
 
+/* Search form */
+.food-search-box {
+  padding:10px;
+  margin-bottom:10px;
+}
+.food-search-box .text {
+  width:350px;
+  height:35px;
+  border:2px solid #CCC;
+  text-indent:10px;
+  text-decoration : none
+}
+.food-search-box .btn {
+  background: #2BBBAD;
+  height:40px;
+  text-align: center;
+  font-size: small;
+}
+
 /* Foods list grid left */
 .food_grid_left_safe {
   text-align: left;

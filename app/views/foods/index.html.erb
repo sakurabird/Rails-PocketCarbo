@@ -1,6 +1,8 @@
 <% provide(:page_title, "食品一覧") %>
 <main>
-  <p id="notice"><%= notice %></p>
+  <% if flash[:notice] %>
+  <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 
   <div class="container">
     <!-- search form-->
