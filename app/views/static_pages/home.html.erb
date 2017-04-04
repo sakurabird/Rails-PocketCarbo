@@ -13,35 +13,69 @@
     </div>
     <!--/.First row-->
 
-    <!--Second row-->
     <%= render 'layouts/search_form' %>
-    <!--/.Second row-->
 
     <!--Type cards row1-->
     <div class="row">
         <div class="card-group">
             <div class="card">
-                <img class="img-fluid" src="<%= asset_path 'kind1.jpg' %>">
+                <a href="<%= foods_search_t_path(:type_id => 1) %>">
+                    <img class="img-fluid" src="<%= asset_path 'kind1.jpg' %>">
+                </a>
                 <div class="card-block">
-                    <h4 class="card-title">各種食材</h4>
-                    <p class="card-text">穀類、豆、種実、藻類、野菜、果実、魚介類、肉類、卵・乳類、油脂、調味料など</p>
-                    <%= button_to "見る", foods_search_t_path(:type_id => 1), class: "btn btn-default btn-md" %>
+                    <h4 class="card-title underline"><a href="<%= foods_search_t_path(:type_id => 1) %>">各種食材</a></h4>
+                    <p class="card-text underline">
+                        <a href="<%= foods_search_t_path(:type_id => 1, :kind_id => 1) %>">穀類</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 1, :kind_id => 2) %>">豆・種実・藻類</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 1, :kind_id => 3) %>">いも・野菜・きのこ類</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 1, :kind_id => 4) %>">果実類</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 1, :kind_id => 5) %>">魚介類</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 1, :kind_id => 6) %>">肉類</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 1, :kind_id => 7) %>">卵・乳類</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 1, :kind_id => 8) %>">油脂類・調味料・香辛料</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 1, :kind_id => 9) %>">砂糖・ジャムなど</a>
+                    </p>
+                    <%= button_to "各種食材を見る", foods_search_t_path(:type_id => 1), class: "btn btn-default btn-sm" %>
                 </div>
             </div>
             <div class="card">
-                <img class="img-fluid" src="<%= asset_path 'kind3.jpg' %>">
+                <a href="<%= foods_search_t_path(:type_id => 2) %>">
+                    <img class="img-fluid" src="<%= asset_path 'kind3.jpg' %>">
+                </a>
                 <div class="card-block">
-                    <h4 class="card-title">定番料理</h4>
-                    <p class="card-text">ごはん、パン、めん類、肉料理、魚介料理、野菜料理、卵・豆腐・海藻料理、鍋・汁物など</p>
-                    <%= button_to "見る", foods_search_t_path(:type_id => 2), class: "btn btn-default btn-md" %>
+                    <h4 class="card-title underline"><a href="<%= foods_search_t_path(:type_id => 2) %>">定番料理</a></h4>
+                    <p class="card-text underline">
+                        <a href="<%= foods_search_t_path(:type_id => 2, :kind_id => 10) %>">主食（ごはん・パンなど）</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 2, :kind_id => 11) %>">主食（めん類・その他）</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 2, :kind_id => 12) %>">肉料理</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 2, :kind_id => 13) %>">魚介料理</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 2, :kind_id => 14) %>">野菜・いも・きのこ類の料理</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 2, :kind_id => 15) %>">卵・豆腐・海藻などの料理</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 2, :kind_id => 16) %>">鍋・汁ものなど</a>
+                    </p>
+                    <br>
+                    <br>
+                    <%= button_to "定番料理を見る", foods_search_t_path(:type_id => 2), class: "btn btn-default btn-sm" %>
                 </div>
             </div>
             <div class="card">
-                <img class="img-fluid" src="<%= asset_path 'kind2.jpg' %>">
+                <a href="<%= foods_search_t_path(:type_id => 3) %>">
+                    <img class="img-fluid" src="<%= asset_path 'kind2.jpg' %>">
+                </a>
                 <div class="card-block">
-                    <h4 class="card-title">市販食品</h4>
-                    <p class="card-text">おつまみ、乳製品、缶詰、インスタント食品、冷凍食品、調理パン、おにぎり、菓子類他</p>
-                    <%= button_to "見る", foods_search_t_path(:type_id => 3), class: "btn btn-default btn-md" %>
+                    <h4 class="card-title underline"><a href="<%= foods_search_t_path(:type_id => 3) %>">市販食品</a></h4>
+                    <p class="card-text underline">
+                        <a href="<%= foods_search_t_path(:type_id => 3, :kind_id => 17) %>">おつまみ</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 3, :kind_id => 19) %>">缶詰など</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 3, :kind_id => 20) %>">インスタント・レトルト食品</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 3, :kind_id => 21) %>">冷凍食品</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 3, :kind_id => 22) %>">調理パン・おにぎり</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 3, :kind_id => 23) %>">和菓子・洋菓子</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 3, :kind_id => 24) %>">アイスクリーム・ゼリー・スナック類他</a><br>
+                    </p>
+                    <br>
+                    <br>
+                    <%= button_to "市販食品を見る", foods_search_t_path(:type_id => 3), class: "btn btn-default btn-sm" %>
                 </div>
             </div>
         </div>
@@ -52,27 +86,66 @@
     <div class="row">
         <div class="card-group">
             <div class="card">
-                <img class="img-fluid" src="<%= asset_path 'kind4.jpg' %>">
+                <a href="<%= foods_search_t_path(:type_id => 4) %>">
+                    <img class="img-fluid" src="<%= asset_path 'kind4.jpg' %>">
+                </a>
                 <div class="card-block">
-                    <h4 class="card-title">外食・テイクアウト</h4>
-                    <p class="card-text">ファストフード、ピザ、弁当、定食、すし、焼き鳥、おでん、焼き肉、天ぷら、串揚げなど</p>
-                    <%= button_to "見る", foods_search_t_path(:type_id => 4), class: "btn btn-default btn-md" %>
+                    <h4 class="card-title underline"><a href="<%= foods_search_t_path(:type_id => 4) %>">外食・テイクアウト</a></h4>
+                    <p class="card-text underline">
+                        <a href="<%= foods_search_t_path(:type_id => 4, :kind_id => 25) %>">ピザ他</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 4, :kind_id => 26) %>">クレープ</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 4, :kind_id => 27) %>">弁当</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 4, :kind_id => 28) %>">定食など</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 4, :kind_id => 29) %>">すし</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 4, :kind_id => 30) %>">焼き鳥</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 4, :kind_id => 31) %>">おでん</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 4, :kind_id => 32) %>">焼き肉</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 4, :kind_id => 33) %>">天ぷら</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 4, :kind_id => 34) %>">串揚げ</a>
+                    </p>
+                    <%= button_to "外食・テイクアウトを見る", foods_search_t_path(:type_id => 4), class: "btn btn-default btn-sm" %>
                 </div>
             </div>
             <div class="card">
-                <img class="img-fluid" src="<%= asset_path 'kind5.jpg' %>">
+                <a href="<%= foods_search_t_path(:type_id => 5) %>">
+                    <img class="img-fluid" src="<%= asset_path 'kind5.jpg' %>">
+                </a>
                 <div class="card-block">
-                    <h4 class="card-title">飲みもの</h4>
-                    <p class="card-text">ソフトドリンク、アルコールなど</p><br>
-                    <%= button_to "見る", foods_search_t_path(:type_id => 5), class: "btn btn-default btn-md" %>
+                    <h4 class="card-title underline"><a href="<%= foods_search_t_path(:type_id => 5) %>">飲みもの</a></h4>
+                    <p class="card-text underline">
+                        <a href="<%= foods_search_t_path(:type_id => 5, :kind_id => 35) %>">ソフトドリンク</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 5, :kind_id => 36) %>">アルコールなど</a><br>
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <%= button_to "飲みものを見る", foods_search_t_path(:type_id => 5), class: "btn btn-default btn-sm" %>
                 </div>
             </div>
             <div class="card">
-                <img class="img-fluid" src="<%= asset_path 'kind6.jpg' %>">
+                <a href="<%= foods_search_t_path(:type_id => 6) %>">
+                    <img class="img-fluid" src="<%= asset_path 'kind6.jpg' %>">
+                </a>
                 <div class="card-block">
-                    <h4 class="card-title">メーカー商品</h4>
-                    <p class="card-text">メーカーのホームページなどの情報より集めたデータ</p>
-                    <%= button_to "見る", foods_search_t_path(:type_id => 6), class: "btn btn-default btn-md" %>
+                    <h4 class="card-title underline"><a href="<%= foods_search_t_path(:type_id => 6) %>">メーカー商品</a></h4>
+                    <p class="card-text underline">
+                        <a href="<%= foods_search_t_path(:type_id => 6, :kind_id => 37) %>">雪印メグミルク</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 6, :kind_id => 38) %>">フジッコ</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 6, :kind_id => 39) %>">グリコ</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 6, :kind_id => 40) %>">大塚製薬</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 6, :kind_id => 41) %>">マクドナルド</a><br>
+                        <a href="<%= foods_search_t_path(:type_id => 6, :kind_id => 42) %>">モスバーガー</a><br>
+                    </p>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <%= button_to "メーカー商品を見る", foods_search_t_path(:type_id => 6), class: "btn btn-default btn-sm" %>
                 </div>
             </div>
         </div>

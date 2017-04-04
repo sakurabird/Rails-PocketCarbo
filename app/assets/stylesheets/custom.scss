@@ -34,6 +34,11 @@ main {
   margin-bottom: 2.5rem;
 }
 
+/* underline for link text */
+.underline a:hover {
+  text-decoration: underline;
+}
+
 /* Search form */
 .food-search-box {
   padding:10px;
