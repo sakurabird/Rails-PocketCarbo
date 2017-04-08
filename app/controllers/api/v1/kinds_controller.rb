@@ -7,7 +7,8 @@ module Api
 
       def index
         @kinds = Kind.all
-        render json: @kinds
+        j = @kinds.to_json(only: [:id, :name, :type_id])
+        render json: j
       end
     end
   end

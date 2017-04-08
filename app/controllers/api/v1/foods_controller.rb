@@ -8,7 +8,20 @@ module Api
       def index
         @q = Food.ransack(:deleted_flg_eq => false) if !@q.present?
         @foods = @q.result
-        render json: @foods
+        j = @foods.to_json(only: [
+            :id,
+            :name,
+            :carbohydrate_per_100g,
+            :carbohydrate_per_weight,
+            :weight,
+            :weight_hint,
+            :calory,
+            :protein,
+            :fat,
+            :sodium,
+            :type_id,
+            :kind_id])
+        render json: j
       end
     end
   end
