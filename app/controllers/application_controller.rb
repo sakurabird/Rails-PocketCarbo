@@ -4,6 +4,9 @@ class ApplicationController < ActionController::Base
   # staging環境にBasic認証をかける
   http_basic_authenticate_with name: ENV['BASIC_AUTH_USERNAME'], password: ENV['BASIC_AUTH_PASSWORD'] if Rails.env.staging?
 
+  # トークン認証
+  include ActionController::HttpAuthentication::Token::ControllerMethods
+
   # 例外処理
   rescue_from ActiveRecord::RecordNotFound, with: :render_404
   rescue_from ActionController::RoutingError, with: :render_404

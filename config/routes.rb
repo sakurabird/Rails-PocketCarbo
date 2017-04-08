@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  namespace :api, format: 'json' do
+    namespace :v1 do
+      resources :kinds, :foods
+    end
+  end
+
   root 'static_pages#home'
 
   get 'static_pages/home'
