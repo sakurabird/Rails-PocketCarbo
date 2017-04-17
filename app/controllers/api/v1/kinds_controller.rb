@@ -6,9 +6,9 @@ module Api
       before_action :authenticate
 
       def index
-        @kinds = Kind.all
-        j = @kinds.to_json(only: [:id, :name, :type_id])
-        render json: j
+        kinds = Kind.select('id, name, type_id')
+        hash = { :kinds => kinds }
+        render :json => hash
       end
     end
   end
