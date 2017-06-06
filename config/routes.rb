@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api, format: 'json' do
     namespace :v1 do
       resources :foods
+      get '/data_version', to: 'status#data_version', as: :data_version
     end
   end
 

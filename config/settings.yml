@@ -1,3 +1,5 @@
+foods:
+  data_version : 1
 site:
   url: 'http://www.pockettoushituryou.com/'
   name : 'ポケット糖質量'
