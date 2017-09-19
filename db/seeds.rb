@@ -14,7 +14,10 @@ csv_data.each do |data|
   Kind.create!(data.to_hash)
 end
 
-csv_data = CSV.read('db/food.csv', headers: true)
+csv_data = CSV.read('db/food.csv', headers: true,
+    external_encoding: "Shift_JIS",
+    internal_encoding: "utf-8"
+  )
 csv_data.each do |data|
   Food.create!(data.to_hash)
 end
