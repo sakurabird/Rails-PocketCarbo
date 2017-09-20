@@ -28,7 +28,7 @@ Rails.application.configure do
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
   # Rails5.1からconfig.public_file_server.enabledになるとある http://stackoverflow.com/a/30128323/2845202
-  config.serve_static_files = true
+  # config.serve_static_files = true
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
