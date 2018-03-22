@@ -5,6 +5,9 @@ Rails.application.routes.draw do
       resources :foods
       get '/data_version', to: 'status#data_version', as: :data_version
     end
+    namespace :v2 do
+      resources :foods
+    end
   end
 
   root 'static_pages#home'
