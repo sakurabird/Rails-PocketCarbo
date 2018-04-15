@@ -196,7 +196,7 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
-    rails_12factor (0.0.2)
+    rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
     rails_serve_static_assets (0.0.5)
@@ -285,7 +285,7 @@ DEPENDENCIES
   puma (= 3.11.4)
   rails (= 5.0.0.1)
   rails-controller-testing
-  rails_12factor (= 0.0.2)
+  rails_12factor (= 0.0.3)
   ransack (= 1.8.8)
   sass-rails (= 5.0.7)
   spring
