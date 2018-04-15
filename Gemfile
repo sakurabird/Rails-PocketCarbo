@@ -19,7 +19,7 @@ gem 'bootstrap-sass', '~> 3.3.7'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
-  gem 'byebug',  '9.0.0', platform: :mri
+  gem 'byebug',  '10.0.2', platform: :mri
 end
 
 group :development do
