@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails',        '5.0.0.1'
+gem 'rails',        '5.1.6'
 gem 'dotenv-rails', '2.2.2'
 gem 'ransack',      '1.8.8'
 gem 'kaminari',     '1.1.1'
