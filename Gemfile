@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails',        '5.0.0.1'
 gem 'dotenv-rails', '2.2.2'
-gem 'ransack',      '1.8.2'
+gem 'ransack',      '1.8.8'
 gem 'kaminari',     '1.0.1'
 gem 'puma',         '3.4.0'
 gem 'sass-rails',   '5.0.6'
