@@ -14,5 +14,9 @@ module PocketCarbo
 
     # See http://qiita.com/d-mato/items/2be9466b2d768f1ba055
     config.time_zone = 'Tokyo'
+
+    if Rails.version >= '5.1.0'
+      config.active_record.sqlite3.represent_boolean_as_integer = true
+    end
   end
 end
