@@ -38,9 +38,15 @@ module FoodsHelper
 
   def ingredient_discription(food)
     weight_hint = food.weight_hint.blank? ? '' : "(#{food.weight_hint})"
-    logger.debug(weight_hint)
+    cube_string = cube_sugar(food.carbohydrate_per_weight)
 
-    "一回分#{weight_hint}#{food.weight} g あたりの値"
+    "一回分#{weight_hint}#{food.weight} g あたりの値　　　#{cube_string}"
+  end
+
+  def cube_sugar(carbohydrate)
+    cube_num = (carbohydrate.to_f / 4).round(1)
+
+    "角砂糖#{cube_num}個分"
   end
 
 end
