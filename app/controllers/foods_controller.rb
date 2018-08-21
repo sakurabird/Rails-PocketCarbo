@@ -4,6 +4,7 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     @q = Food.ransack(:deleted_flg_eq => false) if !@q.present?
+    @q.sorts = ['name asc'] if @q.sorts.empty?
     @foods = @q.result.page(params[:page])
   end
 
