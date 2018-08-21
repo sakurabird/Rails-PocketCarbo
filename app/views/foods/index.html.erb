@@ -19,9 +19,9 @@
       <% if @kinds.present? %>
       <% @kinds.each do |kind| %>
       <div class="btn-group">
-        <a href="<%= foods_search_t_path(:type_id => @type_id, :kind_id => kind.id) %>"
-        class="<%= @kind_id.to_s == kind.id.to_s ? 'food_type_button_selected' : 'food_type_button' %>">
-        <span><%= kind.name %></span></a>
+        <a href="<%= foods_search_t_path(:type_id => @type_id, :kind_id => kind.id) %>" class="<%= @kind_id.to_s == kind.id.to_s ? 'food_type_button_selected' : 'food_type_button' %>">
+          <span><%= kind.name %></span>
+        </a>
       </div>
       <% end %>
       <% end %>
@@ -36,16 +36,26 @@
         <!-- left -->
         <div class="<%= carbo_level_color_css(food) %> col-md-5">
           <div class="mb-1 font-weight-bold h5"><%= food.name %></div>
-          <div class="font-weight-bold h4"><%= food.carbohydrate_per_100g %> g<span style="font-size:small"> /100g中 </span>
+          <div class="font-weight-bold h4"><%= food.carbohydrate_per_100g %>
+            g<span style="font-size:small">
+              /100g中
+            </span>
           </div>
         </div>
 
         <!-- right -->
         <div class="col-md-7 food_grid_right grey.darken-2">
           <p class="mt-1"><%= ingredient_discription(food) %></p>
-          <p class="mb-1"><strong>糖質:</strong> <%= food.carbohydrate_per_weight %>g <strong>カロリー:</strong>
-            <%= food.calory %>kcal <strong>たんぱく質:</strong> <%= food.protein %>g <strong>脂質:</strong>
-            <%= food.fat %>g <strong>塩分:</strong><%= food.sodium %>g</p>
+          <p class="mb-1">
+            <strong>糖質:</strong>
+            <%= food.carbohydrate_per_weight %>g
+            <strong>カロリー:</strong>
+            <%= food.calory %>kcal
+            <strong>たんぱく質:</strong>
+            <%= food.protein %>g
+            <strong>脂質:</strong>
+            <%= food.fat %>g
+            <strong>塩分:</strong><%= food.sodium %>g</p>
         </div>
       </div>
       <% end %>
