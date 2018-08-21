@@ -1,9 +1,10 @@
-<div class="row">
-  <div class="food-search-box">
-    <%= form_tag({controller: :foods, action: :search}, class: "form-inline") do %>
-    <%= text_field_tag :search_keyword, nil, size: '70%', class: "text", placeholder: "検索したい食品名を入力してください...", value: @search_keyword %>
-    <%= button_tag(type: "submit", class: "btn") do %><i class="fa fa-search"> 検索 </i>
-    <% end %>
-    <% end %>
-  </div>
+<div class="food-search-box">
+  <%= form_tag({controller: :foods, action: :search}, class: "form-inline") do %>
+  <%= text_field_tag :search_keyword, nil, size: '70%', class: "text", placeholder: "検索したい食品名を入力してください...", value: @search_keyword %>
+  <%= button_tag(type: "submit", class: "btn") do %>
+  <i class="fa fa-search">
+    検索
+  </i>
+  <% end %>
+  <% end %>
 </div>
