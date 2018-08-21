@@ -40,6 +40,11 @@ main {
   text-decoration: underline;
 }
 
+/* Header background */
+.header-gradient-color {
+  background: linear-gradient(135deg, #2BBBAD, #E0E7CA);
+}
+
 /* Search form */
 .food-search-box {
   padding:10px;
