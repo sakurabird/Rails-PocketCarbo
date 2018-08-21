@@ -21,7 +21,7 @@ module FoodsHelper
 
   def food_type
     if @type_name.present?
-      link_to "#{@type_name}の糖質量", foods_search_t_path(:type_id => @type_id), class: "food_type"
+      link_to "#{@type_name}の糖質量", foods_search_t_path(:type_id => @type_id), class: "food_type font-weight-bold"
     end
   end
 
