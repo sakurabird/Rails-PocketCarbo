@@ -10,38 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320122535) do
+ActiveRecord::Schema.define(version: 2018_08_26_091908) do
 
   create_table "foods", force: :cascade do |t|
-    t.string   "name"
-    t.float    "carbohydrate_per_100g"
-    t.float    "carbohydrate_per_weight"
-    t.integer  "weight"
-    t.float    "calory"
-    t.float    "protein"
-    t.float    "fat"
-    t.float    "sodium"
-    t.integer  "type_id"
-    t.integer  "kind_id"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "search_word"
-    t.boolean  "deleted_flg"
-    t.string   "weight_hint"
+    t.string "name"
+    t.float "carbohydrate_per_100g"
+    t.float "carbohydrate_per_weight"
+    t.integer "weight"
+    t.float "calory"
+    t.float "protein"
+    t.float "fat"
+    t.float "sodium"
+    t.integer "type_id"
+    t.integer "kind_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "search_word"
+    t.boolean "deleted_flg"
+    t.string "weight_hint"
     t.index ["kind_id"], name: "index_foods_on_kind_id"
     t.index ["type_id"], name: "index_foods_on_type_id"
   end
 
   create_table "kinds", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "type_id"
+    t.string "name"
+    t.integer "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "search_word"
+    t.index ["search_word"], name: "index_kinds_on_search_word"
     t.index ["type_id"], name: "index_kinds_on_type_id"
   end
 
   create_table "types", force: :cascade do |t|
-    t.string   "name"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
