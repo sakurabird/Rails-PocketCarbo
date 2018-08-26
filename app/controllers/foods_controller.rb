@@ -16,7 +16,7 @@ class FoodsController < ApplicationController
     render :index
   end
 
-  def search_by_type
+  def index_by_type_and_kind
     current_type
     current_kinds
     @search_keyword = nil
