@@ -2,6 +2,7 @@
 main {
   padding-top: 5rem;
   padding-bottom: 2rem;
+  background-color: #eafaf9;
 }
 
 /* navbar */
@@ -39,6 +40,11 @@ main {
   text-decoration: underline;
 }
 
+/* Header background */
+.header-gradient-color {
+  background: linear-gradient(135deg, #2BBBAD, #E0E7CA);
+}
+
 /* Search form */
 .food-search-box {
   padding:10px;
@@ -49,7 +55,8 @@ main {
   height:35px;
   border:2px solid #CCC;
   text-indent:10px;
-  text-decoration : none
+  text-decoration : none;
+  background-color: #fff
 }
 .food-search-box .btn {
   background: #2BBBAD;

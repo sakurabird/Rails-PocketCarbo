@@ -4,7 +4,7 @@
   <head>
     <%= render 'layouts/meta_tags' %>
 
-    <title>ポケット糖質量 <%= yield(:page_title) %></title>
+    <title>ポケット糖質量<%= yield(:page_title) %></title>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'bootstrap.min': 'reload' %>
@@ -33,9 +33,9 @@
 
   <%= yield %>
 
-  <%= google_adsense_unit1 %>
-
   <%= render 'layouts/footer' %>
+
+  <%= google_adsense_unit1 %>
 
   <%= debug(params) if Rails.env.development? %>
 
