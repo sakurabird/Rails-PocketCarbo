@@ -1,7 +1,7 @@
 system:
-  version : '2.0.0'
+  version : '2.0.1'
 foods:
-  data_version : 3
+  data_version : 4
 site:
   url: 'http://www.pockettoushituryou.com/'
   name : 'ポケット糖質量'
