@@ -10,7 +10,13 @@ class FoodsController < ApplicationController
 
   def search
     @search_keyword = params[:search_keyword]
-    @q = Food.with_keywords(@search_keyword).ransack(params[:q], :deleted_flg_eq => false)
+
+    keywords = @search_keyword.split(/[\p{blank}\s]+/)
+
+    # FoodとKindの両方のテーブルのフィールドのどこかに含まれていたら表示
+    grouping_hash = keywords.reduce({}){|hash, word| hash.merge(word => { name_or_search_word_or_kind_search_word_cont: word })}
+
+    @q = Food.joins(:kind).ransack({ combinator: 'and', groupings: grouping_hash, s: 'name asc' }, :deleted_flg_eq => false)
 
     index
     render :index
