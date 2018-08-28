@@ -7,9 +7,9 @@ module Api
 
       def index
         data_version = Settings.foods.data_version
-        kinds = Kind.select('id, name, type_id')
+        kinds = Kind.select('id, name, search_word, type_id')
         foods = Food.select('id, name, carbohydrate_per_100g, carbohydrate_per_weight, weight,
-                           weight_hint, calory, protein, fat, sodium,search_word,
+                           weight_hint, calory, protein, fat, sodium, search_word,
                             type_id, kind_id')
                     .where(deleted_flg: false)
         hash = { :data_version => data_version, :kinds => kinds, :foods => foods }
