@@ -35,14 +35,16 @@
 
         <!-- left -->
         <div class="<%= carbo_level_color_css(food) %> col-md-5">
-          <div class="mb-1 font-weight-bold h5"><%= food.name %></div>
+          <div class="food_kind_title_row"><%= food.kind.name %></div>
+          <div class="font-weight-bold h5"><%= food.name %></div>
           <div class="d-inline font-weight-bold h4">
-            <%=food.carbohydrate_per_100g %>
-            g
+            <%=food.carbohydrate_per_100g %> g
           </div>
           <div class="d-inline small">
             /100g中
-            <%=cube_sugar(food.carbohydrate_per_100g) %>
+            <span class="cube_sugar_color">
+              <%=cube_sugar(food.carbohydrate_per_100g) %>
+            </span>
           </div>
         </div>
 
