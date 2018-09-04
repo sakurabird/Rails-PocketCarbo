@@ -9,14 +9,17 @@ class FoodsController < ApplicationController
   end
 
   def search
-    @search_keyword = params[:search_keyword]
 
-    keywords = @search_keyword.split(/[\p{blank}\s]+/)
+    if params[:search_keyword]
 
-    # FoodとKindの両方のテーブルのフィールドのどこかに含まれていたら表示
-    grouping_hash = keywords.reduce({}){|hash, word| hash.merge(word => { name_or_search_word_or_kind_search_word_cont: word })}
+      keywords = params[:search_keyword].split(/[\p{blank}\s]+/)
 
-    @q = Food.joins(:kind).ransack({ combinator: 'and', groupings: grouping_hash, s: 'name asc' }, :deleted_flg_eq => false)
+      # FoodとKindの両方のテーブルのフィールドのどこかに含まれていたら表示
+      grouping_hash = keywords.reduce({}){|hash, word| hash.merge(word => { name_or_search_word_or_kind_search_word_cont: word })}
+
+      @q = Food.joins(:kind).ransack({ combinator: 'and', groupings: grouping_hash, s: 'name asc' }, :deleted_flg_eq => false)
+
+    end
 
     index
     render :index
@@ -25,7 +28,7 @@ class FoodsController < ApplicationController
   def index_by_type_and_kind
     current_type
     current_kinds
-    @search_keyword = nil
+
     @q = Food.ransack(:type_id_eq => @type_id,
                       :kind_id_eq => @kind_id,
                       :deleted_flg_eq => false)
