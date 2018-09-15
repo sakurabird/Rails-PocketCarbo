@@ -41,6 +41,17 @@ module FoodsHelper
     cube_string = cube_sugar(food.carbohydrate_per_weight)
 
     "一回分#{weight_hint}#{food.weight} g あたりの値　　　#{cube_string}"
+    html = <<-EOF
+      一回分#{weight_hint}#{food.weight} g あたりの値　#{cube_string}
+      <br />
+      <strong>糖質:</strong>#{food.carbohydrate_per_weight}g
+      <strong>　カロリー:</strong>#{food.calory}kcal
+      <strong>　たんぱく質:</strong>#{food.protein}g
+      <strong>　脂質:</strong>#{food.fat}g
+      <strong>　塩分:</strong>#{food.sodium}g
+      EOF
+
+    html.html_safe
   end
 
   def cube_sugar(carbohydrate)
