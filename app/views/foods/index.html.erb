@@ -50,17 +50,9 @@
 
         <!-- right -->
         <div class="col-md-7 food_grid_right grey.darken-2">
-          <p class="mt-1"><%= ingredient_discription(food) %></p>
-          <p class="mb-1">
-            <strong>糖質:</strong>
-            <%= food.carbohydrate_per_weight %>g
-            <strong>カロリー:</strong>
-            <%= food.calory %>kcal
-            <strong>たんぱく質:</strong>
-            <%= food.protein %>g
-            <strong>脂質:</strong>
-            <%= food.fat %>g
-            <strong>塩分:</strong><%= food.sodium %>g</p>
+          <p class="mt-1">
+            <%= ingredient_discription(food) %>
+          </p>
         </div>
       </div>
       <% end %>

@@ -38,9 +38,24 @@ module FoodsHelper
 
   def ingredient_discription(food)
     weight_hint = food.weight_hint.blank? ? '' : "(#{food.weight_hint})"
+
     cube_string = cube_sugar(food.carbohydrate_per_weight)
 
-    "一回分#{weight_hint}#{food.weight} g あたりの値　　　#{cube_string}"
+    notes_string = food.notes.present? ?
+      "<br /><strong>備考:</strong>#{food.notes}" : ""
+
+    html = <<-EOF
+      一回分#{weight_hint}#{food.weight} g あたりの値　#{cube_string}
+      <br />
+      <strong>糖質:</strong>#{food.carbohydrate_per_weight}g
+      <strong>　カロリー:</strong>#{food.calory}kcal
+      <strong>　たんぱく質:</strong>#{food.protein}g
+      <strong>　脂質:</strong>#{food.fat}g
+      <strong>　塩分:</strong>#{food.sodium}g
+      #{notes_string}
+      EOF
+
+    html.html_safe
   end
 
   def cube_sugar(carbohydrate)
