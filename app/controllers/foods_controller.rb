@@ -34,6 +34,8 @@ class FoodsController < ApplicationController
                       :kind_id_eq => @kind_id,
                       :deleted_flg_eq => false)
 
+    @q.sorts = ['name asc']
+
     index
     render :index
   end
