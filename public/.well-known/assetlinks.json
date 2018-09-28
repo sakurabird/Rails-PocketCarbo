@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.sakurafish.pockettoushituryou",
+    "sha256_cert_fingerprints":
+    ["A7:32:80:68:41:3D:8C:E6:18:E2:0C:B6:B2:A9:92:01:DB:1C:11:CE:10:DE:84:29:A8:5C:BF:B6:DE:08:F4:E4"]
+  }
+}]
