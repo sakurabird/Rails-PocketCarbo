@@ -12,10 +12,7 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  get 'static_pages/home'
-  get 'static_pages/privacy_policy'
-  get 'static_pages/about'
-  get 'static_pages/help'
+  get "/static_pages/*static_page" => "static_pages#show"
 
   match 'foods/index', to: 'foods#index', via: ['post', 'get']
   match 'foods/search', to: 'foods#search', via: ['post', 'get']

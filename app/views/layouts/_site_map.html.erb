@@ -1,5 +1,5 @@
 <ul class="site-map-list">
-  <li><%= link_to "Home", static_pages_home_path %></li>
+  <li><%= link_to "Home", root_path %></li>
   <li><%= link_to "全食品一覧", foods_path %></li>
   <li>食品種類別
     <ul class="site-map-list-child">
@@ -11,7 +11,7 @@
       <li><%= link_to "メーカー商品", foods_search_t_path(:type_id => 6) %></li>
     </ul>
   </li>
-  <li><%= link_to "このサイトについて", static_pages_about_path %></li>
-  <li><%= link_to "使い方", static_pages_help_path %></li>
-  <li><%= link_to "プライバシーポリシー", static_pages_privacy_policy_path %></li>
+  <li><%= link_to "このサイトについて", "/static_pages/about" %></li>
+  <li><%= link_to "使い方", "/static_pages/help" %></li>
+  <li><%= link_to "プライバシーポリシー", "/static_pages/privacy_policy" %></li>
 </ul>
