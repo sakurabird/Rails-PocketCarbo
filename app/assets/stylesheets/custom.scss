@@ -5,32 +5,7 @@ main {
   background-color: #eafaf9;
 }
 
-/* navbar */
-.navbar {
-  background-color: transparent;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-  color: #fff;
-}
-.scrolling-navbar {
-  -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
-  -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
-  transition: background .5s ease-in-out, padding .5s ease-in-out;
-}
-
-.top-nav-collapse {
-  background-color: #1C2331;
-}
-
-@media only screen and (max-width: 768px) {
-  .navbar {
-    background-color: #1C2331;
-  }
-}
-
 /* badge */
-
 .badge {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
