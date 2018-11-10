@@ -1,3 +1,44 @@
-// Place all the styles related to the StaticPages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* thumbnail image size */
+.image-square104 {
+  object-fit: cover;
+  overflow: hidden;
+  width: 104px;
+  height: 104px;
+}
+
+/* input form */
+.calc-bordered-form-control {
+  display: block;
+  width: 65% !important;
+  height: calc(2.25rem + 2px) !important;
+  padding: .375rem .375rem !important;
+  font-size: 1rem !important;
+  line-height: 1.5 !important;
+  border: 1px solid #ced4da !important;
+  border-radius: .25rem !important;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* description table */
+.calc-description-table {
+  display: block !important;
+}
+
+.calc-description-table th,
+.calc-description-table td {
+  border: solid 1px lightgrey;
+}
+
+.calc-description-table th {
+  padding: 10px;
+  background-color: #4285F4;
+  color: white;
+  text-align: center;
+}
+
+.calc-description-table td {
+  background-color: #e1f5fe;
+  padding: 3px 10px;
+  text-align: left;
+}

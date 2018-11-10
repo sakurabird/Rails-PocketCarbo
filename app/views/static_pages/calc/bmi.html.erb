@@ -1,0 +1,193 @@
+<% provide(:page_title, " ＢＭＩ計算") %>
+<main>
+
+    <!-- /.Main Container -->
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href=<%=root_path %>>Home</a></li>
+                <li class="breadcrumb-item"><a href="/static_pages/calc/index">色々計算機</a></li>
+                <li class="breadcrumb-item active" aria-current="page">BMI計算</li>
+            </ol>
+        </nav>
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Content -->
+            <div class="col-lg-12">
+
+                <!-- Section: Intro -->
+                <section class="section">
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!--Grid column left-->
+                        <div class="col-lg-9 col-md-12 mb-3 pb-lg-2">
+
+                            <div class="view z-depth-1">
+                                <img src="<%= asset_path 'calc/bmi_intro.png' %>" class="img-fluid">
+                            </div>
+
+                            <!-- BMI -->
+                            <div class="card white mt-4">
+
+                                <!-- Input form -->
+                                <form name="form_bmi" class="p-5">
+
+                                    <p class="h4 bq-primary pl-2 mb-1">身長と体重を入力してください</p>
+                                    <p class="mdb-color-text">ホディ・マス・インデックス法（ＢＭＩ）は身長と体重から算出する肥満度の目安です。<br />まずはチェックしてみましょう。</p>
+
+                                    <label for="input_height">身長 (cm)</label>
+                                    <input type="number" id="input_height" class="calc-bordered-form-control mb-1"
+                                        placeholder="例：170.5">
+
+                                    <label for="input_weight">体重 (kg)</label>
+                                    <input type="number" id="input_weight" class="calc-bordered-form-control mb-2"
+                                        placeholder="例：80.2">
+
+                                    <div>
+                                        <input type="button" class="btn btn-primary" onclick="calc_bmi();" value="計算する">
+                                    </div>
+
+                                </form>
+                                <!--/.Input form -->
+
+                                <!-- Calculate result -->
+                                <div id="result_area" class="mb-2"></div>
+                                <div class="card light-blue lighten-5 pb-3 ml-5 mr-5 mb-5">
+                                    <p class="h4 text-center">計算結果</p>
+                                    <p class="text-center mt-1" id="result_bmi_input"></p>
+                                    <div class="align-self-center">
+                                        <div class="h3 mt-1" id="result_bmi"></div>
+                                        <div class="h3 mt-1" id="result_bmi_category"></div>
+                                        <div class="h3 mt-1 mb-1" id="result_bmi_fine"></div>
+                                    </div>
+                                </div>
+                                <!--/.Calculate result -->
+
+                                <!-- Description -->
+                                <p class="h4 bq-primary pl-2 ml-5">BMIの判定基準</p>
+                                <p class="mdb-color-text mt-1 ml-5 mr-5">次の表は日本肥満学会による肥満の
+                                    判定基準です。<br />減量目標は20歳代
+                                    前半の体重とされています。<br />
+                                    約15万人の調査では、22が一番病気にかかりにくいとされています。<br />
+                                    25以上は高血圧、糖尿病、高脂血症のリスクが２倍になり、<br />
+                                    アジア人は比較的軽度の肥満で生活習慣病になりやすいとわかっており、<br />
+                                    適正体重の維持することが大切です。</p>
+
+                                <table class="calc-description-table ml-5 mt-1">
+                                    <thead>
+                                        <tr>
+                                            <th>BMI</th>
+                                            <th>肥満判定</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>18.5未満</td>
+                                            <td>低体重（痩せ型）</td>
+                                        </tr>
+                                        <tr>
+                                            <td>18.5以上、25未満</td>
+                                            <td>普通体重</td>
+                                        </tr>
+                                        <tr>
+                                            <td>25以上、30未満</td>
+                                            <td>肥満（1度）</td>
+                                        </tr>
+                                        <tr>
+                                            <td>30以上、35未満</td>
+                                            <td>肥満（2度）</td>
+                                        </tr>
+                                        <tr>
+                                            <td>35以上、40未満</td>
+                                            <td>肥満（3度）</td>
+                                        </tr>
+                                        <tr>
+                                            <td>40以上</td>
+                                            <td>肥満（4度）</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <p class="h4 bq-primary pl-2 ml-5 mt-4">BMIの計算式</p>
+                                <p class="mdb-color-text mt-1 ml-5">BMIの計算式は次のとおりです。</p>
+                                <div class="card light-blue lighten-5 p-3 mt-1 ml-5 mr-5">
+                                    <p class="h5 deep-orange-text text-center">ＢＭＩ＝体重（ｋｇ）÷身長（ｍ）÷身長（ｍ）</p>
+                                </div>
+
+                                <p class="h4 bq-primary pl-2 ml-5 mt-4">理想体重の計算式</p>
+                                <p class="mdb-color-text mt-1 ml-5">理想体重の計算式は次のとおりです。</p>
+                                <div class="card light-blue lighten-5 p-3 mt-1 ml-5 mr-5">
+                                    <p class="h5 deep-orange-text text-center">体重＝身長（ｍ）×身長（ｍ）×２２</p>
+                                </div>
+
+                                <p class="h4 bq-primary pl-2 ml-5 mt-4">参考リンク</p>
+                                <a class="mt-1 ml-5" href="https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%87%E3%82%A3%E3%83%9E%E3%82%B9%E6%8C%87%E6%95%B0#cite_note-himan-mhlw-12"
+                                    target="_blank">ボディマス指数 - Wikipedia</a>
+                                <a class="mt-1 ml-5" href="http://www.jasso.or.jp/data/magazine/pdf/chart_A.pdf" target="_blank">一般社団法人日本肥満学会
+                                    BMIガイドライン (PDF)</a>
+                                <a class="mt-1 ml-5 mb-5" href="https://www.e-healthnet.mhlw.go.jp/information/dictionary/metabolic/ym-002.html"
+                                    target="_blank">厚生労働省 BMI | e-ヘルスネット</a>
+
+                                <!--/.Description -->
+                            </div>
+                            <!--/.BMI -->
+
+                        </div>
+                        <!--/.Grid column left-->
+
+                        <!--Grid column right-->
+                        <div class="col-lg-3 col-md-12 mb-4">
+
+                            <!-- A8 banner1-->
+                            <div id="zsid4916090381"></div>
+                            <script type="text/javascript" src="//statics.a8.net/js/harippaban.js" charset="utf-8"></script>
+                            <script type="text/javascript">
+                                var aid = '170405731565';
+                                var frame = '1';
+                                var shopname = '1';
+                                var horizontal = '1';
+                                var vertical = '5';
+                                var alignment = '0';
+                                var rndid = 'zsid4916090381';
+                                var bannerkind = 'item.variable.kind1';
+                            </script>
+                            <script type="text/javascript" src="//items.a8.net/search?keyword=%E7%97%A9%E3%81%9B&limit=5&callback=callbackA8"
+                                charset="utf-8"></script>
+                            <!--/.A8 banner1-->
+
+                            <!-- A8 banner2-->
+                            <div id="zsid0863622169"></div>
+                            <script type="text/javascript" src="//statics.a8.net/js/harippaban.js" charset="utf-8"></script>
+                            <script type="text/javascript">
+                                var aid = '170405731565';
+                                var frame = '1';
+                                var shopname = '1';
+                                var rndid = 'zsid0863622169';
+                                var bannerkind = 'item.fix.kind7';
+                            </script>
+                            <script type="text/javascript" src="//items.a8.net/search?keyword=BMI&limit=10&callback=callbackA8"
+                                charset="utf-8"></script>
+                            <!--/.A8 banner2-->
+                        </div>
+                        <!--/.Grid column right-->
+
+                    </div>
+                    <!--/.Grid row-->
+
+                </section>
+                <!--/.Section: Intro -->
+
+            </div>
+            <!--/.Content -->
+
+        </div>
+        <!--/.Grid row -->
+        <%= render 'layouts/sns_share' %>
+    </div>
+    <!--/.Main Container -->
+</main>
