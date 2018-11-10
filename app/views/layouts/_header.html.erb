@@ -6,14 +6,14 @@
         <div class="container">
 
             <!-- Brand -->
-            <a class="navbar-brand waves-effect" href=<%= root_path %>>
-             <img src=<%= asset_path 'web_title.png' %> height="40" class="d-inline-block align-top"
-      alt="ポケット糖質量トップ">
+            <a class="navbar-brand waves-effect" href=<%=root_path %>>
+                <img src=<%=asset_path 'web_title.png' %> height="40" class="d-inline-block align-top"
+                alt="ポケット糖質量トップ">
             </a>
 
             <!-- Collapse -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -22,23 +22,24 @@
                 <!-- left side -->
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                            <a class="nav-link" href=<%= root_path %>>Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href=<%=root_path %>>Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=<%= foods_path %>>全食品一覧</a>
+                        <a class="nav-link" href=<%=foods_path %>>全食品一覧</a>
                     </li>
 
                     <li class="nav-item dropdown btn-group">
                         <div class="dropdown">
-                        <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">食品種類別</a>
-                        <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
-                            <a href=<%= foods_search_t_path(:type_id => 1) %> class="dropdown-item">各種食材</a>
-                            <a href=<%= foods_search_t_path(:type_id => 2) %> class="dropdown-item">定番料理</a>
-                            <a href=<%= foods_search_t_path(:type_id => 3) %> class="dropdown-item">市販食品</a>
-                            <a href=<%= foods_search_t_path(:type_id => 4) %> class="dropdown-item">外食・テイクアウト</a>
-                            <a href=<%= foods_search_t_path(:type_id => 5) %> class="dropdown-item">飲みもの</a>
-                            <a href=<%= foods_search_t_path(:type_id => 6) %> class="dropdown-item">メーカー商品</a>
-                        </div>
+                            <a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">食品種類別</a>
+                            <div class="dropdown-menu dropdown" aria-labelledby="dropdownMenu1">
+                                <a href=<%=foods_search_t_path(:type_id=> 1) %> class="dropdown-item">各種食材</a>
+                                <a href=<%=foods_search_t_path(:type_id=> 2) %> class="dropdown-item">定番料理</a>
+                                <a href=<%=foods_search_t_path(:type_id=> 3) %> class="dropdown-item">市販食品</a>
+                                <a href=<%=foods_search_t_path(:type_id=> 4) %> class="dropdown-item">外食・テイクアウト</a>
+                                <a href=<%=foods_search_t_path(:type_id=> 5) %> class="dropdown-item">飲みもの</a>
+                                <a href=<%=foods_search_t_path(:type_id=> 6) %> class="dropdown-item">メーカー商品</a>
+                            </div>
                         </div>
                     </li>
                 </ul>
