@@ -6,16 +6,16 @@ module FoodsHelper
     case food.carbohydrate_per_100g
       when 0 .. 5 then
         # 糖質量が少ない
-        return "col-md-3 food_grid_left_safe"
+        return "food_grid_left_safe"
       when 5 .. 15 then
         # 糖質量がやや多い
-        return "col-md-3 food_grid_left_warning"
+        return "food_grid_left_warning"
       when 15 .. 50 then
         # 糖質量が多い
-        return "col-md-3 food_grid_left_danger"
+        return "food_grid_left_danger"
       else
         # 糖質量が非常に多い
-        return "col-md-3 food_grid_left_danger_high"
+        return "food_grid_left_danger_high"
     end
   end
 
@@ -45,6 +45,7 @@ module FoodsHelper
       "<br /><strong>備考:</strong>#{food.notes}" : ""
 
     html = <<-EOF
+      <p class="food_grid_right_p">
       一回分#{weight_hint}#{food.weight} g あたりの値　#{cube_string}
       <br />
       <strong>糖質:</strong>#{food.carbohydrate_per_weight}g
@@ -53,10 +54,34 @@ module FoodsHelper
       <strong>　脂質:</strong>#{food.fat}g
       <strong>　塩分:</strong>#{food.sodium}g
       #{notes_string}
+      </p>
       EOF
 
     html.html_safe
   end
+
+  # def ingredient_discription(food)
+  #   weight_hint = food.weight_hint.blank? ? '' : "(#{food.weight_hint})"
+
+  #   cube_string = cube_sugar(food.carbohydrate_per_weight)
+
+  #   notes_string = food.notes.present? ?
+  #     "<br /><strong>備考:</strong>#{food.notes}" : ""
+
+  #   html = <<-EOF
+  #     <p>一回分#{weight_hint}#{food.weight} g あたりの値　#{cube_string}
+  #     <br />
+  #     <strong>糖質:</strong>#{food.carbohydrate_per_weight}g
+  #     <strong>　カロリー:</strong>#{food.calory}kcal
+  #     <strong>　たんぱく質:</strong>#{food.protein}g
+  #     <strong>　脂質:</strong>#{food.fat}g
+  #     <strong>　塩分:</strong>#{food.sodium}g
+  #     #{notes_string}
+  #     </p>
+  #     EOF
+
+  #   html.html_safe
+  # end
 
   def cube_sugar(carbohydrate)
     cube_num = (carbohydrate.to_f / 4).round(1)
