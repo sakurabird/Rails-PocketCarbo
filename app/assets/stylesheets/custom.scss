@@ -21,10 +21,11 @@ main {
 /* breadcrumb */
 .breadcrumb {
   background-color: transparent !important;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .breadcrumb::after {
-  display: block;
   clear: both;
   content: "";
 }

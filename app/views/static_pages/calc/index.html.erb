@@ -6,7 +6,7 @@
 
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href=<%=root_path %>>Home</a></li>
+                <li class="breadcrumb-item"><a href=<%=root_path %>> Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">色々計算機</li>
             </ol>
         </nav>
@@ -17,82 +17,80 @@
             <!-- Content -->
             <div class="col-lg-12">
 
-                <!-- Section: Intro -->
-                <section class="section">
+                <!-- Grid row -->
+                <div class="row">
 
-                    <!-- Grid row -->
-                    <div class="row">
+                    <!--Grid left-->
+                    <div class="col-lg-9 col-md-12 mb-3 pb-lg-2">
+                        <!--Image -->
+                        <section class="view rounded wow fadeIn z-depth-1">
 
-                        <!--Grid column-->
-                        <div class="col-lg-9 col-md-12 mb-3 pb-lg-2">
-                            <!--Image -->
-                            <div class="view z-depth-1">
-
-                                <img src="<%= asset_path 'calc/calc_index_intro.png' %>" class="img-fluid">
-                                <div class="mask rgba-black-light">
-                                    <div class="white-text d-flex align-items-center pt-1 pl-4">
-                                        <div>
-                                            <a><span class="badge light-green">特設コーナー</span></a>
-                                            <h3 class="card-title font-weight-bold pt-2"><strong>色々計算機まとめ</strong></h3>
-                                            <p class="pr-4">様々な計算式をまとめてチェックできるようにしてみました。お気軽にお試しください。<br>
-                                                なお、情報が入った時に追加する予定です。 </p>
-                                        </div>
+                            <img src="<%= asset_path 'calc/calc_index_intro.png' %>" class="img-fluid">
+                            <div class="mask rgba-black-light">
+                                <div class="white-text mt-5 pl-5">
+                                    <div>
+                                        <a><span class="badge light-green">特設コーナー</span></a>
+                                        <p class="h3 font-weight-bold my-2">色々計算機まとめ</p>
+                                        <p class="pr-4">様々な計算式をまとめてチェックできるようにしてみました。お気軽にお試しください。<br>
+                                            なお、情報が入った時に追加する予定です。 </p>
                                     </div>
                                 </div>
-
                             </div>
-                            <!--Image -->
 
-                            <!--Check Category -->
-                            <div class="list-group mt-4">
-                                <a href="" class="list-group-item list-group-item-action disabled header-gradient-color white-text">
-                                    ヘルスカテゴリー
-                                </a>
-                                <a href="bmi.html" class="list-group-item list-group-item-action h4">
-                                    <span class="">
-                                        <img src="<%= asset_path 'calc/bmi_list_thumbnail.png' %>" class="image-square104 mr-3" />
-                                    </span>
-                                    BMI計算</a>
-                            </div>
-                            <!--Check Category -->
+                        </section>
+                        <!--Image -->
 
+                        <!--Health Category -->
+                        <div class="list-group mt-5">
+                            <a href="" class="h5 list-group-item list-group-item-action disabled header-gradient-color white-text py-3">
+                                ヘルスカテゴリー
+                            </a>
+                            <a href="bmi.html" class="list-group-item list-group-item-action h4">
+                                <span class="">
+                                    <img src="<%= asset_path 'calc/bmi_list_thumbnail.png' %>" class="image-square104 mr-3 mt-1 mb-1" />
+                                </span>
+                                BMI計算</a>
                         </div>
-                        <!--Grid column-->
-
-                        <!--Grid column-->
-                        <div class="col-lg-3 col-md-12 mb-4">
-
-                            <!--A8 banner-->
-                            <div id="zsid9115131585"></div>
-                            <script type="text/javascript" src="//statics.a8.net/js/harippaban.js" charset="utf-8"></script>
-                            <script type="text/javascript">
-                                var aid = '170405731565';
-                                var frame = '1';
-                                var shopname = '1';
-                                var horizontal = '1';
-                                var vertical = '5';
-                                var alignment = '0';
-                                var rndid = 'zsid9115131585';
-                                var bannerkind = 'item.variable.kind1';
-                            </script>
-                            <script type="text/javascript" src="//items.a8.net/search?keyword=%E7%B3%96%E8%B3%AA&limit=5&callback=callbackA8"
-                                charset="utf-8"></script>
-                            <!--A8 banner-->
-                        </div>
-                        <!--Grid column-->
+                        <!--Health Category -->
 
                     </div>
-                    <!--Grid row-->
+                    <!--/.Grid left-->
 
-                </section>
-                <!-- Section: Intro -->
+                    <!--Grid right-->
+                    <div class="col-lg-3 mb-4">
 
+                        <!--A8 banner-->
+                        <div id="zsid9115131585"></div>
+                        <script type="text/javascript" src="//statics.a8.net/js/harippaban.js" charset="utf-8"></script>
+                        <script type="text/javascript">
+                            var aid = '170405731565';
+                            var frame = '1';
+                            var shopname = '1';
+                            var horizontal = '1';
+                            var vertical = '5';
+                            var alignment = '0';
+                            var rndid = 'zsid9115131585';
+                            var bannerkind = 'item.variable.kind1';
+                        </script>
+                        <script type="text/javascript" src="//items.a8.net/search?keyword=%E7%B3%96%E8%B3%AA&limit=5&callback=callbackA8"
+                            charset="utf-8"></script>
+                        <!--A8 banner-->
+                    </div>
+                    <!--/.Grid right-->
+
+                </div>
+                <!--Grid row-->
             </div>
             <!-- /.Content -->
 
         </div>
-        <!-- Grid row -->
-        <%= render 'layouts/sns_share' %>
+
+        <!-- SNS share button -->
+        <div class="row mt-5">
+            <%= render 'layouts/sns_share' %>
+        </div>
+        <!--/. SNS share button -->
+
     </div>
     <!-- /.Main Container -->
 </main>
