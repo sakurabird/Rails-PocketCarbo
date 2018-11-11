@@ -10,18 +10,9 @@
   </title>
 
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'bootstrap.min': 'reload' %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'mdb.min': 'reload' %>
-
-  <%= javascript_include_tag 'jquery-2.2.3.min' %>
-  <%= javascript_include_tag 'tether.min' %>
-  <%= javascript_include_tag 'bootstrap.min' %>
-  <%= javascript_include_tag 'mdb.min' %>
-
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
   <%= render 'layouts/shim' %>
+
   <%= analytics_init if Rails.env.production? %>
   <%= google_adsense %>
 
@@ -43,11 +34,6 @@
   <%= google_adsense_unit1 %>
 
   <%= debug(params) if Rails.env.development? %>
-
-  <%= javascript_include_tag 'jquery-2.2.3.min' %>
-  <%= javascript_include_tag 'tether.min' %>
-  <%= javascript_include_tag 'bootstrap.min' %>
-  <%= javascript_include_tag 'mdb.min' %>
 
 </body>
 
