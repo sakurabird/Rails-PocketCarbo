@@ -1,0 +1,88 @@
+<% provide(:page_title, " ポケット糖質量スマートフォンアプリ登場！iPhone・Androidで糖質制限アプリをお探しの方へ。通信量の少ない、より便利なアプリです。") %>
+
+<main>
+    <!-- /.Main Container -->
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href=<%=root_path %>> Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">スマホアプリ紹介</li>
+            </ol>
+        </nav>
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <div class="col-12 mb-3">
+                <!--Image1 -->
+                <div class="view rounded">
+                    <img src="<%= asset_path 'mobile_apps/mobile_app1.png' %>" class="img-fluid">
+                </div>
+
+                <div class="dark-grey-text mt-5 pl-5 pb-3">
+                    <div>
+                        <p class="h1 font-weight-bold my-2 text-center">糖質制限のお供にぴったりなスマートフォンアプリ登場！</p>
+                        <p class="h4 text-center pt-3">糖質量一覧・糖質量検索・糖質量ソートなどの便利な機能をお使いください</p>
+                    </div>
+                </div>
+
+                <!-- Smartphone Apps badge -->
+                <div class="d-flex justify-content-center mt-5 pb-3 pt-2">
+                    <a class="mr-3" href="https://itunes.apple.com/jp/app/id1371454314" target="_blank">
+                        <img src="<%= asset_path 'mobile_apps/app-store-badge.png' %>" height="52">
+                    </a>
+                    <a class="ml-3" href="https://play.google.com/store/apps/details?id=com.sakurafish.pockettoushituryou"
+                        target="_blank">
+                        <img src="<%= asset_path 'mobile_apps/google-play-badge.png' %>" height="52">
+                    </a>
+                </div>
+
+                <!--Image2 -->
+                <div class="view rounded mt-5">
+                    <img src="<%= asset_path 'mobile_apps/mobile_app2.png' %>" class="img-fluid">
+                </div>
+
+                <div class="dark-grey-text mt-5 pl-5 pb-3">
+                    <div>
+                        <p class="h1 font-weight-bold my-2 text-center">アプリ内部のデータベースより表示するので<br />
+                            通信量が少ない軽量なアプリです。</p>
+                        <p class="h4 text-center pt-3">調べる回数が多い方にはアプリのインストールをおすすめします。 <br />
+                            シンプルなのでサイズも小さく邪魔になりません。</p>
+                    </div>
+                </div>
+
+                <!--Image3 -->
+                <div class="view rounded mt-5">
+                    <img src="<%= asset_path 'mobile_apps/mobile_app3.png' %>" class="img-fluid">
+                </div>
+
+                <div class="dark-grey-text mt-5 pl-5 pb-3">
+                    <div>
+                        <p class="h1 font-weight-bold my-2 text-center">画面遷移や各コンテンツのサイズは<br />
+                            スマートフォンに最適化</p>
+                        <p class="h4 text-center pt-3">iPhone・Androidをお持ちの方は是非この機会におためしください！</p>
+                    </div>
+                </div>
+
+                <!-- Smartphone Apps badge -->
+                <div class="d-flex justify-content-center mt-5 pb-3 pt-2">
+                    <a class="mr-3" href="https://itunes.apple.com/jp/app/id1371454314" target="_blank">
+                        <img src="<%= asset_path 'mobile_apps/app-store-badge.png' %>" height="52">
+                    </a>
+                    <a class="ml-3" href="https://play.google.com/store/apps/details?id=com.sakurafish.pockettoushituryou"
+                        target="_blank">
+                        <img src="<%= asset_path 'mobile_apps/google-play-badge.png' %>" height="52">
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+        <!--Grid row-->
+
+        <%= render 'layouts/sns_share' %>
+
+    </div>
+    <!-- /.Main Container -->
+</main>
