@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby "2.5.1"
+
 gem 'rails', '~> 5.2', '>= 5.2.1'
 gem 'dotenv-rails', '~> 2.5'
 gem 'ransack', '~> 2.0', '>= 2.0.1'
