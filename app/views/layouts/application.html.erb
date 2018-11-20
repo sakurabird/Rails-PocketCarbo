@@ -13,12 +13,14 @@
 
   <%= render 'layouts/shim' %>
 
-  <%= analytics_init if Rails.env.production? %>
+  <%= google_tag_manager_head %>
   <%= google_adsense %>
 
 </head>
 
 <body>
+  <%= google_tag_manager_body %>
+
   <%= render 'layouts/header' %>
 
   <% flash.each do |message_type, message| %>
