@@ -8,7 +8,7 @@
 </div>
 
 <!-- food kinds -->
-<div class="row">
+<div class="row ml-2">
   <% if @kinds.present? %>
   <% @kinds.each do |kind| %>
   <div class="btn-group">
@@ -22,51 +22,49 @@
 </div>
 <!--/. food kind -->
 
-<div class="row">
-  <!-- food list group -->
-  <div class="list-group">
-    <% @foods.each do |food| %>
-    <div class="list-group-item">
+<!-- food list group -->
+<div class="list-group">
+  <% @foods.each do |food| %>
+  <div class="list-group-item" style="background-color:<%= cycle('#ffffff','#f3f3f3') %>">
 
-      <!-- food list row -->
-      <div class="row">
-        <!-- left -->
-        <div class="<%= carbo_level_color_css(food) %> col-md-5">
-          <div class="food_kind_title_row">
-            <%= food.kind.name %>
-          </div>
-          <div class="font-weight-bold h5">
-            <%= food.name %>
-          </div>
-          <div class="d-inline font-weight-bold h4">
-            <%=food.carbohydrate_per_100g %> g
-          </div>
-          <div class="d-inline small">
-            /100g中
-            <span class="cube_sugar_color">
-              <%=cube_sugar(food.carbohydrate_per_100g) %>
-            </span>
-          </div>
+    <!-- food list row -->
+    <div class="row">
+      <!-- left -->
+      <div class="<%= carbo_level_color_css(food) %> col-lg-4">
+        <div class="food_kind_title_row">
+          <%= food.kind.name %>
         </div>
-        <!--/. left -->
-
-        <!-- right -->
-        <div class="col-md-7 align-self-center">
-          <div class="card grey lighten-5">
-            <%= ingredient_discription(food) %>
-          </div>
+        <div class="font-weight-bold h5">
+          <%= food.name %>
         </div>
-        <!--/. right -->
+        <div class="d-inline font-weight-bold h4">
+          <%=food.carbohydrate_per_100g %> g
+        </div>
+        <div class="d-inline small">
+          /100g中
+          <span class="cube_sugar_color">
+            <%=cube_sugar(food.carbohydrate_per_100g) %>
+          </span>
+        </div>
       </div>
-      <!--/. food list row -->
-    </div>
-    <% end %>
-  </div>
-  <!--/. food list group -->
+      <!--/. left -->
 
-  <!-- pagination -->
-  <div class="row mt-3 ml-1">
-    <%= paginate @foods %>
+      <!-- right -->
+      <div class="col align-self-center">
+        <div class="view food_grid_right">
+          <%= ingredient_discription(food) %>
+        </div>
+      </div>
+      <!--/. right -->
+    </div>
+    <!--/. food list row -->
   </div>
-  <!--/. pagination -->
+  <% end %>
 </div>
+<!--/. food list group -->
+
+<!-- pagination -->
+<div class="row mt-3 ml-1">
+  <%= paginate @foods %>
+</div>
+<!--/. pagination -->

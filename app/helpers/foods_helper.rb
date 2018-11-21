@@ -42,17 +42,19 @@ module FoodsHelper
     cube_string = cube_sugar(food.carbohydrate_per_weight)
 
     notes_string = food.notes.present? ?
-      "<br /><strong>備考:</strong>#{food.notes}" : ""
+      "<br /><span class=\"font-weight-bold\">備考 : </span>#{food.notes}" : ""
 
     html = <<-EOF
-      <p class="food_grid_right_p">
-      一回分#{weight_hint}#{food.weight} g あたりの値　#{cube_string}
+      <p>
+      <span class="font-weight-bold">【 一回分#{weight_hint}#{food.weight} g あたりの値 】</span>
       <br />
-      <strong>糖質:</strong>#{food.carbohydrate_per_weight}g
-      <strong>　カロリー:</strong>#{food.calory}kcal
-      <strong>　たんぱく質:</strong>#{food.protein}g
-      <strong>　脂質:</strong>#{food.fat}g
-      <strong>　塩分:</strong>#{food.sodium}g
+      <span class="font-weight-bold">糖質 : </span>#{food.carbohydrate_per_weight}g
+      #{cube_string}
+      <span class="font-weight-bold">　カロリー : </span>#{food.calory}kcal
+      <br />
+      <span class="font-weight-bold">たんぱく質 : </span>#{food.protein}g
+      <span class="font-weight-bold">　脂質 : </span>#{food.fat}g
+      <span class="font-weight-bold">　塩分 : </span>#{food.sodium}g
       #{notes_string}
       </p>
       EOF
@@ -63,7 +65,7 @@ module FoodsHelper
   def cube_sugar(carbohydrate)
     cube_num = (carbohydrate.to_f / 4).round(1)
 
-    "角砂糖#{cube_num}個分"
+    "　 角砂糖#{cube_num}個分"
   end
 
 end
