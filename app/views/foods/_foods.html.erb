@@ -2,13 +2,13 @@
 <%= render 'layouts/search_form' %>
 
 <!-- food type -->
-<div class="col-md-12">
+<div class="row">
   <%= food_type %>
   <%= food_kind_title %>
 </div>
 
 <!-- food kinds -->
-<div class="col-md-12">
+<div class="row">
   <% if @kinds.present? %>
   <% @kinds.each do |kind| %>
   <div class="btn-group">
@@ -22,7 +22,7 @@
 </div>
 <!--/. food kind -->
 
-<div class="col-md-12">
+<div class="row">
   <!-- food list group -->
   <div class="list-group">
     <% @foods.each do |food| %>

@@ -10,7 +10,98 @@
   <div class="container">
     <!-- row -->
     <div class="row">
-      <%= render 'foods/foods' %>
+
+      <!-- Left -->
+      <div class="col-lg-9 col-md-12">
+
+        <!-- Foods list -->
+        <%= render 'foods/foods' %>
+
+      </div>
+      <!--/.Left -->
+
+      <!-- Right -->
+      <div class="col-lg-3 mt-5">
+
+        <!-- Smartphone Apps badge -->
+        <section>
+          <div class="view white pb-4">
+            <!--Featured image-->
+            <a href="/static_pages/mobile_app">
+              <img src="<%= asset_path 'mobile_apps/mobile_app_home_banner.png' %>" class="img-fluid" alt="smartphone app image">
+            </a>
+
+            <!-- iPhone -->
+            <div class="row d-flex justify-content-center pt-2">
+              <a href="https://itunes.apple.com/jp/app/id1371454314" class="teal-text" target="_blank">
+                <h6 class="font-weight-bold">
+                  <i class="fa fa-heart"></i>
+                  iPhoneアプリをゲット
+                </h6>
+              </a>
+              <a href="https://itunes.apple.com/jp/app/id1371454314" target="_blank">
+                <img src="<%= asset_path 'mobile_apps/app-store-badge.png' %>" height="52">
+              </a>
+            </div>
+
+            <!-- Android -->
+            <div class="row d-flex justify-content-center pt-2">
+              <a href="https://play.google.com/store/apps/details?id=com.sakurafish.pockettoushituryou" class="teal-text"
+                target="_blank">
+                <h6 class="font-weight-bold">
+                  <i class="fa fa-heart"></i>
+                  Androidアプリをゲット
+                </h6>
+              </a>
+              <a href="https://play.google.com/store/apps/details?id=com.sakurafish.pockettoushituryou" target="_blank">
+                <img src="<%= asset_path 'mobile_apps/google-play-badge.png' %>" height="52">
+              </a>
+            </div>
+
+          </div>
+        </section>
+        <!--/.Smartphone Apps badge -->
+
+        <!-- Ads -->
+        <section class="mt-5">
+          <script type="text/javascript">
+            amzn_assoc_ad_type = "responsive_search_widget";
+            amzn_assoc_tracking_id = "sakurabird1-22";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "JP";
+            amzn_assoc_placement = "";
+            amzn_assoc_search_type = "search_widget";
+            amzn_assoc_width = "300";
+            amzn_assoc_height = "250";
+            amzn_assoc_default_search_category = "";
+            amzn_assoc_default_search_key = "糖質オフ";
+            amzn_assoc_theme = "light";
+            amzn_assoc_bg_color = "FFFFFF";
+          </script>
+          <script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script>
+        </section>
+
+        <section class="mt-5">
+          <script type="text/javascript">
+            rakuten_design = "slide";
+            rakuten_affiliateId = "0905aa48.768a134f.0905aa49.cc03976f";
+            rakuten_items = "ranking";
+            rakuten_genreId = "100938";
+            rakuten_size = "300x250";
+            rakuten_target = "_blank";
+            rakuten_theme = "gray";
+            rakuten_border = "on";
+            rakuten_auto_mode = "on";
+            rakuten_genre_title = "off";
+            rakuten_recommend = "on";
+            rakuten_ts = "1542553496857";
+          </script>
+          <script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
+        </section>
+        <!--/. Ads -->
+
+      </div>
+      <!--/.Right -->
 
       <!-- SNS share button -->
       <div class="row mt-5">
