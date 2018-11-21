@@ -1,17 +1,39 @@
 <ul class="site-map-list">
-  <li><%= link_to "Home", static_pages_home_path %></li>
-  <li><%= link_to "全食品一覧", foods_path %></li>
+  <li>
+    <%= link_to "Home", root_path %>
+  </li>
+  <li>
+    <%= link_to "全食品一覧", foods_path %>
+  </li>
   <li>食品種類別
     <ul class="site-map-list-child">
-      <li><%= link_to "各種食材", foods_search_t_path(:type_id => 1) %></li>
-      <li><%= link_to "定番料理", foods_search_t_path(:type_id => 2) %></li>
-      <li><%= link_to "市販食品", foods_search_t_path(:type_id => 3) %></li>
-      <li><%= link_to "外食・テイクアウト", foods_search_t_path(:type_id => 4) %></li>
-      <li><%= link_to "飲みもの", foods_search_t_path(:type_id => 5) %></li>
-      <li><%= link_to "メーカー商品", foods_search_t_path(:type_id => 6) %></li>
+      <li>
+        <%= link_to "各種食材", foods_search_t_path(:type_id => 1) %>
+      </li>
+      <li>
+        <%= link_to "定番料理", foods_search_t_path(:type_id => 2) %>
+      </li>
+      <li>
+        <%= link_to "市販食品", foods_search_t_path(:type_id => 3) %>
+      </li>
+      <li>
+        <%= link_to "外食・テイクアウト", foods_search_t_path(:type_id => 4) %>
+      </li>
+      <li>
+        <%= link_to "飲みもの", foods_search_t_path(:type_id => 5) %>
+      </li>
+      <li>
+        <%= link_to "メーカー商品", foods_search_t_path(:type_id => 6) %>
+      </li>
     </ul>
   </li>
-  <li><%= link_to "このサイトについて", static_pages_about_path %></li>
-  <li><%= link_to "使い方", static_pages_help_path %></li>
-  <li><%= link_to "プライバシーポリシー", static_pages_privacy_policy_path %></li>
+  <li>
+    <%= link_to "このサイトについて", "/static_pages/about" %>
+  </li>
+  <li>
+    <%= link_to "使い方", "/static_pages/help" %>
+  </li>
+  <li>
+    <%= link_to "プライバシーポリシー", "/static_pages/privacy_policy" %>
+  </li>
 </ul>

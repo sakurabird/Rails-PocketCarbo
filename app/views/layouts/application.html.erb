@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="ja">
 <html>
-  <head>
-    <%= render 'layouts/meta_tags' %>
 
-    <title>ポケット糖質量<%= yield(:page_title) %></title>
+<head>
+  <%= render 'layouts/meta_tags' %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'bootstrap.min': 'reload' %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'mdb.min': 'reload' %>
+  <title>ポケット糖質量
+    <%= yield(:page_title) %>
+  </title>
 
-    <%= javascript_include_tag 'jquery-2.2.3.min' %>
-    <%= javascript_include_tag 'tether.min' %>
-    <%= javascript_include_tag 'bootstrap.min' %>
-    <%= javascript_include_tag 'mdb.min' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+  <%= render 'layouts/shim' %>
 
-    <%= render 'layouts/shim' %>
-    <%= analytics_init if Rails.env.production? %>
-    <%= google_adsense %>
+  <%= google_tag_manager_head %>
+  <%= google_adsense %>
 
-  </head>
+</head>
 
-  <body>
+<body>
+  <%= google_tag_manager_body %>
+
   <%= render 'layouts/header' %>
 
   <% flash.each do |message_type, message| %>
-  <div class="alert alert-<%= message_type %>"><%= message %></div>
+  <div class="alert alert-<%= message_type %>">
+    <%= message %>
+  </div>
   <% end %>
 
   <%= yield %>
@@ -39,10 +37,6 @@
 
   <%= debug(params) if Rails.env.development? %>
 
-  <%= javascript_include_tag 'jquery-2.2.3.min' %>
-  <%= javascript_include_tag 'tether.min' %>
-  <%= javascript_include_tag 'bootstrap.min' %>
-  <%= javascript_include_tag 'mdb.min' %>
+</body>
 
-  </body>
 </html>

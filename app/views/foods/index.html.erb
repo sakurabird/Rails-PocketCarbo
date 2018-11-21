@@ -1,70 +1,122 @@
 <% provide(:page_title, " 食品一覧") %>
 <main>
   <% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
   <% end %>
 
+  <!-- container -->
   <div class="container">
-    <!-- search form-->
-    <%= render 'layouts/search_form' %>
+    <!-- row -->
+    <div class="row">
 
-    <!-- food type -->
-    <div class="row col-md-12 ">
-      <%= food_type %>
-      <%= food_kind_title %>
-    </div>
+      <!-- Left -->
+      <div class="col-lg-9 pl-5">
 
-    <!-- food kinds -->
-    <div class="col-md-12">
-      <% if @kinds.present? %>
-      <% @kinds.each do |kind| %>
-      <div class="btn-group">
-        <a href="<%= foods_search_t_path(:type_id => @type_id, :kind_id => kind.id) %>" class="<%= @kind_id.to_s == kind.id.to_s ? 'food_type_button_selected' : 'food_type_button' %>">
-          <span><%= kind.name %></span>
-        </a>
-      </div>
-      <% end %>
-      <% end %>
-    </div>
-    <!--/. food kind -->
-
-    <!-- food list -->
-    <div class="list-group">
-      <% @foods.each do |food| %>
-      <div class="list-group-item">
-
-        <!-- left -->
-        <div class="<%= carbo_level_color_css(food) %> col-md-5">
-          <div class="food_kind_title_row"><%= food.kind.name %></div>
-          <div class="font-weight-bold h5"><%= food.name %></div>
-          <div class="d-inline font-weight-bold h4">
-            <%=food.carbohydrate_per_100g %> g
-          </div>
-          <div class="d-inline small">
-            /100g中
-            <span class="cube_sugar_color">
-              <%=cube_sugar(food.carbohydrate_per_100g) %>
-            </span>
-          </div>
+        <!-- Introduction to Smartphone Apps -->
+        <div class="row">
+          <a href="/static_pages/mobile_app" class="pr-4 pt-4 blue-text">ポケット糖質量のスマートフォンアプリが登場！👉ちょっと見てみる</a>
         </div>
+        <!-- Foods list -->
+        <%= render 'foods/foods' %>
 
-        <!-- right -->
-        <div class="col-md-7 food_grid_right grey.darken-2">
-          <p class="mt-1">
-            <%= ingredient_discription(food) %>
-          </p>
-        </div>
       </div>
-      <% end %>
+      <!--/.Left -->
+
+      <!-- Right -->
+      <div class="col-lg-3">
+
+        <!-- Smartphone Apps badge -->
+        <section class="row">
+          <div class="view white m-4">
+            <!--Featured image-->
+            <a href="/static_pages/mobile_app">
+              <img src="<%= asset_path 'mobile_apps/mobile_app_home_banner.png' %>" class="img-fluid" alt="smartphone app image">
+            </a>
+
+            <!-- iPhone -->
+            <div class="row d-flex justify-content-center pt-2">
+              <a href="https://itunes.apple.com/jp/app/id1371454314" class="teal-text" target="_blank">
+                <h6 class="font-weight-bold">
+                  <i class="fa fa-heart"></i>
+                  iPhoneアプリをゲット
+                </h6>
+              </a>
+              <br />
+              <a href="https://itunes.apple.com/jp/app/id1371454314" target="_blank">
+                <img src="<%= asset_path 'mobile_apps/app-store-badge.png' %>" height="52">
+              </a>
+            </div>
+
+            <!-- Android -->
+            <div class="row d-flex justify-content-center pt-2">
+              <a href="https://play.google.com/store/apps/details?id=com.sakurafish.pockettoushituryou" class="teal-text"
+                target="_blank">
+                <h6 class="font-weight-bold">
+                  <i class="fa fa-heart"></i>
+                  Androidアプリをゲット
+                </h6>
+              </a>
+              <br />
+              <a href="https://play.google.com/store/apps/details?id=com.sakurafish.pockettoushituryou" target="_blank">
+                <img src="<%= asset_path 'mobile_apps/google-play-badge.png' %>" height="52">
+              </a>
+            </div>
+
+          </div>
+        </section>
+        <!--/.Smartphone Apps badge -->
+
+        <!-- Ads -->
+        <section class="row m-2">
+          <script type="text/javascript">
+            amzn_assoc_ad_type = "responsive_search_widget";
+            amzn_assoc_tracking_id = "sakurabird1-22";
+            amzn_assoc_marketplace = "amazon";
+            amzn_assoc_region = "JP";
+            amzn_assoc_placement = "";
+            amzn_assoc_search_type = "search_widget";
+            amzn_assoc_width = "160";
+            amzn_assoc_height = "600";
+            amzn_assoc_default_search_category = "";
+            amzn_assoc_default_search_key = "糖質";
+            amzn_assoc_theme = "light";
+            amzn_assoc_bg_color = "FFFFFF";
+          </script>
+          <script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script>
+        </section>
+
+        <section class="row m-2">
+          <script type="text/javascript">
+            rakuten_design = "slide";
+            rakuten_affiliateId = "0905aa48.768a134f.0905aa49.cc03976f";
+            rakuten_items = "ctsmatch";
+            rakuten_genreId = "0";
+            rakuten_size = "200x600";
+            rakuten_target = "_blank";
+            rakuten_theme = "gray";
+            rakuten_border = "off";
+            rakuten_auto_mode = "on";
+            rakuten_genre_title = "off";
+            rakuten_recommend = "on";
+            rakuten_ts = "1542796523996";
+          </script>
+          <script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
+        </section>
+        <!--/. Ads -->
+
+      </div>
+      <!--/.Right -->
     </div>
-    <br>
-    <%= paginate @foods %>
+    <!--/. row -->
 
-    <!--/. food list -->
-
-    <br>
-
-    <%= render 'layouts/sns_share' %>
+    <!-- SNS share button -->
+    <div class="row mt-5">
+      <%= render 'layouts/sns_share' %>
+    </div>
+    <!--/. SNS share button -->
   </div>
+  <!--/. container -->
 
 </main>

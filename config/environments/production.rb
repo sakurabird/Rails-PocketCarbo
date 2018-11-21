@@ -24,7 +24,8 @@ Rails.application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = true
+  # https://devcenter.heroku.com/articles/rails-asset-pipeline#compile-set-to-true-in-production
+  config.assets.compile = false
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
   # Rails5.1からconfig.public_file_server.enabledになるとある http://stackoverflow.com/a/30128323/2845202
@@ -89,7 +90,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  # Google Analytics tracker code
-  GA.tracker = ENV['GOOGLE_ANALYTICS_TRACKING_ID']
 end

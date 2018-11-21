@@ -1,0 +1,74 @@
+<!-- search form-->
+<div class="row">
+  <%= render 'layouts/search_form' %>
+</div>
+
+<!-- food type -->
+<div class="row">
+  <%= food_type %>
+  <%= food_kind_title %>
+</div>
+
+<!-- food kinds -->
+<div class="row">
+  <% if @kinds.present? %>
+  <% @kinds.each do |kind| %>
+  <div class="btn-group">
+    <a href="<%= foods_search_t_path(:type_id => @type_id, :kind_id => kind.id) %>" class="<%= @kind_id.to_s == kind.id.to_s ? 'food_type_button_selected' : 'food_type_button' %>">
+      <span>
+        <%= kind.name %></span>
+    </a>
+  </div>
+  <% end %>
+  <% end %>
+</div>
+<!--/. food kind -->
+
+<!-- food list group -->
+<div class="row">
+  <div class="list-group col-lg-12">
+    <% @foods.each do |food| %>
+    <div class="list-group-item" style="background-color:<%= cycle('#ffffff','#f3f3f3') %>">
+
+      <!-- food list row -->
+      <div class="row">
+        <!-- left -->
+        <div class="<%= carbo_level_color_css(food) %> col-lg-5">
+          <div class="food_kind_title_row">
+            <%= food.kind.name %>
+          </div>
+          <div class="font-weight-bold h5">
+            <%= food.name %>
+          </div>
+          <div class="d-inline font-weight-bold h4">
+            <%=food.carbohydrate_per_100g %> g
+          </div>
+          <div class="d-inline small">
+            /100g中
+            <span class="cube_sugar_color">
+              <%=cube_sugar(food.carbohydrate_per_100g) %>
+            </span>
+          </div>
+        </div>
+        <!--/. left -->
+
+        <!-- right -->
+        <div class="col align-self-center">
+          <div class="view food_grid_right">
+            <%= ingredient_discription(food) %>
+          </div>
+        </div>
+        <!--/. right -->
+      </div>
+      <!--/. food list row -->
+    </div>
+    <% end %>
+  </div>
+</div>
+<!--/. food list group -->
+
+<!-- pagination -->
+<div class="row mt-3 ml-1">
+  <%= paginate @foods %>
+</div>
+<!--/. pagination -->

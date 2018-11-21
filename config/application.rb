@@ -18,5 +18,10 @@ module PocketCarbo
     if Rails.version >= '5.1.0'
       config.active_record.sqlite3.represent_boolean_as_integer = true
     end
+
+    # See https://mdbootstrap.com/support/jquery/problems-with-pro-components-2
+    config.assets.paths << Rails.root.join("app", "assets", "font", "roboto")
+    config.assets.paths << Rails.root.join("vendor", "assets", "img")
+    config.assets.paths << Rails.root.join("vendor", "assets", "mdb-addons")
   end
 end

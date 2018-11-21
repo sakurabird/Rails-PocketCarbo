@@ -22,9 +22,14 @@
 
 /* Foods list grid right */
 .food_grid_right {
-  background-color: #fafafa;
+  border: solid 1px #cfcfcf;
+}
+.food_grid_right p {
+  padding-top: 0.75rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   text-align: left;
-  color: #757575;
+  color: #424242;
 }
 
 /* Foods type in Foods list */
@@ -85,7 +90,6 @@
   color: #f57c00;
   border: 1px solid #f57c00;
   border-radius: 3px;
-  background-color: #fff;
 }
 
 .cube_sugar_color {

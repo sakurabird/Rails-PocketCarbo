@@ -101,10 +101,11 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     formatador (0.2.5)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
-    google-analytics-rails (1.1.1)
     guard (2.14.2)
       formatador (>= 0.2.4)
       listen (>= 2.7, < 4.0)
@@ -276,7 +277,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2, >= 4.2.2)
   config (~> 1.7)
   dotenv-rails (~> 2.5)
-  google-analytics-rails (~> 1.1, >= 1.1.1)
+  font-awesome-rails
   guard
   guard-minitest
   jbuilder (~> 2.7)
@@ -300,5 +301,8 @@ DEPENDENCIES
   uglifier (~> 4.1, >= 4.1.18)
   web-console
 
+RUBY VERSION
+   ruby 2.5.1p57
+
 BUNDLED WITH
-   1.16.2
+   1.16.3

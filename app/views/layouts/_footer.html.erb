@@ -1,54 +1,66 @@
 <!--Footer-->
-<footer class="page-footer default-color-dark center-on-small-only">
+<footer class="page-footer font-small default-color-dark wow fadeIn">
 
-  <!--Footer Links-->
-  <div class="container-fluid">
-    <div class="row">
+  <div class="row p-3 ml-5">
 
-      <!--First column-->
-      <div class="col-md-3">
-        <h5 class="title">ポケット糖質量
-          <span class="ml-1 small"><%= Settings.system.version %></span>
-        </h5>
-        <h6>新着情報</h6>
-        <p class="small"><%= Settings.site.footer_news %></p>
-      </div>
-      <!--/.First column-->
+    <!--First column-->
+    <div class="col-md-3">
+      <h5 class="title py-1">ポケット糖質量
+        <span class="ml-1 small">ver
+          <%= Settings.system.version %></span>
+      </h5>
+      <h6>新着情報</h6>
+      <p class="small">
+        <%= Settings.site.footer_news %>
+      </p>
+    </div>
+    <!--/.First column-->
 
-      <!--Second column-->
-      <div class="col-md-3">
-        <h5 class="title">糖質量検索</h5>
-        <ul>
-          <li><%= link_to "Home", static_pages_home_path %></li>
-          <li><%= link_to "全食品一覧", foods_path %></li>
-        </ul>
-      </div>
-      <!--/.Second column-->
+    <!--Second column-->
+    <div class="col-md-3">
+      <h5 class="title py-1">糖質量検索</h5>
+      <ul>
+        <li>
+          <%= link_to "Home", root_path %>
+        </li>
+        <li>
+          <%= link_to "全食品一覧", foods_path %>
+        </li>
+      </ul>
+    </div>
+    <!--/.Second column-->
 
-      <!--Second column-->
-      <div class="col-md-3">
-        <h5 class="title">Links</h5>
-        <ul>
-          <li><%= link_to "このサイトについて", static_pages_about_path %></li>
-          <li><%= link_to "使い方", static_pages_help_path %></li>
-          <li><%= link_to "プライバシーポリシー", static_pages_privacy_policy_path %></li>
-        </ul>
-      </div>
-      <!--/.Second column-->
+    <!--Second column-->
+    <div class="col-md-3">
+      <h5 class="title py-1">Links</h5>
+      <ul>
+        <li>
+          <%= link_to "スマートフォンアプリ紹介", "/static_pages/mobile_app" %>
+        </li>
+        <li>
+          <%= link_to "このサイトについて", "/static_pages/about" %>
+        </li>
+        <li>
+          <%= link_to "使い方", "/static_pages/help" %>
+        </li>
+        <li>
+          <%= link_to "プライバシーポリシー", "/static_pages/privacy_policy" %>
+        </li>
+      </ul>
+
 
     </div>
+    <!--/.Second column-->
+
   </div>
-  <!--/.Footer Links-->
 
   <!--Copyright-->
-  <div class="footer-copyright">
-    <div class="container-fluid">
-      © 2017 Copyright:
-      <a href="mailto:sakurafish1@gmail.com">
-        SakuraFish
-      </a>
+  <div class="footer-copyright text-center py-3">
 
-    </div>
+    © 2017 Copyright:
+    <a href="mailto:sakurafish1@gmail.com" target="_blank">
+      SakuraFish
+    </a>
   </div>
   <!--/.Copyright-->
 

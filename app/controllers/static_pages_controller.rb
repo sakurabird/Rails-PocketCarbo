@@ -1,13 +1,6 @@
 class StaticPagesController < ApplicationController
-  def home
-  end
 
-  def privacy_policy
-  end
-
-  def about
-  end
-
-  def help
+  def show
+    render template: "static_pages/#{params[:static_page]}"
   end
 end

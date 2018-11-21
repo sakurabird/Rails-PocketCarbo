@@ -1,7 +1,7 @@
 system:
-  version : '2.0.4'
+  version : '2.1.0'
 foods:
-  data_version : 5
+  data_version : 6
 site:
   url: 'http://www.pockettoushituryou.com/'
   name : 'ポケット糖質量'
@@ -9,7 +9,7 @@ site:
   description: 'ポケット糖質量は1400種類以上の食品に含まれる糖質量が検索できるサイトです。
                 100グラムあたりの糖質量と、それぞれの食品の1回分を目安とした分量に含まれるエネルギー（カロリー）・たんぱく質・脂質・塩分が表示できます。
                 健康づくりのためにぜひご利用ください。'
-  footer_news : '2018/09/16 食品情報追加しました。'
+  footer_news : '2018/11/21 画面レイアウトを更新いたしました。'
   og:
     type: 'website'
     title : 'ポケット糖質量　糖質制限中に糖質量を一発検索・一覧表示'
