@@ -31,111 +31,221 @@
                                 <img src="<%= asset_path 'calc/bmi_intro.png' %>" class="img-fluid">
                             </div>
 
-                            <!-- BMI -->
-                            <div class="card white mt-4">
+                            <div class="card white p-5">
 
-                                <!-- Input form -->
-                                <form name="form_bmi" class="p-5">
+                                <!-- Outline -->
+                                <nav class="page-outline">
+                                    <h5 class="text-center mb-3"><i class="fa fa-list-alt"></i> 目次</h5>
+                                    <ol>
+                                        <li><a href="#bmi1">身長と体重からBMIを計算する</a></li>
+                                        <li><a href="#bmi2">身長とBMIから体重を計算する</a></li>
+                                        <li><a href="#bmi3">BMIと体重から身長を計算する</a></li>
+                                        <li><a href="#bmi-standard">BMIの判定基準</a></li>
+                                        <li><a href="#bmi-formula">BMIの計算式</a></li>
+                                        <li><a href="#bmi-ideal">標準体重の計算式</a></li>
+                                        <li><a href="#bmi-link">参考リンク</a></li>
+                                    </ol>
+                                </nav>
 
-                                    <p class="h4 bq-primary pl-2 mb-1">身長と体重を入力してください</p>
-                                    <p class="mdb-color-text">ホディ・マス・インデックス法（ＢＭＩ）は身長と体重から算出する肥満度の目安です。<br />まずはチェックしてみましょう。</p>
+                                <!-- BMI -->
+                                <section id="bmi1" class="pt-5">
+                                    <!-- Input form1 -->
+                                    <form id="bmi-input1" name="form_bmi1" class="mt-2">
 
-                                    <label for="input_height">身長 (cm)</label>
-                                    <input type="number" id="input_height" class="calc-bordered-form-control mb-1"
-                                        placeholder="例：170.5">
+                                        <p class="h4 bq-primary light-blue lighten-5 p-2 mb-2">身長と体重からBMIを計算する</p>
+                                        <p class="mdb-color-text my-4">ホディ・マス・インデックス法（ＢＭＩ）は身長と体重から算出する肥満度の目安です。<br />まずはチェックしてみましょう。</p>
+                                        <p class="h5 my-2">次の欄に身長と体重を数字で入力してください</p>
 
-                                    <label for="input_weight">体重 (kg)</label>
-                                    <input type="number" id="input_weight" class="calc-bordered-form-control mb-2"
-                                        placeholder="例：80.2">
+                                        <label for="input_height">身長 (cm)</label>
+                                        <input type="number" id="input_height" class="calc-bordered-form-control mb-2"
+                                            placeholder="例：170.5">
 
-                                    <div>
-                                        <input type="button" class="btn btn-primary" onclick="calc_bmi();" value="計算する">
+                                        <label for="input_weight">体重 (kg)</label>
+                                        <input type="number" id="input_weight" class="calc-bordered-form-control mb-2"
+                                            placeholder="例：80.2">
+
+                                        <div>
+                                            <input type="button" class="btn btn-primary" onclick="calc_bmi1();" value="BMIを計算する">
+                                        </div>
+
+                                    </form>
+                                    <!--/.Input form1 -->
+
+                                    <!-- Calculate result1 -->
+                                    <div id="bmi_result_area1" class="pt-5" style="visibility:hidden">
+                                        <div class="view grey lighten-4 p-3">
+                                            <p class="h4 text-center" id="result_bmi_title1">BMIの計算結果</p>
+                                            <p class="text-center mt-1" id="result_bmi_input1"></p>
+                                            <div class="h4 text-center mt-1" id="result_bmi1"></div>
+                                            <div class="h4 text-center mt-1" id="result_bmi_category1"></div>
+                                            <div class="h4 text-center mt-1 mb-1" id="result_bmi_fine1"></div>
+                                        </div>
                                     </div>
+                                    <!--/.Calculate result1 -->
+                                </section>
+                                <!--/. BMI -->
 
-                                </form>
-                                <!--/.Input form -->
+                                <!-- Weight -->
+                                <section  id="bmi2" class="pt-5">
+                                    <!-- Input form2 -->
+                                    <form id="bmi-input2" name="form_bmi2" class="mt-2">
 
-                                <!-- Calculate result -->
-                                <div id="result_area" class="mb-2"></div>
-                                <div class="card light-blue lighten-5 pb-3 ml-5 mr-5 mb-5">
-                                    <p class="h4 text-center">計算結果</p>
-                                    <p class="text-center mt-1" id="result_bmi_input"></p>
-                                    <div class="align-self-center">
-                                        <div class="h3 mt-1" id="result_bmi"></div>
-                                        <div class="h3 mt-1" id="result_bmi_category"></div>
-                                        <div class="h3 mt-1 mb-1" id="result_bmi_fine"></div>
+                                        <p class="h4 bq-primary light-blue lighten-5 p-2 mb-2">身長とBMIから体重を計算する</p>
+                                        <p class="mdb-color-text my-4">身長とBMIから体重を逆算出します。<br />
+                                            上で計算したBMIは四捨五入しているので、ここの計算結果と若干ズレがあります。<br />
+                                            予めご了承ください。</p>
+                                        <p class="h5 my-2">次の欄に身長とBMIを数字で入力してください</p>
+
+                                        <label for="input_height">身長 (cm)</label>
+                                        <input type="number" id="input_height" class="calc-bordered-form-control mb-2"
+                                            placeholder="例：170.5">
+
+                                        <label for="input_weight">BMI</label>
+                                        <input type="number" id="input_bmi" class="calc-bordered-form-control mb-2"
+                                            placeholder="例：27.6">
+
+                                        <div>
+                                            <input type="button" class="btn btn-primary" onclick="calc_bmi2();" value="体重を計算する">
+                                        </div>
+
+                                    </form>
+                                    <!--/.Input form2 -->
+
+                                    <!-- Calculate result2 -->
+                                    <div id="bmi_result_area2" class="pt-5" style="visibility:hidden">
+                                        <div class="view grey lighten-4 p-3">
+                                            <p class="h4 text-center" id="result_bmi_title2">体重の計算結果</p>
+                                            <p class="text-center mt-1" id="result_bmi_input2"></p>
+                                            <div class="h4 text-center mt-1" id="result_bmi2"></div>
+                                        </div>
                                     </div>
-                                </div>
-                                <!--/.Calculate result -->
+                                    <!--/.Calculate result2 -->
+                                </section>
+                                <!--/. Weight -->
+
+                                <!-- Height -->
+                                <section  id="bmi3" class="pt-5">
+                                    <!-- Input form3 -->
+                                    <form id="bmi-input3" name="form_bmi3" class="mt-2">
+
+                                        <p class="h4 bq-primary light-blue lighten-5 p-2 mb-2">BMIと体重から身長を計算する</p>
+                                        <p class="mdb-color-text my-4">BMIと体重から身長を逆算出します。<br />
+                                            上で計算したBMIは四捨五入しているので、ここの計算結果と若干ズレがあります。<br />
+                                            予めご了承ください。</p>
+                                        <p class="h5 my-2">次の欄に体重とBMIを数字で入力してください</p>
+
+                                        <label for="input_weight">体重 (kg)</label>
+                                        <input type="number" id="input_weight" class="calc-bordered-form-control mb-2"
+                                            placeholder="例：80.2">
+
+                                        <label for="input_weight">BMI</label>
+                                        <input type="number" id="input_bmi" class="calc-bordered-form-control mb-2"
+                                            placeholder="例：27.6">
+
+                                        <div>
+                                            <input type="button" class="btn btn-primary" onclick="calc_bmi3();" value="身長を計算する">
+                                        </div>
+
+                                    </form>
+                                    <!--/.Input form3 -->
+
+                                    <!-- Calculate result3 -->
+                                    <div id="bmi_result_area3" class="pt-5" style="visibility:hidden">
+                                        <div class="view grey lighten-4 p-3">
+                                            <p class="h4 text-center" id="result_bmi_title3">身長の計算結果</p>
+                                            <p class="text-center mt-1" id="result_bmi_input3"></p>
+                                            <div class="h4 text-center mt-1" id="result_bmi3"></div>
+                                        </div>
+                                    </div>
+                                    <!--/.Calculate result2 -->
+                                </section>
+                                <!--/. Height -->
 
                                 <!-- Description -->
-                                <p class="h4 bq-primary pl-2 ml-5">BMIの判定基準</p>
-                                <p class="mdb-color-text mt-1 ml-5 mr-5">次の表は日本肥満学会による肥満の
-                                    判定基準です。<br />減量目標は20歳代
-                                    前半の体重とされています。<br />
-                                    約15万人の調査では、22が一番病気にかかりにくいとされています。<br />
-                                    25以上は高血圧、糖尿病、高脂血症のリスクが２倍になり、<br />
-                                    アジア人は比較的軽度の肥満で生活習慣病になりやすいとわかっており、<br />
-                                    適正体重の維持することが大切です。</p>
+                                <div id="bmi-standard" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">BMIの判定基準</p>
 
-                                <table class="calc-description-table ml-5 mt-1">
-                                    <thead>
-                                        <tr>
-                                            <th>BMI</th>
-                                            <th>肥満判定</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>18.5未満</td>
-                                            <td>低体重（痩せ型）</td>
-                                        </tr>
-                                        <tr>
-                                            <td>18.5以上、25未満</td>
-                                            <td>普通体重</td>
-                                        </tr>
-                                        <tr>
-                                            <td>25以上、30未満</td>
-                                            <td>肥満（1度）</td>
-                                        </tr>
-                                        <tr>
-                                            <td>30以上、35未満</td>
-                                            <td>肥満（2度）</td>
-                                        </tr>
-                                        <tr>
-                                            <td>35以上、40未満</td>
-                                            <td>肥満（3度）</td>
-                                        </tr>
-                                        <tr>
-                                            <td>40以上</td>
-                                            <td>肥満（4度）</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                    <p class="mdb-color-text my-4">次の表は日本肥満学会による肥満の
+                                        判定基準です。<br />減量目標は20歳代
+                                        前半の体重とされています。<br />
+                                        約15万人の調査では、BMI22が一番病気にかかりにくいとされています。<br />
+                                        BMI25以上は高血圧、糖尿病、高脂血症のリスクが２倍になり、<br />
+                                        アジア人は比較的軽度の肥満で生活習慣病になりやすいとわかっており、<br />
+                                        適正体重の維持することが大切です。</p>
 
-                                <p class="h4 bq-primary pl-2 ml-5 mt-4">BMIの計算式</p>
-                                <p class="mdb-color-text mt-1 ml-5">BMIの計算式は次のとおりです。</p>
-                                <div class="card light-blue lighten-5 p-3 mt-1 ml-5 mr-5">
-                                    <p class="h5 deep-orange-text text-center">ＢＭＩ＝体重（ｋｇ）÷身長（ｍ）÷身長（ｍ）</p>
+                                    <table class="calc-description-table">
+                                        <thead>
+                                            <tr>
+                                                <th>BMI</th>
+                                                <th>肥満判定</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>18.5未満</td>
+                                                <td>低体重（痩せ型）</td>
+                                            </tr>
+                                            <tr>
+                                                <td>18.5以上、25未満</td>
+                                                <td>普通体重</td>
+                                            </tr>
+                                            <tr>
+                                                <td>25以上、30未満</td>
+                                                <td>肥満（1度）</td>
+                                            </tr>
+                                            <tr>
+                                                <td>30以上、35未満</td>
+                                                <td>肥満（2度）</td>
+                                            </tr>
+                                            <tr>
+                                                <td>35以上、40未満</td>
+                                                <td>肥満（3度）</td>
+                                            </tr>
+                                            <tr>
+                                                <td>40以上</td>
+                                                <td>肥満（4度）</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
                                 </div>
 
-                                <p class="h4 bq-primary pl-2 ml-5 mt-4">理想体重の計算式</p>
-                                <p class="mdb-color-text mt-1 ml-5">理想体重の計算式は次のとおりです。</p>
-                                <div class="card light-blue lighten-5 p-3 mt-1 ml-5 mr-5">
-                                    <p class="h5 deep-orange-text text-center">体重＝身長（ｍ）×身長（ｍ）×２２</p>
+                                <div id="bmi-formula" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 mt-2 p-2">BMIの計算式</p>
+                                    <p class="mdb-color-text my-4">BMIの計算式は次のとおりです。</p>
+                                    <div class="view grey lighten-4 ml-5 mr-5">
+                                        <p class="h5 deep-orange-text text-center mt-2">ＢＭＩ＝　体重(kg)　÷　身長(m)　÷　身長(m)</p>
+                                    </div>
+                                    <p class="mdb-color-text my-4">身長とBMIから体重を逆算出する計算式は次のとおりです。</p>
+                                    <div class="view grey lighten-4 ml-5 mr-5">
+                                        <p class="h5 deep-orange-text text-center mt-2">体重(kg)　＝　身長(m)　×　身長(m)　×　ＢＭＩ</p>
+                                    </div>
+                                    <p class="mdb-color-text my-4">体重とBMIから身長を逆算出する計算式は次のとおりです。</p>
+                                    <div class="view grey lighten-4 ml-5 mr-5">
+                                        <p class="h5 deep-orange-text text-center mt-2">身長(m)　＝　√（体重(kg)　÷　ＢＭＩ）</p>
+                                    </div>
                                 </div>
 
-                                <p class="h4 bq-primary pl-2 ml-5 mt-4">参考リンク</p>
-                                <a class="mt-1 ml-5" href="https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%87%E3%82%A3%E3%83%9E%E3%82%B9%E6%8C%87%E6%95%B0#cite_note-himan-mhlw-12"
-                                    target="_blank">ボディマス指数 - Wikipedia</a>
-                                <a class="mt-1 ml-5" href="http://www.jasso.or.jp/data/magazine/pdf/chart_A.pdf" target="_blank">一般社団法人日本肥満学会
-                                    BMIガイドライン (PDF)</a>
-                                <a class="mt-1 ml-5 mb-5" href="https://www.e-healthnet.mhlw.go.jp/information/dictionary/metabolic/ym-002.html"
-                                    target="_blank">厚生労働省 BMI | e-ヘルスネット</a>
+                                <div id="bmi-ideal" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 mt-2 p-2">標準体重の計算式</p>
+                                    <p class="mdb-color-text my-4">標準体重の計算式は次のとおりです。<br />
+                                        一番病気にかかりにくいとされているBMI22の値となります。</p>
+                                    <div class="view grey lighten-4 ml-5 mr-5">
+                                        <p class="h5 deep-orange-text text-center mt-2">体重　＝　身長(m)　×　身長(m)　×　22</p>
+                                    </div>
+                                </div>
+
+                                <div id="bmi-link" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">参考リンク</p>
+                                    <p><a class="" href="https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%87%E3%82%A3%E3%83%9E%E3%82%B9%E6%8C%87%E6%95%B0"
+                                            target="_blank">ボディマス指数 - Wikipedia</a> </p>
+                                    <p><a class="" href="http://www.jasso.or.jp/data/magazine/pdf/chart_A.pdf" target="_blank">一般社団法人日本肥満学会
+                                            BMIガイドライン (PDF)</a></p>
+                                    <p><a class="" href="https://www.e-healthnet.mhlw.go.jp/information/dictionary/metabolic/ym-002.html"
+                                            target="_blank">厚生労働省 BMI | e-ヘルスネット</a></p>
+                                </div>
 
                                 <!--/.Description -->
                             </div>
-                            <!--/.BMI -->
 
                         </div>
                         <!--/.Grid column left-->
