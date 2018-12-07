@@ -64,7 +64,6 @@ function calc_bmi2() {
     scrollTop: $('#bmi_result_area2').offset().top
   });
 }
-
 // Height
 function calc_bmi3() {
 
@@ -89,5 +88,49 @@ function calc_bmi3() {
 
   $("html,body").animate({
     scrollTop: $('#bmi_result_area3').offset().top
+  });
+}
+
+// NaCI -> Tablet Solt
+function calc_sodium1() {
+
+  var na = Number(document.form_sodium1.input_na.value);
+  var ts = (na * 2.54 / 1000).toFixed(2);
+  var ts_text;
+
+  if (na <= 0) {
+    ts_text = "入力値が無効です";
+  } else {
+    ts_text = ts + "g です。";
+
+  }
+  document.getElementById('result_sodium_input1').innerHTML = "ナトリウム: " + na + "mg の食塩相当量は";
+  document.getElementById('result_sodium1').innerHTML = ts_text;
+  document.getElementById("sodium_result_area1").style.visibility = "visible";
+
+  $("html,body").animate({
+    scrollTop: $('#sodium_result_area1').offset().top
+  });
+}
+
+// Tablet Solt -> NaCI
+function calc_sodium2() {
+
+  var ts = Number(document.form_sodium2.input_ts.value);
+  var na = (ts / 2.54 * 1000).toFixed(0);
+  var na_text;
+
+  if (ts <= 0) {
+    na_text = "入力値が無効です";
+  } else {
+    na_text = na + "mg です。";
+
+  }
+  document.getElementById('result_sodium_input2').innerHTML = "食塩相当量: " + ts + "g のナトリウム量は";
+  document.getElementById('result_sodium2').innerHTML = na_text;
+  document.getElementById("sodium_result_area2").style.visibility = "visible";
+
+  $("html,body").animate({
+    scrollTop: $('#sodium_result_area2').offset().top
   });
 }
