@@ -27,7 +27,7 @@
         </div>
 
         <!-- Type cards -->
-        <%= render 'static_pages/home_cards' %>
+        <%= render 'layouts/home_cards' %>
 
       </div>
       <!--/.Left -->
@@ -36,54 +36,14 @@
       <div class="col-lg-3 mt-5">
 
         <!-- Smartphone Apps badge -->
-        <section class="row">
-          <div class="view white m-4">
-            <!--Featured image-->
-            <a href="/static_pages/mobile_app">
-              <img src="<%= asset_path 'mobile_apps/mobile_app_home_banner.png' %>" class="img-fluid" alt="smartphone app image">
-            </a>
-
-            <!-- iPhone -->
-            <div class="row d-flex justify-content-center pt-2">
-              <a href="https://itunes.apple.com/jp/app/id1371454314" class="teal-text" target="_blank">
-                <h6 class="font-weight-bold">
-                  <i class="fa fa-heart"></i>
-                  iPhoneアプリをゲット
-                </h6>
-              </a>
-              <br />
-              <a href="https://itunes.apple.com/jp/app/id1371454314" target="_blank">
-                <img src="<%= asset_path 'mobile_apps/app-store-badge.png' %>" height="52">
-              </a>
-            </div>
-
-            <!-- Android -->
-            <div class="row d-flex justify-content-center pt-2">
-              <a href="https://play.google.com/store/apps/details?id=com.sakurafish.pockettoushituryou" class="teal-text"
-                target="_blank">
-                <h6 class="font-weight-bold">
-                  <i class="fa fa-heart"></i>
-                  Androidアプリをゲット
-                </h6>
-              </a>
-              <br />
-              <a href="https://play.google.com/store/apps/details?id=com.sakurafish.pockettoushituryou" target="_blank">
-                <img src="<%= asset_path 'mobile_apps/google-play-badge.png' %>" height="52">
-              </a>
-            </div>
-
-          </div>
-        </section>
-        <!--/.Smartphone Apps badge -->
+        <%= render 'layouts/mobile_app_banner' %>
 
         <!-- Caluculators -->
-        <!-- 
-        <div class="view mt-5">
+        <div class="view mt-1">
           <a href="/static_pages/calc/index">
             <img class="img-fluid" src="<%= asset_path 'calc/home_link_calculator.png' %>" alt="calculator page image">
           </a>
         </div>
-        -->
 
         <!-- Ads -->
         <section class="row m-2">

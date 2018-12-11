@@ -1,0 +1,295 @@
+<% provide(:page_title, " ＢＭＩ計算") %>
+<main>
+
+    <!-- /.Main Container -->
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href=<%=root_path %>>Home</a></li>
+                <li class="breadcrumb-item"><a href="/static_pages/calc/index">色々計算機</a></li>
+                <li class="breadcrumb-item active" aria-current="page">食塩相当量計算</li>
+            </ol>
+        </nav>
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Content -->
+            <div class="col-lg-12">
+
+                <!-- Section: Intro -->
+                <section class="section">
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!--Grid column left-->
+                        <div class="col-lg-9 col-md-12 mb-3 pb-lg-2">
+
+                            <div class="view z-depth-1">
+                                <img src="<%= asset_path 'calc/sodium_intro.png' %>" class="img-fluid">
+                            </div>
+
+                            <div class="card white p-5">
+
+                                <!-- Outline -->
+                                <nav class="page-outline">
+                                    <h5 class="text-center mb-3"><i class="fa fa-list-alt"></i> 目次</h5>
+                                    <ol>
+                                        <li><a href="#sodium1">ナトリウム量から食塩相当量を計算する</a></li>
+                                        <li><a href="#sodium2">食塩相当量からナトリウム量を計算する</a></li>
+                                        <li><a href="#sodium-formula">食塩相当量換算の計算式</a></li>
+                                        <li><a href="#sodium-about">ナトリウムとは</a></li>
+                                        <li><a href="#sodium-risc">ナトリウム過剰摂取のリスク</a></li>
+                                        <li><a href="#sodium-amount">一日の食塩摂取量の基準値</a></li>
+                                        <li><a href="#sodium-link">参考リンク</a></li>
+                                    </ol>
+                                </nav>
+
+                                <p class="mdb-color-text my-4">
+                                    食品を購入すると、栄養成分の表示に<br />
+                                    <span class="font-weight-bold orange-text">「ナトリウム」</span>と記載されていることがありますね。<br />
+                                    <br />
+                                    <span class="font-weight-bold orange-text">「食塩相当量」</span>と書いてあれば、いつも使っている食塩だからわかりやすいのですが<br />
+                                    <span class="font-weight-bold orange-text">「ナトリウム」</span>という成分名だとイメージしづらいですね。<br /><br />
+                                    「ナトリウムって食塩とは何が違うの？」<br />
+                                    「食品のパッケージに塩分のグラム数が載っていたらいいのに…」<br />
+                                    とお困りになったことはないでしょうか？<br />
+                                    <br />
+                                    このページでは<span class="font-weight-bold orange-text">「ナトリウム」</span>
+                                    から<span class="font-weight-bold orange-text">「食塩相当量」</span>を計算します。<br />
+                                    <span class="font-weight-bold orange-text">「食塩相当量」</span>から
+                                    <span class="font-weight-bold orange-text">「ナトリウム量」</span>の逆算もできます。
+                                    <br /><br />
+                                    早速計算してみましょう。<br />
+                                </p>
+                                <!--/. Outline -->
+
+                                <!-- sodium1 -->
+                                <section id="sodium1" class="pt-5">
+                                    <form id="sodium-input1" name="form_sodium1" class="mt-2">
+
+                                        <p class="h4 bq-primary light-blue lighten-5 p-2 mb-2">ナトリウム量から食塩相当量を計算する</p>
+                                        <p class="mdb-color-text my-4">ナトリウムの量(mg)を塩分の量(g)に換算します。<br />
+                                            <br />
+                                        </p>
+                                        <p class="h5 my-2">次の欄にナトリウム量(mg)を数字で入力してください</p>
+
+                                        <label for="input_na">ナトリウム (mg)</label>
+                                        <input type="number" id="input_na" class="calc-bordered-form-control mb-2"
+                                            placeholder="例：1000">
+
+                                        <div>
+                                            <input type="button" class="btn btn-primary" onclick="calc_sodium1();"
+                                                value="食塩相当量を計算する">
+                                        </div>
+
+                                    </form>
+
+                                    <!-- Calculate result1 -->
+                                    <div id="sodium_result_area1" class="pt-5" style="visibility:hidden">
+                                        <div class="view grey lighten-4 p-3">
+                                            <p class="h4 text-center" id="result_sodium_title1">食塩相当量の計算結果</p>
+                                            <p class="text-center mt-1" id="result_sodium_input1"></p>
+                                            <div class="h4 text-center mt-1" id="result_sodium1"></div>
+                                        </div>
+                                    </div>
+                                    <!--/.Calculate result1 -->
+                                </section>
+                                <!--/. sodium1 -->
+
+                                <!-- sodium2 -->
+                                <section id="sodium2" class="pt-5">
+                                    <form id="sodium-input2" name="form_sodium2" class="mt-2">
+
+                                        <p class="h4 bq-primary light-blue lighten-5 p-2 mb-2">食塩相当量からナトリウム量を計算する</p>
+                                        <p class="mdb-color-text my-4">食塩相当量(g)をナトリウムの量(mg)に換算します。<br />
+                                            <br />
+                                        </p>
+                                        <p class="h5 my-2">次の欄に食塩相当量(g)を数字で入力してください</p>
+
+                                        <label for="input_ts">食塩相当量(g)</label>
+                                        <input type="number" id="input_ts" class="calc-bordered-form-control mb-2"
+                                            placeholder="例：5.3">
+
+                                        <div>
+                                            <input type="button" class="btn btn-primary" onclick="calc_sodium2();"
+                                                value="ナトリウム量を計算する">
+                                        </div>
+
+                                    </form>
+
+                                    <!-- Calculate result2 -->
+                                    <div id="sodium_result_area2" class="pt-5" style="visibility:hidden">
+                                        <div class="view grey lighten-4 p-3">
+                                            <p class="h4 text-center" id="result_sodium_title2">ナトリウム量の計算結果</p>
+                                            <p class="text-center mt-1" id="result_sodium_input2"></p>
+                                            <div class="h4 text-center mt-1" id="result_sodium2"></div>
+                                        </div>
+                                    </div>
+                                    <!--/.Calculate result2 -->
+                                </section>
+                                <!--/. sodium2 -->
+
+                                <!-- Description -->
+                                <div id="sodium-formula" class="pt-5 pb-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 mt-2 p-2">食塩相当量の計算式</p>
+                                    <p class="mdb-color-text my-4">ナトリウムの量から食塩相当量に変換する計算式は次のとおりです。</p>
+                                    <div class="view grey lighten-4 ml-5 mr-5">
+                                        <p class="h5 deep-orange-text text-center mt-2">食塩相当量（g） = ナトリウム量（mg）× 2.54 ÷
+                                            1000</p>
+                                    </div>
+                                    <p class="mdb-color-text my-4">食塩相当量（塩分）からナトリウム量を逆算出する計算式は次のとおりです。</p>
+                                    <div class="view grey lighten-4 ml-5 mr-5">
+                                        <p class="h5 deep-orange-text text-center mt-2">ナトリウム量（mg）=　食塩相当量（g） ÷ 2.54 ×
+                                            1000</p>
+                                    </div>
+                                </div>
+
+                                <div class="view z-depth-1 mt-5">
+                                    <img src="<%= asset_path 'calc/sodium_img.png' %>" class="img-fluid">
+                                </div>
+
+                                <div id="sodium-about" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">ナトリウムとは</p>
+
+                                    <p class="mdb-color-text my-4">ナトリウムとは人体に必要なミネラルの一種で、主に食塩（塩化ナトリウム）の形で摂取されます。<br />
+                                        <br />
+                                        食塩以外ではグルタミン酸ナトリウムや、重炭酸ナトリウムなどで吸収されるナトリウムもあります。
+                                        <br />
+                                        ナトリウムは細胞内の浸透圧を一定に保つために重要な役割を果たしています。<br />
+                                        また、酸・塩基平衡、筋肉の収縮、神経の情報伝達、栄養素の吸収・輸送などにも関わっています。<br />
+                                        また、水分を保持しながら細胞外液量や循環血液の量を維持し、血圧を調節しています。<br />
+                                    </p>
+                                </div>
+
+                                <div id="sodium-risc" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">ナトリウム過剰摂取のリスク</p>
+
+                                    <p class="mdb-color-text my-4">
+                                        ナトリウムは健康な人では通常の食事をしていれば欠乏することはありませんので、不足のリスクはほぼ無いといえます。<br />
+                                        不足するとめまいやふらつき、脱水症状などが起こるといわれています。<br />
+                                        <br />
+                                        対してナトリウムを摂りすぎるとむくみや口の渇きのほか、高血圧・胃がん・食道がんのリスクを高めるとされています。<br />
+                                        血圧が高くなると、それに伴い動脈硬化、心筋梗塞や腎臓病などの病気を誘発する可能性があります。<br />
+                                        <br />
+                                        ナトリウムの過剰摂取が高血圧に繋がるのは、人間の体に備わっている血液中のナトリウム濃度を一定に保とうとする機能のためです。<br />
+                                        <br />
+                                        ナトリウム濃度が上がると、血液中に水分を引き込んで濃度を下げようとするため、血液が増えて血管壁に強く圧力がかかり血圧が高くなります。 <br />
+                                        <br />
+                                        現代の食塩摂取量は石器時代の１日1～2g以下から10g以上へと増えてしまいました。<br />
+                                        減塩は高血圧の改善のためだけではなく、健康な人たちの病気予防のためにも大切なことです。<br />
+                                    </p>
+                                </div>
+
+                                <div id="sodium-amount" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">一日の食塩摂取量の基準値</p>
+
+                                    <p class="mdb-color-text my-4">
+                                        食塩摂取量には以下のようなガイドラインが設定されています。<br />
+                                        <br />
+                                        ・<span class="font-weight-bold">厚生労働省</span>の「日本人の食事摂取基準（2015年版）」では、<br />
+                                        <span class="font-weight-bold yellow">成人男性で1日当たり10g未満、成人女性では8g未満</span>が目標とされています。<br />
+                                        <br />
+                                        ・<span class="font-weight-bold">日本高血圧学会</span>の高血圧治療ガイドライン（JSH2014）では<span
+                                            class="font-weight-bold yellow">1日6g未満</span>の目標を掲げています。 <br />
+                                        <br />
+                                        ・<span class="font-weight-bold">世界保健機関（WHO）</span>はすべての成人の減塩目標を<span class="font-weight-bold yellow">1日5g未満</span>としています。
+                                        <br />
+                                        <br />
+                                        <br />
+                                        2015年の調査結果(厚生労働省 国民健康・栄養調査結果の概要)では、<br />
+                                        <span class="font-weight-bold yellow">日本人成人の一日の平均食塩摂取量は男性11.0g、女性9.2g</span>となっています。
+                                        <br />
+                                        徐々に平均摂取量は減少していますが、まだまだ減らしたほうがよいと言えるでしょう。
+                                    </p>
+                                </div>
+
+                                <div id="sodium-link" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">参考リンク</p>
+
+                                    <p class="pt-2"><a href="https://www.mhlw.go.jp/file/05-Shingikai-10901000-Kenkoukyoku-Soumuka/0000114399.pdf"
+                                            target="_blank">厚生労働省 「日本人の食事摂取基準（2015 年版）」
+                                            策定検討会報告書</a> </p>
+                                    <p><a href="https://www.mhlw.go.jp/file/04-Houdouhappyou-10904750-Kenkoukyoku-Gantaisakukenkouzoushinka/kekkagaiyou.pdf"
+                                            target="_blank">厚生労働省 「平成 27 年国民健康・栄養調査結果の概要」</a></p>
+                                    <p><a href="https://www.e-healthnet.mhlw.go.jp/information/dictionary/food/ye-024.html"
+                                            target="_blank">厚生労働省 ナトリウム | e-ヘルスネット</a></p>
+                                    <p><a href="http://www.mac.or.jp/mail/161001/03.shtml" target="_blank">一般財団法人食品分析開発センターSUNATEC
+                                            食塩相当量について</a></p>
+                                    <p><a href="http://www.jpnsh.jp/general_salt.html#gsalt02" target="_blank">特定非営利活動法人日本高血圧学会
+                                            さあ、減塩！ - 食塩の知識</a></p>
+                                    <p><a href="https://www.jpnsh.jp/data/jsh2014/jsh2014v1_1.pdf" target="_blank">特定非営利活動法人日本高血圧学会
+                                            高血圧治療ガイドライン（JSH2014）</a></p>
+                                    <p><a href="https://ja.wikipedia.org/wiki/%E5%A1%A9" target="_blank">塩
+                                            - Wikipedia</a> </p>
+                                </div>
+
+                                <!--/.Description -->
+                            </div>
+
+                        </div>
+                        <!--/.Grid column left-->
+
+                        <!--Grid column right-->
+                        <div class="col-lg-3 col-md-12 mb-4">
+
+
+                            <!-- Smartphone Apps badge -->
+                            <%= render 'layouts/mobile_app_banner' %>
+
+                            <!-- Ads -->
+                            <section class="row m-2">
+                                <div id="zsid4436753242"></div>
+                                <script type="text/javascript" src="//statics.a8.net/js/harippaban.js" charset="utf-8"></script>
+                                <script type="text/javascript">
+                                    var aid = '170405731565';
+                                    var frame = '1';
+                                    var shopname = '1';
+                                    var horizontal = '1';
+                                    var vertical = '3';
+                                    var alignment = '0';
+                                    var rndid = 'zsid4436753242';
+                                    var bannerkind = 'item.variable.kind1';
+                                </script>
+                                <script type="text/javascript" src="//items.a8.net/search?keyword=%E3%82%B9%E3%83%9E%E3%83%BC%E3%83%88%E3%82%A6%E3%82%A9%E3%83%83%E3%83%81&limit=3&callback=callbackA8"
+                                    charset="utf-8"></script>
+                            </section>
+
+                            <section class="row m-2">
+                                <div id="zsid9611703208"></div>
+                                <script type="text/javascript" src="//statics.a8.net/js/harippaban.js" charset="utf-8"></script>
+                                <script type="text/javascript">
+                                    var aid = '170405731565';
+                                    var frame = '1';
+                                    var shopname = '1';
+                                    var horizontal = '1';
+                                    var vertical = '3';
+                                    var alignment = '0';
+                                    var rndid = 'zsid9611703208';
+                                    var bannerkind = 'item.variable.kind1';
+                                </script>
+                                <script type="text/javascript" src="//items.a8.net/search?keyword=%E8%A1%80%E5%9C%A7%E8%A8%88&limit=3&callback=callbackA8"
+                                    charset="utf-8"></script>
+                            </section>
+                            <!--/. Ads -->
+
+                        </div>
+                        <!--/.Grid column right-->
+
+                    </div>
+                    <!--/.Grid row-->
+
+                </section>
+                <!--/.Section: Intro -->
+
+            </div>
+            <!--/.Content -->
+
+        </div>
+        <!--/.Grid row -->
+        <%= render 'layouts/sns_share' %>
+    </div>
+    <!--/.Main Container -->
+</main>

@@ -42,7 +42,7 @@ module FoodsHelper
     cube_string = cube_sugar(food.carbohydrate_per_weight)
 
     notes_string = food.notes.present? ?
-      "<br /><span class=\"font-weight-bold\">備考 : </span>#{food.notes}" : ""
+      "<br /><span class=\"font-weight-bold pink-text\">備考 : #{food.notes}</span>" : ""
 
     html = <<-EOF
       <p>
