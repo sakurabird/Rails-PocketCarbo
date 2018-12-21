@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_21_042451) do
+ActiveRecord::Schema.define(version: 2018_12_21_052515) do
 
   create_table "foods", force: :cascade do |t|
     t.string "name"
@@ -34,11 +34,11 @@ ActiveRecord::Schema.define(version: 2018_12_21_042451) do
   end
 
   create_table "kinds", force: :cascade do |t|
-    t.string "name"
-    t.integer "type_id"
+    t.string "name", null: false
+    t.integer "type_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "search_word"
+    t.string "search_word", null: false
     t.index ["search_word"], name: "index_kinds_on_search_word"
     t.index ["type_id"], name: "index_kinds_on_type_id"
   end
