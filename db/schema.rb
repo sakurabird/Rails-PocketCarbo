@@ -10,23 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_21_052515) do
+ActiveRecord::Schema.define(version: 2018_12_21_053026) do
 
   create_table "foods", force: :cascade do |t|
-    t.string "name"
-    t.float "carbohydrate_per_100g"
-    t.float "carbohydrate_per_weight"
-    t.integer "weight"
-    t.float "calory"
-    t.float "protein"
-    t.float "fat"
-    t.float "sodium"
-    t.integer "type_id"
-    t.integer "kind_id"
+    t.string "name", null: false
+    t.float "carbohydrate_per_100g", null: false
+    t.float "carbohydrate_per_weight", null: false
+    t.integer "weight", null: false
+    t.float "calory", null: false
+    t.float "protein", null: false
+    t.float "fat", null: false
+    t.float "sodium", null: false
+    t.integer "type_id", null: false
+    t.integer "kind_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "search_word"
-    t.boolean "deleted_flg"
+    t.string "search_word", null: false
+    t.boolean "deleted_flg", null: false
     t.string "weight_hint"
     t.string "notes"
     t.index ["kind_id"], name: "index_foods_on_kind_id"
