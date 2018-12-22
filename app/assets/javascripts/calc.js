@@ -64,6 +64,7 @@ function calc_bmi2() {
     scrollTop: $('#bmi_result_area2').offset().top
   });
 }
+
 // Height
 function calc_bmi3() {
 
