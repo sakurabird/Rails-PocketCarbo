@@ -9,14 +9,14 @@
   <!-- container -->
   <div class="container">
     <!-- row -->
-    <div class="row">
+    <div class="row pt-4">
 
       <!-- Left -->
       <div class="col-lg-9 pl-5">
 
         <!-- Introduction to Smartphone Apps -->
         <div class="row">
-          <a href="/static_pages/mobile_app" class="pr-4 pt-4 blue-text">ポケット糖質量のスマートフォンアプリが登場！👉ちょっと見てみる</a>
+          <a href="/static_pages/mobile_app" class="pr-4 blue-text">ポケット糖質量のスマートフォンアプリが登場！👉ちょっと見てみる</a>
         </div>
         <!-- Foods list -->
         <%= render 'foods/foods' %>
@@ -28,48 +28,27 @@
       <div class="col-lg-3">
 
         <!-- Smartphone Apps badge -->
-        <section class="row">
-          <div class="view white m-4">
-            <!--Featured image-->
-            <a href="/static_pages/mobile_app">
-              <img src="<%= asset_path 'mobile_apps/mobile_app_home_banner.png' %>" class="img-fluid" alt="smartphone app image">
-            </a>
+        <%= render 'layouts/mobile_app_banner' %>
 
-            <!-- iPhone -->
-            <div class="row d-flex justify-content-center pt-2">
-              <a href="https://itunes.apple.com/jp/app/id1371454314" class="teal-text" target="_blank">
-                <h6 class="font-weight-bold">
-                  <i class="fa fa-heart"></i>
-                  iPhoneアプリをゲット
-                </h6>
-              </a>
-              <br />
-              <a href="https://itunes.apple.com/jp/app/id1371454314" target="_blank">
-                <img src="<%= asset_path 'mobile_apps/app-store-badge.png' %>" height="52">
-              </a>
-            </div>
-
-            <!-- Android -->
-            <div class="row d-flex justify-content-center pt-2">
-              <a href="https://play.google.com/store/apps/details?id=com.sakurafish.pockettoushituryou" class="teal-text"
-                target="_blank">
-                <h6 class="font-weight-bold">
-                  <i class="fa fa-heart"></i>
-                  Androidアプリをゲット
-                </h6>
-              </a>
-              <br />
-              <a href="https://play.google.com/store/apps/details?id=com.sakurafish.pockettoushituryou" target="_blank">
-                <img src="<%= asset_path 'mobile_apps/google-play-badge.png' %>" height="52">
-              </a>
-            </div>
-
-          </div>
-        </section>
-        <!--/.Smartphone Apps badge -->
+        <!-- Caluculators -->
+        <div class="view mt-1">
+          <a href="/static_pages/calc/index">
+            <img class="img-fluid" src="<%= asset_path 'calc/home_link_calculator.png' %>" alt="calculator page image">
+          </a>
+        </div>
 
         <!-- Ads -->
-        <section class="row m-2">
+        <section class="row mt-4 ml-2">
+          <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- web-PocketCarbo -->
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6381489451756721" data-ad-slot="6829513953"
+            data-ad-format="auto" data-full-width-responsive="true"></ins>
+          <script>
+            (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+        </section>
+
+        <section class="row mt-4 ml-2">
           <script type="text/javascript">
             amzn_assoc_ad_type = "responsive_search_widget";
             amzn_assoc_tracking_id = "sakurabird1-22";
@@ -87,23 +66,6 @@
           <script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script>
         </section>
 
-        <section class="row m-2">
-          <script type="text/javascript">
-            rakuten_design = "slide";
-            rakuten_affiliateId = "0905aa48.768a134f.0905aa49.cc03976f";
-            rakuten_items = "ctsmatch";
-            rakuten_genreId = "0";
-            rakuten_size = "200x600";
-            rakuten_target = "_blank";
-            rakuten_theme = "gray";
-            rakuten_border = "off";
-            rakuten_auto_mode = "on";
-            rakuten_genre_title = "off";
-            rakuten_recommend = "on";
-            rakuten_ts = "1542796523996";
-          </script>
-          <script type="text/javascript" src="https://xml.affiliate.rakuten.co.jp/widget/js/rakuten_widget.js"></script>
-        </section>
         <!--/. Ads -->
 
       </div>

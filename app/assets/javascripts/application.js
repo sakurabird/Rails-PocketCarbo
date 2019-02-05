@@ -15,5 +15,6 @@
 //= require popper.min
 //= require bootstrap
 //= require mdb
+//= require rails-ujs
 //= require turbolinks
 //= require_tree .

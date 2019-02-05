@@ -1,0 +1,413 @@
+<% provide(:page_title, " HbA1cから推定平均血糖値計算") %>
+<main>
+
+    <!-- /.Main Container -->
+    <div class="container">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href=<%=root_path %>>Home</a></li>
+                <li class="breadcrumb-item"><a href="/static_pages/calc/index">色々計算機</a></li>
+                <li class="breadcrumb-item active" aria-current="page">HbA1cから推定平均血糖値(eAG)計算</li>
+            </ol>
+        </nav>
+
+        <!-- Grid row -->
+        <div class="row">
+
+            <!-- Content -->
+            <div class="col-lg-12">
+
+                <!-- Introduction to Smartphone Apps -->
+                <div class="pb-lg-2">
+                    <a href="/static_pages/mobile_app" class="pt-4 mb-4 blue-text">ポケット糖質量のスマートフォンアプリが登場！👉ちょっと見てみる</a>
+                </div>
+
+                <!-- Section: Intro -->
+                <section class="section">
+
+                    <!-- Grid row -->
+                    <div class="row">
+
+                        <!--Grid column left-->
+                        <div class="col-lg-9 col-md-12 mb-3 pb-lg-2">
+
+                            <div class="view z-depth-1">
+                                <img src="<%= asset_path 'calc/eag_intro.png' %>" class="img-fluid">
+                            </div>
+
+                            <div class="card white p-5">
+
+                                <!-- Outline -->
+                                <nav class="page-outline">
+                                    <h5 class="text-center mb-3"><i class="fa fa-list-alt"></i> 目次</h5>
+                                    <ol>
+                                        <li><a href="#eag1">HbA1cから推定平均血糖値(eAG)を計算する</a></li>
+                                        <li><a href="#eag2">血糖値から推定HbA1cを計算する</a></li>
+                                        <li><a href="#eag-formula">推定平均血糖値(eAG)の計算式</a></li>
+                                        <li><a href="#eag-about">HbA1c（ヘモグロビンエーワンシー）とは</a></li>
+                                        <li><a href="#eag-ngsp">NGSP値とJDS値の違いとは</a></li>
+                                        <li><a href="#eag-amount">HbA1cと推定平均血糖値の表</a></li>
+                                        <li><a href="#eag-link">参考リンク</a></li>
+                                    </ol>
+                                </nav>
+
+                                <p class="mdb-color-text my-4">
+                                    <span class="font-weight-bold orange-text">HbA1c（ヘモグロビンエーワンシー）</span>
+                                    の値は
+                                    <span class="font-weight-bold orange-text">過去1～2ヵ月間の血糖値の平均</span><br />
+                                    をあらわしていると言われ「7.5%」などの
+                                    <span class="font-weight-bold orange-text">割合で表現</span>
+                                    されています。
+                                    <br /><br />
+                                    この値は血糖値管理においてとても大切な数字ですが、<br />
+                                    血糖値で言うとどのあたりのレベルなのか<br />
+                                    イメージしづらいと思ったことはありませんか？<br />
+                                    HbA1cが10%ならば血糖値はいくつぐらいなのでしょう。<br />
+                                    <br />
+                                    このページでは<span class="font-weight-bold orange-text">「HbA1c」</span>
+                                    から<span class="font-weight-bold orange-text">「推定平均血糖値(eAG = Estimated Average
+                                        Glucose)」</span>を計算します。<br />
+                                    <span class="font-weight-bold orange-text">「血糖値」</span>から
+                                    <span class="font-weight-bold orange-text">「推定HbA1c」</span>の逆算もできます。
+                                    <br /><br />
+                                    計算結果はあくまでも
+                                    <span class="font-weight-bold red-text">平均値</span>です。<br />
+                                    一日の中の血糖値変動などはこのサイトの計算結果からは読み取れません。<br />
+                                    あくまでも大まかなイメージを把握したい！というような用途にご使用くださいね。<br />
+                                    <br />
+                                    早速計算してみましょう。<br />
+                                </p>
+                                <p class="border border-light small grey-text p-2">
+                                    ※ 当サイトの計算については、参考リンク他の情報を元に一般的に普及している計算式を使用して数値を換算しておりますが、
+                                    診断や治療行為ではありません。<br />
+                                    医療情報を必要とされている方は医療機関への受診をおすすめいたします。<br />
+                                    また当サイトの内容に付きましては内容を保証するものではありません。<br />
+                                    閲覧者様の責任において細心の注意を払った上でのご利用をお願いいたします。
+                                </p>
+                                <!--/. Outline -->
+
+                                <!-- eag1 -->
+                                <section id="eag1" class="pt-5">
+                                    <form id="eag-input1" name="form_eag1" class="mt-2">
+
+                                        <p class="h4 bq-primary light-blue lighten-5 p-2 mb-2">HbA1cから推定平均血糖値(eAG)を計算する</p>
+                                        <p class="mdb-color-text my-4">
+                                            HbA1c(%)を推定平均血糖値(mg/dL)に換算します。<br />
+                                            小数点以下は四捨五入します。<br />
+                                            HbA1cは<span class="font-weight-bold">NGSP値</span>が前提となります。<br />
+                                            NGSP値については<a href="#eag-ngsp">NGSP値とJDS値の違いとは</a>
+                                            をご覧ください。
+
+                                        </p>
+                                        <p class="h5 my-2">次の欄にHbA1c(%)を数字で入力してください</p>
+
+                                        <label for="input_eag">HbA1c(%)</label>
+                                        <input type="number" id="input_hba1c" class="calc-bordered-form-control mb-2"
+                                            placeholder="例：5.2">
+
+                                        <div>
+                                            <input type="button" class="btn btn-primary" onclick="calc_eag1();" value="推定平均血糖値を計算する">
+                                        </div>
+
+                                    </form>
+
+                                    <!-- Calculate result1 -->
+                                    <div id="eag_result_area1" class="pt-5" style="visibility:hidden">
+                                        <div class="view grey lighten-4 p-3">
+                                            <p class="h4 text-center" id="result_eag_title1">推定平均血糖値(eAG)の計算結果</p>
+                                            <p class="text-center mt-1" id="result_eag_input1"></p>
+                                            <div class="h4 text-center mt-1" id="result_eag1"></div>
+                                        </div>
+                                    </div>
+                                    <!--/.Calculate result1 -->
+                                </section>
+                                <!--/. eag1 -->
+
+                                <!-- eag2 -->
+                                <section id="eag2" class="pt-5">
+                                    <form id="eag-input2" name="form_eag2" class="mt-2">
+
+                                        <p class="h4 bq-primary light-blue lighten-5 p-2 mb-2">血糖値から推定HbA1cを計算する</p>
+                                        <p class="mdb-color-text my-4">血糖値(mg/dL)から推定HbA1cを(%)を逆算します。<br />
+                                            小数点第２位を四捨五入します。<br />
+                                        </p>
+                                        <p class="h5 my-2">次の欄に血糖値(mg/dL)を数字で入力してください</p>
+
+                                        <label for="input_ag">血糖値(mg/dL)</label>
+                                        <input type="number" id="input_ag" class="calc-bordered-form-control mb-2"
+                                            placeholder="例：103">
+
+                                        <div>
+                                            <input type="button" class="btn btn-primary" onclick="calc_eag2();" value="推定HbA1cを計算する">
+                                        </div>
+
+                                    </form>
+
+                                    <!-- Calculate result2 -->
+                                    <div id="eag_result_area2" class="pt-5" style="visibility:hidden">
+                                        <div class="view grey lighten-4 p-3">
+                                            <p class="h4 text-center" id="result_eag_title2">推定HbA1cの計算結果</p>
+                                            <p class="text-center mt-1" id="result_eag_input2"></p>
+                                            <div class="h4 text-center mt-1" id="result_eag2"></div>
+                                        </div>
+                                    </div>
+                                    <!--/.Calculate result2 -->
+                                </section>
+                                <!--/. eag2 -->
+
+                                <!-- Description -->
+                                <div id="eag-formula" class="pt-5 pb-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 mt-2 p-2">推定平均血糖値の計算式</p>
+                                    <p class="mdb-color-text my-4">推定平均血糖値(eAG)の計算式は次のとおりです。</p>
+                                    <div class="view grey lighten-4 ml-5 mr-5">
+                                        <p class="h5 deep-orange-text text-center mt-2">eAG[mg/dL] = 28.7 x HbA1c[％]
+                                            - 46.7 </p>
+                                    </div>
+                                    <p class="mdb-color-text my-4">推定HbA1cの計算式は次のとおりです。</p>
+                                    <div class="view grey lighten-4 ml-5 mr-5">
+                                        <p class="h5 deep-orange-text text-center mt-2">HbA1c[％] =　(血糖値[mg/dL] + 46.7)
+                                            ÷ 28.7</p>
+                                    </div>
+                                </div>
+
+                                <div id="eag-about" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">HbA1c（ヘモグロビンエーワンシー）とは</p>
+
+                                    <p class="mdb-color-text my-4">
+                                        <span class="font-weight-bold orange-text">HbA1c（ヘモグロビンエーワンシー）</span>とは
+                                        糖尿病に関連する指標の一つで、<br />
+                                        <span class="font-weight-bold orange-text">採血から過去1～2ヵ月間の血糖値の平均</span>を反映したものです。<br />
+                                        <br />
+                                        血液の中の赤血球内のヘモグロビンにブドウ糖がくっついたもののことを
+                                        <span class="font-weight-bold orange-text">糖化ヘモグロビン</span>といいます。<br />
+                                        血液中に糖化ヘモグロビンがどのくらい含まれているかをパーセント(%)であらわしたものがHbA1cです。<br />
+                                        <br />
+                                        血糖値が高いほどヘモグロビンに結合するブドウ糖の量が多くなりますので、
+                                        血糖値の高い状態が続くとHbA1cも高くなります。<br />
+                                        <br />
+                                        いったん糖化したヘモグロビンは、赤血球の寿命（120日）が尽きるまで元には戻らないことから、
+                                        採血当日の血糖値の影響を受けることなく過去1～2ヶ月の血糖値の平均を反映します。<br />
+                                        <br />
+                                        なお、2012年4月より日本のHbA1cはJDS値から<span class="font-weight-bold orange-text">NGSP値を使うように変更されています。</span><br />
+                                        違いについては<a href="#eag-ngsp">NGSP値とJDS値の違いとは</a>をご覧ください。
+                                    </p>
+                                </div>
+
+                                <div id="eag-ngsp" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">NGSP値とJDS値の違いとは</p>
+
+                                    <p class="mdb-color-text my-4">
+                                        HbA1cの表記方法について、「NGSP」と「JDS」という２つの表記方法を見かけることがあります。<br />
+                                        これらは一体何でしょうか？<br />
+                                        <br />
+                                        「JDS値」は日本独自の条件に従って測った値で、<br />
+                                        「NGSP値」は主に米国で決められた条件に従って測った値です。<br />
+                                        より国際的で広く使用されている測定値です。<br />
+                                        <br />
+                                        　　JDS : Japan Diabetes Society<br />
+                                        　　NGSP : National Glycohemoglobin Standardization Program<br />
+                                        <br />
+                                        JDS値はNGSP値と比べると約0.4％低い値となっています。<br />
+                                        例えばJDS値が6.1%だとすると、NGSP値では6.5%となります。<br />
+                                        <br />
+                                        2012年4月より医療機関で表記されるHbA1c値がJDS値から
+                                        <span class="font-weight-bold orange-text">NGSP値を使う</span>ように変更になりました。<br />
+                                        <br />
+                                        当サイトのHbA1cの表記方法もNGSP値となっております。
+                                    </p>
+                                </div>
+
+                                <div id="eag-amount" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">HbA1cと推定平均血糖値の表</p>
+
+                                    <p class="mdb-color-text my-4">
+                                        HbA1cから算出した推定平均血糖値を一覧表にしました。<br />
+                                        目安にご利用ください。<br />
+                                    </p>
+
+                                    <table class="calc-description-table">
+                                        <thead>
+                                            <tr>
+                                                <th>HbA1c（%）</th>
+                                                <th>推定平均血糖値(mg/dL)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>4.5</td>
+                                                <td>82</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5</td>
+                                                <td>97</td>
+                                            </tr>
+                                            <tr>
+                                                <td>5.5</td>
+                                                <td>111</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6</td>
+                                                <td>126</td>
+                                            </tr>
+                                            <tr>
+                                                <td>6.5</td>
+                                                <td>140</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>154</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7.5</td>
+                                                <td>169</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8</td>
+                                                <td>183</td>
+                                            </tr>
+                                            <tr>
+                                                <td>8.5</td>
+                                                <td>197</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9</td>
+                                                <td>212</td>
+                                            </tr>
+                                            <tr>
+                                                <td>9.5</td>
+                                                <td>226</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10</td>
+                                                <td>240</td>
+                                            </tr>
+                                            <tr>
+                                                <td>10.5</td>
+                                                <td>255</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11</td>
+                                                <td>269</td>
+                                            </tr>
+                                            <tr>
+                                                <td>11.5</td>
+                                                <td>283</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12</td>
+                                                <td>298</td>
+                                            </tr>
+                                            <tr>
+                                                <td>12.5</td>
+                                                <td>312</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13</td>
+                                                <td>326</td>
+                                            </tr>
+                                            <tr>
+                                                <td>13.5</td>
+                                                <td>341</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>355</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14.5</td>
+                                                <td>369</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div id="eag-link" class="pt-5">
+                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">参考リンク</p>
+
+                                    <p class="pt-2"><a href="https://dm-nagoya.com/2017/01/16/post-799/" target="_blank">名古屋糖尿病内科クリニック
+                                            血糖値とHbA1c関連まとめ（2017/01/16作成）</a></p>
+                                    <p><a href="http://www.ngsp.org/A1ceAG.asp" target="_blank">NGSP HbA1c and
+                                            Estimated Average Glucose (eAG)</a></p>
+                                    <p><a href="https://www.hosp.go.jp/~kyotolan/img/img/guide/medicalinfo/diabeticcenter/tonyo_img/kikanshi/5-2.pdf"
+                                            target="_blank">糖尿病センターだより平成24年春号 - 独立行政法人国立病院機構京都医療センター糖尿病センター[PDF]</a></p>
+                                    <p><a href="http://www.ncvc.go.jp/hospital/section/ld/endocrinology/hba1c.html"
+                                            target="_blank">ＨｂＡ1ｃとは？ - 国立循環器病研究センター病院</a></p>
+                                </div>
+
+                                <div class="py-3 text-right">
+                                    <p class="teal-text"> updated 2019/2/6</p>
+                                </div>
+
+                                <!--/.Description -->
+                            </div>
+
+                        </div>
+                        <!--/.Grid column left-->
+
+                        <!--Grid column right-->
+                        <div class="col-lg-3 col-md-12 mb-4">
+
+
+                            <!-- Smartphone Apps badge -->
+                            <%= render 'layouts/mobile_app_banner' %>
+
+                            <!-- Ads -->
+                            <section class="row m-2">
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <!-- web-PocketCarbo -->
+                                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6381489451756721"
+                                    data-ad-slot="6829513953" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
+                                </script>
+                            </section>
+
+                            <section class="row m-2">
+                                <script type="text/javascript">
+                                    amzn_assoc_ad_type = "responsive_search_widget";
+                                    amzn_assoc_tracking_id = "sakurabird1-22";
+                                    amzn_assoc_marketplace = "amazon";
+                                    amzn_assoc_region = "JP";
+                                    amzn_assoc_placement = "";
+                                    amzn_assoc_search_type = "search_widget";
+                                    amzn_assoc_width = "160";
+                                    amzn_assoc_height = "600";
+                                    amzn_assoc_default_search_category = "";
+                                    amzn_assoc_default_search_key = "糖尿";
+                                    amzn_assoc_theme = "light";
+                                    amzn_assoc_bg_color = "FFFFFF";
+                                </script>
+                                <script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script>
+                            </section>
+                            <!--/. Ads -->
+
+                        </div>
+                        <!--/.Grid column right-->
+
+                    </div>
+                    <!--/.Grid row-->
+
+                </section>
+                <!--/.Section: Intro -->
+
+            </div>
+            <!--/.Content -->
+
+        </div>
+        <!--/.Grid row -->
+
+        <div class="row mt-2">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- web-PocketCarbo -->
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6381489451756721" data-ad-slot="6829513953"
+                data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+        <%= render 'layouts/sns_share' %>
+    </div>
+    <!--/.Main Container -->
+</main>

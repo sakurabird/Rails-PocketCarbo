@@ -1,15 +1,15 @@
 system:
-  version : '2.1.2'
+  version : '2.1.3'
 foods:
   data_version : 7
 site:
-  url: 'http://www.pockettoushituryou.com/'
+  url: 'https://www.pockettoushituryou.com/'
   name : 'ポケット糖質量'
   title : 'ポケット糖質量'
   description: 'ポケット糖質量は1400種類以上の食品に含まれる糖質量が検索できるサイトです。
                 100グラムあたりの糖質量と、それぞれの食品の1回分を目安とした分量に含まれるエネルギー（カロリー）・たんぱく質・脂質・塩分が表示できます。
                 健康づくりのためにぜひご利用ください。'
-  footer_news : '2018/11/21 画面レイアウトを更新いたしました。'
+  footer_news : '2019/2/6 HbA1c→推定平均血糖値計算ページ追加しました'
   og:
     type: 'website'
     title : 'ポケット糖質量　糖質制限中に糖質量を一発検索・一覧表示'

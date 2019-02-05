@@ -64,6 +64,7 @@ function calc_bmi2() {
     scrollTop: $('#bmi_result_area2').offset().top
   });
 }
+
 // Height
 function calc_bmi3() {
 
@@ -91,7 +92,7 @@ function calc_bmi3() {
   });
 }
 
-// NaCI -> Tablet Solt
+// NaCI -> Solt
 function calc_sodium1() {
 
   var na = Number(document.form_sodium1.input_na.value);
@@ -113,7 +114,7 @@ function calc_sodium1() {
   });
 }
 
-// Tablet Solt -> NaCI
+// Solt -> NaCI
 function calc_sodium2() {
 
   var ts = Number(document.form_sodium2.input_ts.value);
@@ -132,5 +133,51 @@ function calc_sodium2() {
 
   $("html,body").animate({
     scrollTop: $('#sodium_result_area2').offset().top
+  });
+}
+
+// HbA1c -> eAG
+function calc_eag1() {
+
+  var hba1c = Number(document.form_eag1.input_hba1c.value);
+  var eag1 = (hba1c * 28.7);
+  var eag2 = (eag1 * 10) - 467;
+  var eag = (eag2 / 10).toFixed(0);
+  var eag_text;
+
+  if (eag <= 0) {
+    eag_text = "入力値が無効です";
+  } else {
+    eag_text = eag + "mg/dL です。";
+
+  }
+  document.getElementById('result_eag_input1').innerHTML = "HbA1c: " + hba1c + "% の推定平均血糖値(eAG)は";
+  document.getElementById('result_eag1').innerHTML = eag_text;
+  document.getElementById("eag_result_area1").style.visibility = "visible";
+
+  $("html,body").animate({
+    scrollTop: $('#eag_result_area1').offset().top
+  });
+}
+
+// eAG -> HbA1c
+function calc_eag2() {
+
+  var ag = Number(document.form_eag2.input_ag.value);
+  var hba1c = ((ag + 46.7) / 28.7).toFixed(1);
+  var hba1c_text;
+
+  if (ag <= 0) {
+    hba1c_text = "入力値が無効です";
+  } else {
+    hba1c_text = hba1c + "% です。";
+
+  }
+  document.getElementById('result_eag_input2').innerHTML = "血糖値: " + ag + "(mg/dL) の推定HbA1cは";
+  document.getElementById('result_eag2').innerHTML = hba1c_text;
+  document.getElementById("eag_result_area2").style.visibility = "visible";
+
+  $("html,body").animate({
+    scrollTop: $('#eag_result_area2').offset().top
   });
 }
