@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-# cp .env .env
-
-rm ./tmp/pids/server.pid
 docker-compose build
 
 docker-compose run --rm web bin/rails db:create

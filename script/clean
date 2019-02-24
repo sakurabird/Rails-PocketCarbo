@@ -19,7 +19,7 @@ docker rmi $(docker images -q)
 docker volume ls -f "dangling=true" -q | xargs docker volume rm
 
 # 止まってるコンテナ、使われてないボリューム、使われてないネットワーク、使われてないイメージを削除
-# docker system prune
+docker system prune
 
 docker system df
 
