@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.5.1"
+ruby "2.5.3"
 
 gem 'rails', '~> 5.2', '>= 5.2.1'
 gem 'dotenv-rails', '~> 2.5'
@@ -20,7 +20,6 @@ gem 'config', '~> 1.7'
 gem 'bootstrap-sass', '>= 3.4.1'
 
 group :development, :test do
-  gem 'sqlite3', '~> 1.3', '>= 1.3.13'
   gem 'byebug',  '10.0.2', platform: :mri
 end
 
