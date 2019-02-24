@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+# docker stop $(docker ps -a -q)
+# docker rm $(docker ps -a -q)
+# docker images | awk 'NR>1 {print $3}' | xargs docker rmi -f
+
+# docker volume ls -f "dangling=true" -q | xargs docker volume rm
+
+# Image,Container,Volumeの数や容量を表示
+docker system df
+
+# 全コンテナ停止 
+docker stop $(docker ps -q)
+# 全コンテナ削除:
+docker rm $(docker ps -q -a)
+# 全イメージ削除:
+docker rmi $(docker images -q)
+
+docker volume ls -f "dangling=true" -q | xargs docker volume rm
+
+# 止まってるコンテナ、使われてないボリューム、使われてないネットワーク、使われてないイメージを削除
+# docker system prune
+
+docker system df
+
+# Rails アプリケーションを Docker を使って開発する、ほとんどの人が通る（であろう）道 - Qiita
+# https://qiita.com/kmt/items/89c31d647bf42bf2300c
+rm ./tmp/pids/server.pid

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+rm ./tmp/pids/server.pid
+
+docker-compose up -d
+
+# 再起動 restartでは、コンテナはそのままでソースコードの変更だけ反映可能
+# docker-compose restart
