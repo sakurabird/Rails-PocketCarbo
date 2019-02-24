@@ -38,3 +38,7 @@ public/assets/
 
 # vscode settings
 .vscode
+
+# Script for my local environment
+/script/gcloud-ssh
+
