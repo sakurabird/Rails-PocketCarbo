@@ -1,8 +1,3 @@
-<!-- search form-->
-<div class="row">
-  <%= render 'layouts/search_form' %>
-</div>
-
 <!-- food type -->
 <div class="row">
   <%= food_type %>
@@ -26,7 +21,7 @@
 
 <!-- food list group -->
 <div class="row">
-  <div class="list-group col-lg-12">
+  <div class="list-group col-lg-12 food_remove_padding_right">
     <% @foods.each do |food| %>
     <div class="list-group-item" style="background-color:<%= cycle('#ffffff','#f3f3f3') %>">
 
