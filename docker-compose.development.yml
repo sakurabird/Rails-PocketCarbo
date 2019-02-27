@@ -1,5 +1,16 @@
 version: '3'
 services:
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - web
+    restart: always
+    environment:
+      STAGE: local
+      DOMAINS: 'localhost -> http://web:3000'
   db:
     image: postgres:11.1-alpine
     ports:

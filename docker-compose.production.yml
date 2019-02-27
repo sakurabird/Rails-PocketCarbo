@@ -1,5 +1,18 @@
 version: '3'
 services:
+  # HTTPS Reverse Proxy
+  https-portal:
+    image: steveltn/https-portal:1
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - web
+    restart: always
+    environment:
+      STAGE: 'production'
+      DOMAINS: 'dousa-kensho.tk => www.dousa-kensho.tk, www.dousa-kensho.tk -> http://web:3000'
+      FORCE_RENEW: 'true'
   db:
     image: postgres:11.1-alpine
     ports:
