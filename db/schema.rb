@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2018_12_21_053026) do
 
-  create_table "foods", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "foods", id: :serial, force: :cascade do |t|
     t.string "name", null: false
     t.float "carbohydrate_per_100g", null: false
     t.float "carbohydrate_per_weight", null: false
@@ -33,7 +36,7 @@ ActiveRecord::Schema.define(version: 2018_12_21_053026) do
     t.index ["type_id"], name: "index_foods_on_type_id"
   end
 
-  create_table "kinds", force: :cascade do |t|
+  create_table "kinds", id: :serial, force: :cascade do |t|
     t.string "name", null: false
     t.integer "type_id", null: false
     t.datetime "created_at", null: false
@@ -43,10 +46,13 @@ ActiveRecord::Schema.define(version: 2018_12_21_053026) do
     t.index ["type_id"], name: "index_kinds_on_type_id"
   end
 
-  create_table "types", force: :cascade do |t|
+  create_table "types", id: :serial, force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "foods", "kinds"
+  add_foreign_key "foods", "types"
+  add_foreign_key "kinds", "types"
 end

@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+# 停止 backgroundで起動していた場合
+docker-compose stop
+
+# 停止＆削除（コンテナ・ネットワーク）
+# docker-compose down
+
+# 停止＆削除（コンテナ・ネットワーク・イメージ）
+# docker-compose down --rmi all
+
+# 停止＆削除（コンテナ・ネットワーク・ボリューム）
+# docker-compose down -v
