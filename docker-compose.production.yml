@@ -11,7 +11,7 @@ services:
     restart: always
     environment:
       STAGE: 'production'
-      DOMAINS: 'dousa-kensho.tk => www.dousa-kensho.tk, www.dousa-kensho.tk -> http://web:3000'
+      DOMAINS: 'pockettoushituryou.com => www.pockettoushituryou.com, www.pockettoushituryou.com -> http://web:3000'
       FORCE_RENEW: 'true'
   db:
     image: postgres:11.1-alpine
