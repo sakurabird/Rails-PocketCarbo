@@ -58,7 +58,8 @@
                                     <form id="bmi-input1" name="form_bmi1" class="mt-2">
 
                                         <p class="h4 bq-primary light-blue lighten-5 p-2 mb-2">身長と体重からBMIを計算する</p>
-                                        <p class="mdb-color-text my-4">ホディ・マス・インデックス法（ＢＭＩ）は身長と体重から算出する肥満度の目安です。<br />まずはチェックしてみましょう。</p>
+                                        <p class="mdb-color-text my-4">
+                                            ホディ・マス・インデックス法（ＢＭＩ）は身長と体重から算出する肥満度の目安です。<br />まずはチェックしてみましょう。</p>
                                         <p class="h5 my-2">次の欄に身長と体重を数字で入力してください</p>
 
                                         <label for="input_height">身長 (cm)</label>
@@ -70,7 +71,8 @@
                                             placeholder="例：80.2">
 
                                         <div>
-                                            <input type="button" class="btn btn-primary" onclick="calc_bmi1();" value="BMIを計算する">
+                                            <input type="button" class="btn btn-primary" onclick="calc_bmi1();"
+                                                value="BMIを計算する">
                                         </div>
 
                                     </form>
@@ -110,7 +112,8 @@
                                             placeholder="例：27.6">
 
                                         <div>
-                                            <input type="button" class="btn btn-primary" onclick="calc_bmi2();" value="体重を計算する">
+                                            <input type="button" class="btn btn-primary" onclick="calc_bmi2();"
+                                                value="体重を計算する">
                                         </div>
 
                                     </form>
@@ -148,7 +151,8 @@
                                             placeholder="例：27.6">
 
                                         <div>
-                                            <input type="button" class="btn btn-primary" onclick="calc_bmi3();" value="身長を計算する">
+                                            <input type="button" class="btn btn-primary" onclick="calc_bmi3();"
+                                                value="身長を計算する">
                                         </div>
 
                                     </form>
@@ -241,11 +245,14 @@
 
                                 <div id="bmi-link" class="pt-5">
                                     <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">参考リンク</p>
-                                    <p><a class="" href="https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%87%E3%82%A3%E3%83%9E%E3%82%B9%E6%8C%87%E6%95%B0"
+                                    <p><a class=""
+                                            href="https://ja.wikipedia.org/wiki/%E3%83%9C%E3%83%87%E3%82%A3%E3%83%9E%E3%82%B9%E6%8C%87%E6%95%B0"
                                             target="_blank">ボディマス指数 - Wikipedia</a> </p>
-                                    <p><a class="" href="http://www.jasso.or.jp/data/magazine/pdf/chart_A.pdf" target="_blank">一般社団法人日本肥満学会
+                                    <p><a class="" href="http://www.jasso.or.jp/data/magazine/pdf/chart_A.pdf"
+                                            target="_blank">一般社団法人日本肥満学会
                                             BMIガイドライン (PDF)</a></p>
-                                    <p><a class="" href="https://www.e-healthnet.mhlw.go.jp/information/dictionary/metabolic/ym-002.html"
+                                    <p><a class=""
+                                            href="https://www.e-healthnet.mhlw.go.jp/information/dictionary/metabolic/ym-002.html"
                                             target="_blank">厚生労働省 BMI | e-ヘルスネット</a></p>
                                 </div>
 
@@ -265,33 +272,29 @@
                             <%= render 'layouts/mobile_app_banner' %>
 
                             <!-- Ads-->
+
                             <section class="row m-2">
                                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                <!-- web-PocketCarbo -->
+                                <!-- PocketCarboレスポンシブ -->
                                 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6381489451756721"
-                                    data-ad-slot="6829513953" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                    data-ad-slot="6829513953" data-ad-format="auto"
+                                    data-full-width-responsive="true"></ins>
                                 <script>
                                     (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
                             </section>
 
                             <section class="row m-2">
-                                <script type="text/javascript">
-                                    amzn_assoc_ad_type = "responsive_search_widget";
-                                    amzn_assoc_tracking_id = "sakurabird1-22";
-                                    amzn_assoc_marketplace = "amazon";
-                                    amzn_assoc_region = "JP";
-                                    amzn_assoc_placement = "";
-                                    amzn_assoc_search_type = "search_widget";
-                                    amzn_assoc_width = "160";
-                                    amzn_assoc_height = "600";
-                                    amzn_assoc_default_search_category = "";
-                                    amzn_assoc_default_search_key = "メタボ";
-                                    amzn_assoc_theme = "light";
-                                    amzn_assoc_bg_color = "FFFFFF";
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <!-- PocketCarboLink -->
+                                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6381489451756721"
+                                    data-ad-slot="9026109836" data-ad-format="link"
+                                    data-full-width-responsive="true"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
-                                <script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script>
                             </section>
+
                             <!--/. Ads -->
 
                         </div>
@@ -308,16 +311,6 @@
 
         </div>
         <!--/.Grid row -->
-
-        <div class="row mt-2">
-            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-            <!-- web-PocketCarbo -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6381489451756721" data-ad-slot="6829513953"
-                data-ad-format="auto" data-full-width-responsive="true"></ins>
-            <script>
-                (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
 
         <%= render 'layouts/sns_share' %>
     </div>
