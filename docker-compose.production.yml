@@ -12,7 +12,6 @@ services:
     environment:
       STAGE: 'production'
       DOMAINS: 'pockettoushituryou.com => www.pockettoushituryou.com, www.pockettoushituryou.com -> http://web:3000'
-      FORCE_RENEW: 'true'
   db:
     image: postgres:11.1-alpine
     ports:
