@@ -91,7 +91,8 @@
                                 <section id="eag1" class="pt-5">
                                     <form id="eag-input1" name="form_eag1" class="mt-2">
 
-                                        <p class="h4 bq-primary light-blue lighten-5 p-2 mb-2">HbA1cから推定平均血糖値(eAG)を計算する</p>
+                                        <p class="h4 bq-primary light-blue lighten-5 p-2 mb-2">HbA1cから推定平均血糖値(eAG)を計算する
+                                        </p>
                                         <p class="mdb-color-text my-4">
                                             HbA1c(%)を推定平均血糖値(mg/dL)に換算します。<br />
                                             小数点以下は四捨五入します。<br />
@@ -107,7 +108,8 @@
                                             placeholder="例：5.2">
 
                                         <div>
-                                            <input type="button" class="btn btn-primary" onclick="calc_eag1();" value="推定平均血糖値を計算する">
+                                            <input type="button" class="btn btn-primary" onclick="calc_eag1();"
+                                                value="推定平均血糖値を計算する">
                                         </div>
 
                                     </form>
@@ -139,7 +141,8 @@
                                             placeholder="例：103">
 
                                         <div>
-                                            <input type="button" class="btn btn-primary" onclick="calc_eag2();" value="推定HbA1cを計算する">
+                                            <input type="button" class="btn btn-primary" onclick="calc_eag2();"
+                                                value="推定HbA1cを計算する">
                                         </div>
 
                                     </form>
@@ -172,12 +175,14 @@
                                 </div>
 
                                 <div id="eag-about" class="pt-5">
-                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">HbA1c（ヘモグロビンエーワンシー）とは</p>
+                                    <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">HbA1c（ヘモグロビンエーワンシー）とは
+                                    </p>
 
                                     <p class="mdb-color-text my-4">
                                         <span class="font-weight-bold orange-text">HbA1c（ヘモグロビンエーワンシー）</span>とは
                                         糖尿病に関連する指標の一つで、<br />
-                                        <span class="font-weight-bold orange-text">採血から過去1～2ヵ月間の血糖値の平均</span>を反映したものです。<br />
+                                        <span
+                                            class="font-weight-bold orange-text">採血から過去1～2ヵ月間の血糖値の平均</span>を反映したものです。<br />
                                         <br />
                                         血液の中の赤血球内のヘモグロビンにブドウ糖がくっついたもののことを
                                         <span class="font-weight-bold orange-text">糖化ヘモグロビン</span>といいます。<br />
@@ -189,7 +194,8 @@
                                         いったん糖化したヘモグロビンは、赤血球の寿命（120日）が尽きるまで元には戻らないことから、
                                         採血当日の血糖値の影響を受けることなく過去1～2ヶ月の血糖値の平均を反映します。<br />
                                         <br />
-                                        なお、2012年4月より日本のHbA1cはJDS値から<span class="font-weight-bold orange-text">NGSP値を使うように変更されています。</span><br />
+                                        なお、2012年4月より日本のHbA1cはJDS値から<span
+                                            class="font-weight-bold orange-text">NGSP値を使うように変更されています。</span><br />
                                         違いについては<a href="#eag-ngsp">NGSP値とJDS値の違いとは</a>をご覧ください。
                                     </p>
                                 </div>
@@ -325,7 +331,8 @@
                                 <div id="eag-link" class="pt-5">
                                     <p class="h4 bq-primary light-blue lighten-5 p-2 mt-2 mb-2">参考リンク</p>
 
-                                    <p class="pt-2"><a href="https://dm-nagoya.com/2017/01/16/post-799/" target="_blank">名古屋糖尿病内科クリニック
+                                    <p class="pt-2"><a href="https://dm-nagoya.com/2017/01/16/post-799/"
+                                            target="_blank">名古屋糖尿病内科クリニック
                                             血糖値とHbA1c関連まとめ（2017/01/16作成）</a></p>
                                     <p><a href="http://www.ngsp.org/A1ceAG.asp" target="_blank">NGSP HbA1c and
                                             Estimated Average Glucose (eAG)</a></p>
@@ -348,38 +355,33 @@
                         <!--Grid column right-->
                         <div class="col-lg-3 col-md-12 mb-4">
 
-
                             <!-- Smartphone Apps badge -->
                             <%= render 'layouts/mobile_app_banner' %>
 
                             <!-- Ads -->
+
                             <section class="row m-2">
                                 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                                <!-- web-PocketCarbo -->
+                                <!-- PocketCarboレスポンシブ -->
                                 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6381489451756721"
-                                    data-ad-slot="6829513953" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                                    data-ad-slot="6829513953" data-ad-format="auto"
+                                    data-full-width-responsive="true"></ins>
                                 <script>
                                     (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
                             </section>
 
                             <section class="row m-2">
-                                <script type="text/javascript">
-                                    amzn_assoc_ad_type = "responsive_search_widget";
-                                    amzn_assoc_tracking_id = "sakurabird1-22";
-                                    amzn_assoc_marketplace = "amazon";
-                                    amzn_assoc_region = "JP";
-                                    amzn_assoc_placement = "";
-                                    amzn_assoc_search_type = "search_widget";
-                                    amzn_assoc_width = "160";
-                                    amzn_assoc_height = "600";
-                                    amzn_assoc_default_search_category = "";
-                                    amzn_assoc_default_search_key = "糖尿";
-                                    amzn_assoc_theme = "light";
-                                    amzn_assoc_bg_color = "FFFFFF";
+                                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                                <!-- PocketCarboLink -->
+                                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6381489451756721"
+                                    data-ad-slot="9026109836" data-ad-format="link"
+                                    data-full-width-responsive="true"></ins>
+                                <script>
+                                    (adsbygoogle = window.adsbygoogle || []).push({});
                                 </script>
-                                <script src="//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP"></script>
                             </section>
+
                             <!--/. Ads -->
 
                         </div>
@@ -400,8 +402,8 @@
         <div class="row mt-2">
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             <!-- web-PocketCarbo -->
-            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6381489451756721" data-ad-slot="6829513953"
-                data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6381489451756721"
+                data-ad-slot="6829513953" data-ad-format="auto" data-full-width-responsive="true"></ins>
             <script>
                 (adsbygoogle = window.adsbygoogle || []).push({});
             </script>
