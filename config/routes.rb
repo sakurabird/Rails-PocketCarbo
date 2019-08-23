@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
 
   get "/static_pages/*static_page" => "static_pages#show"
+  get "/sakurafish/*sakurafish" => "sakurafish#show"
 
   match 'foods/index', to: 'foods#index', via: ['post', 'get']
   match 'foods/search', to: 'foods#search', via: ['post', 'get']
