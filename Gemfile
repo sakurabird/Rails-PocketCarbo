@@ -1,26 +1,26 @@
 source 'https://rubygems.org'
 
-ruby "2.5.3"
+ruby "2.6.2"
 
-gem 'rails', '~> 5.2', '>= 5.2.1'
-gem 'dotenv-rails', '~> 2.5'
-gem 'ransack', '~> 2.0', '>= 2.0.1'
-gem 'kaminari', '~> 1.1', '>= 1.1.1'
-gem 'puma', '~> 3.12'
-gem 'sassc-rails'
-gem 'uglifier', '~> 4.1', '>= 4.1.18'
-gem 'coffee-rails', '~> 4.2', '>= 4.2.2'
-gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'rails', '~> 6.0'
+gem 'dotenv-rails'
+gem 'ransack'
+gem 'kaminari'
+gem 'puma', '~> 4.3'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'jquery-rails'
 gem 'font-awesome-rails'
-gem 'turbolinks', '~> 5.1', '>= 5.1.1'
-gem 'jbuilder', '~> 2.7'
-gem 'pg', '~> 1.0'
-gem 'meta-tags', '~> 2.10'
-gem 'config', '~> 1.7'
-gem 'bootstrap-sass', '>= 3.4.1'
+gem 'turbolinks', '~> 5.2.0'
+gem 'jbuilder', '~> 2.9', '>= 2.9.1'
+gem 'pg', '~> 1.1', '>= 1.1.4'
+gem 'meta-tags'
+gem 'config'
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails'
 
 group :development, :test do
-  gem 'byebug',  '10.0.2', platform: :mri
+  gem 'byebug',  '11.0.1', platform: :mri
 end
 
 group :development do
@@ -38,5 +38,4 @@ group :test do
 end
 
 group :production, :staging do
-  gem 'rails_12factor', '~> 0.0.3'
 end
