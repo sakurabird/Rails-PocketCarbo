@@ -9,5 +9,6 @@ class Food < ApplicationRecord
   validates :calory, numericality: { greater_than_or_equal_to: 0 }
   validates :protein, numericality: { greater_than_or_equal_to: 0 }
   validates :fat, numericality: { greater_than_or_equal_to: 0 }
+  validates :fat_per100g, numericality: { greater_than_or_equal_to: 0 }
   validates :sodium, numericality: { greater_than_or_equal_to: 0 }
 end
