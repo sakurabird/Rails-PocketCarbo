@@ -1,7 +1,7 @@
 
-FROM ruby:2.5.3-alpine3.8
+FROM ruby:2.6.2-alpine3.9
 
-LABEL maintainer="Yukari Sakurai<neko3genki@gmail.com>" Name=pocket_carbo Version=0.0.1
+LABEL maintainer="Yukari Sakurai<neko3genki@gmail.com>" Name=pocket_carbo Version=1.0.0
 
 ENV LANG C.UTF-8
 
@@ -12,8 +12,8 @@ WORKDIR $APP_PATH
 COPY Gemfile $APP_PATH
 COPY Gemfile.lock $APP_PATH
 
-ENV RUNTIME_PACKAGES="libxml2-dev libxslt-dev libstdc++ bash tzdata postgresql-dev postgresql-client nodejs ca-certificates"\
-  DEV_PACKAGES="build-base"
+ENV RUNTIME_PACKAGES="libxslt-dev libstdc++ bash tzdata postgresql-client nodejs ca-certificates"\
+  DEV_PACKAGES="build-base libxml2-dev postgresql-dev gmp-dev"
 
 RUN set -x && \
   apk add --update --no-cache $RUNTIME_PACKAGES &&\
