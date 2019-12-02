@@ -1,7 +1,7 @@
 <div class="food-search-box">
   <%= form_tag({controller: :foods, action: :search}, class: "") do %>
   <%= text_field_tag :search_keyword, params[:search_keyword], size: '70%', class: "text", placeholder: "検索したい食品名を入力してください..." %>
-  <%= button_tag(type: "submit", class: "btn") do %>
+  <%= button_tag(type: "submit", class: "btn mb-3") do %>
   <i class="fa fa-search">
     検索
   </i>
